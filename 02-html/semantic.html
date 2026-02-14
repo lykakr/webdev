@@ -1,0 +1,1346 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semantic HTML5 | WebDev Learning Hub</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/lesson.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="lesson-nav">
+        <div class="container">
+            <a href="../index.html" class="nav-logo"><span>🚀</span> WebDev Hub</a>
+            <div class="nav-breadcrumb">
+                <a href="../index.html">Αρχική</a> / <a href="index.html">HTML</a> / <span class="current">Semantic HTML</span>
+            </div>
+            <div class="nav-actions">
+                <button onclick="takeFullScreenshot()" class="btn-icon">📸</button>
+                <button onclick="exportToPDF()" class="btn-icon">📄</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="lesson-header html-header">
+        <div class="container">
+            <div class="lesson-badge">HTML5 Semantic</div>
+            <h1>🏛️ Semantic HTML5</h1>
+            <p class="lesson-subtitle">Δώσε νόημα και δομή στις σελίδες σου με semantic elements</p>
+            <div class="lesson-meta">
+                <span class="meta-item">⏱️ ~35 λεπτά</span>
+                <span class="meta-item">📊 Μεσαίο</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="lesson-content">
+        <div class="container">
+            
+            <!-- Tabs -->
+            <div class="tabs">
+                <button class="tab-btn active" onclick="showTab('theory')">📖 Θεωρία</button>
+                <button class="tab-btn" onclick="showTab('interactive')">🎮 Editor</button>
+                <button class="tab-btn" onclick="showTab('exercises')">✏️ Ασκήσεις</button>
+                <button class="tab-btn" onclick="showTab('quiz')">🎯 Quiz</button>
+            </div>
+
+            <!-- ============================================ -->
+            <!-- THEORY TAB -->
+            <!-- ============================================ -->
+            <section id="theory" class="tab-content active">
+                
+                <!-- What is Semantic HTML -->
+                <div class="theory-section">
+                    <h2>🤔 Τι είναι το Semantic HTML;</h2>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">💡</div>
+                        <div class="info-content">
+                            <p><strong>Semantic HTML</strong> σημαίνει χρήση HTML elements που περιγράφουν το <em>νόημα</em> του περιεχομένου τους, όχι απλά την εμφάνισή τους. Αντί για γενικά <code>&lt;div&gt;</code>, χρησιμοποιούμε elements που "λένε" τι περιέχουν.</p>
+                        </div>
+                    </div>
+
+                    <div class="comparison-boxes">
+                        <div class="comparison-box bad">
+                            <h4>❌ Μη-Semantic (Παλιός τρόπος)</h4>
+                            <pre class="code-small"><code>&lt;div id="header"&gt;...&lt;/div&gt;
+&lt;div id="nav"&gt;...&lt;/div&gt;
+&lt;div id="main"&gt;
+    &lt;div class="article"&gt;...&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="footer"&gt;...&lt;/div&gt;</code></pre>
+                            <p>Τα div δεν λένε τίποτα για το περιεχόμενο</p>
+                        </div>
+
+                        <div class="comparison-box good">
+                            <h4>✅ Semantic (HTML5 τρόπος)</h4>
+                            <pre class="code-small"><code>&lt;header&gt;...&lt;/header&gt;
+&lt;nav&gt;...&lt;/nav&gt;
+&lt;main&gt;
+    &lt;article&gt;...&lt;/article&gt;
+&lt;/main&gt;
+&lt;footer&gt;...&lt;/footer&gt;</code></pre>
+                            <p>Κάθε element περιγράφει το ρόλο του!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Why Semantic HTML Matters -->
+                <div class="theory-section">
+                    <h2>🎯 Γιατί είναι Σημαντικό;</h2>
+                    
+                    <div class="benefits-grid">
+                        <div class="benefit-card">
+                            <span class="benefit-icon">♿</span>
+                            <h4>Προσβασιμότητα</h4>
+                            <p>Τα screen readers κατανοούν τη δομή και βοηθούν άτομα με αναπηρίες</p>
+                        </div>
+                        <div class="benefit-card">
+                            <span class="benefit-icon">🔍</span>
+                            <h4>SEO</h4>
+                            <p>Οι μηχανές αναζήτησης "καταλαβαίνουν" καλύτερα το περιεχόμενο</p>
+                        </div>
+                        <div class="benefit-card">
+                            <span class="benefit-icon">👨‍💻</span>
+                            <h4>Αναγνωσιμότητα</h4>
+                            <p>Ο κώδικας είναι πιο εύκολος στην κατανόηση και συντήρηση</p>
+                        </div>
+                        <div class="benefit-card">
+                            <span class="benefit-icon">🎨</span>
+                            <h4>Styling</h4>
+                            <p>Ευκολότερο CSS targeting χωρίς πολλές classes</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Page Structure -->
+                <div class="theory-section">
+                    <h2>📐 Δομή Σελίδας με Semantic HTML</h2>
+                    
+                    <div class="page-structure-visual">
+                        <div class="structure-diagram">
+                            <div class="diagram-element header-el">
+                                <code>&lt;header&gt;</code>
+                                <span>Logo, τίτλος, navigation</span>
+                            </div>
+                            <div class="diagram-element nav-el">
+                                <code>&lt;nav&gt;</code>
+                                <span>Κύριο μενού πλοήγησης</span>
+                            </div>
+                            <div class="diagram-row">
+                                <div class="diagram-element main-el">
+                                    <code>&lt;main&gt;</code>
+                                    <div class="nested-elements">
+                                        <div class="diagram-element article-el">
+                                            <code>&lt;article&gt;</code>
+                                            <span>Αυτόνομο περιεχόμενο</span>
+                                        </div>
+                                        <div class="diagram-element section-el">
+                                            <code>&lt;section&gt;</code>
+                                            <span>Θεματική ενότητα</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="diagram-element aside-el">
+                                    <code>&lt;aside&gt;</code>
+                                    <span>Sidebar, σχετικό περιεχόμενο</span>
+                                </div>
+                            </div>
+                            <div class="diagram-element footer-el">
+                                <code>&lt;footer&gt;</code>
+                                <span>Copyright, επικοινωνία, links</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Semantic Elements Reference -->
+                <div class="theory-section">
+                    <h2>📚 Τα Semantic Elements</h2>
+                    
+                    <!-- Header -->
+                    <div class="semantic-element-card">
+                        <div class="element-header-bar">
+                            <code>&lt;header&gt;</code>
+                            <span class="element-category">Structural</span>
+                        </div>
+                        <div class="element-content">
+                            <p><strong>Κεφαλίδα</strong> - Εισαγωγικό περιεχόμενο ή navigation links</p>
+                            <ul>
+                                <li>Συνήθως περιέχει logo, τίτλο, nav</li>
+                                <li>Μπορεί να υπάρχει σε &lt;body&gt;, &lt;article&gt;, &lt;section&gt;</li>
+                                <li>Ένα &lt;header&gt; για ολόκληρη τη σελίδα + headers μέσα σε articles</li>
+                            </ul>
+                            <div class="code-example-inline">
+                                <pre><code>&lt;header&gt;
+    &lt;img src="logo.png" alt="Logo"&gt;
+    &lt;h1&gt;Όνομα Ιστοσελίδας&lt;/h1&gt;
+    &lt;nav&gt;...&lt;/nav&gt;
+&lt;/header&gt;</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Nav -->
+                    <div class="semantic-element-card">
+                        <div class="element-header-bar nav-bar">
+                            <code>&lt;nav&gt;</code>
+                            <span class="element-category">Navigation</span>
+                        </div>
+                        <div class="element-content">
+                            <p><strong>Πλοήγηση</strong> - Περιέχει συνδέσμους πλοήγησης</p>
+                            <ul>
+                                <li>Για <strong>κύρια</strong> navigation links (menu)</li>
+                                <li>Δεν χρειάζεται για κάθε ομάδα links</li>
+                                <li>Μπορεί να υπάρχει πάνω από ένα (main nav, footer nav)</li>
+                            </ul>
+                            <div class="code-example-inline">
+                                <pre><code>&lt;nav&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="/"&gt;Αρχική&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="/about"&gt;Σχετικά&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="/contact"&gt;Επικοινωνία&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Main -->
+                    <div class="semantic-element-card">
+                        <div class="element-header-bar main-bar">
+                            <code>&lt;main&gt;</code>
+                            <span class="element-category">Content</span>
+                        </div>
+                        <div class="element-content">
+                            <p><strong>Κύριο Περιεχόμενο</strong> - Το βασικό περιεχόμενο της σελίδας</p>
+                            <ul>
+                                <li>⚠️ <strong>Μόνο ένα</strong> &lt;main&gt; ανά σελίδα!</li>
+                                <li>Δεν περιλαμβάνει header, footer, nav, sidebars</li>
+                                <li>Μοναδικό περιεχόμενο για κάθε σελίδα</li>
+                            </ul>
+                            <div class="code-example-inline">
+                                <pre><code>&lt;main&gt;
+    &lt;h1&gt;Τίτλος Σελίδας&lt;/h1&gt;
+    &lt;article&gt;...&lt;/article&gt;
+    &lt;section&gt;...&lt;/section&gt;
+&lt;/main&gt;</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Article -->
+                    <div class="semantic-element-card">
+                        <div class="element-header-bar article-bar">
+                            <code>&lt;article&gt;</code>
+                            <span class="element-category">Content</span>
+                        </div>
+                        <div class="element-content">
+                            <p><strong>Άρθρο</strong> - Αυτόνομο, επαναχρησιμοποιήσιμο περιεχόμενο</p>
+                            <ul>
+                                <li>Blog posts, news articles, comments</li>
+                                <li>Μπορεί να σταθεί μόνο του (share, RSS)</li>
+                                <li>Μπορεί να περιέχει header, footer, sections</li>
+                            </ul>
+                            <div class="code-example-inline">
+                                <pre><code>&lt;article&gt;
+    &lt;header&gt;
+        &lt;h2&gt;Τίτλος Άρθρου&lt;/h2&gt;
+        &lt;time datetime="2024-01-15"&gt;15 Ιαν 2024&lt;/time&gt;
+    &lt;/header&gt;
+    &lt;p&gt;Περιεχόμενο άρθρου...&lt;/p&gt;
+    &lt;footer&gt;Συγγραφέας: ...&lt;/footer&gt;
+&lt;/article&gt;</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section -->
+                    <div class="semantic-element-card">
+                        <div class="element-header-bar section-bar">
+                            <code>&lt;section&gt;</code>
+                            <span class="element-category">Content</span>
+                        </div>
+                        <div class="element-content">
+                            <p><strong>Ενότητα</strong> - Θεματική ομαδοποίηση περιεχομένου</p>
+                            <ul>
+                                <li>Πρέπει να έχει επικεφαλίδα (h2, h3...)</li>
+                                <li>Χρησιμοποιείται για να χωρίσει περιεχόμενο</li>
+                                <li>Δεν είναι generic container (χρησιμοποίησε div γι' αυτό)</li>
+                            </ul>
+                            <div class="code-example-inline">
+                                <pre><code>&lt;section&gt;
+    &lt;h2&gt;Οι Υπηρεσίες μας&lt;/h2&gt;
+    &lt;p&gt;Προσφέρουμε...&lt;/p&gt;
+&lt;/section&gt;
+
+&lt;section&gt;
+    &lt;h2&gt;Τιμοκατάλογος&lt;/h2&gt;
+    &lt;p&gt;Οι τιμές μας...&lt;/p&gt;
+&lt;/section&gt;</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Aside -->
+                    <div class="semantic-element-card">
+                        <div class="element-header-bar aside-bar">
+                            <code>&lt;aside&gt;</code>
+                            <span class="element-category">Complementary</span>
+                        </div>
+                        <div class="element-content">
+                            <p><strong>Πλευρικό/Συμπληρωματικό</strong> - Σχετικό αλλά ξεχωριστό περιεχόμενο</p>
+                            <ul>
+                                <li>Sidebars, διαφημίσεις, related links</li>
+                                <li>Pull quotes, σχετικά άρθρα</li>
+                                <li>Περιεχόμενο που θα μπορούσε να αφαιρεθεί χωρίς να χαθεί νόημα</li>
+                            </ul>
+                            <div class="code-example-inline">
+                                <pre><code>&lt;aside&gt;
+    &lt;h3&gt;Σχετικά Άρθρα&lt;/h3&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Άρθρο 1&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Άρθρο 2&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/aside&gt;</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Footer -->
+                    <div class="semantic-element-card">
+                        <div class="element-header-bar footer-bar">
+                            <code>&lt;footer&gt;</code>
+                            <span class="element-category">Structural</span>
+                        </div>
+                        <div class="element-content">
+                            <p><strong>Υποσέλιδο</strong> - Πληροφορίες για το parent element</p>
+                            <ul>
+                                <li>Copyright, στοιχεία επικοινωνίας, sitemap</li>
+                                <li>Μπορεί να υπάρχει σε body, article, section</li>
+                                <li>Συχνά περιέχει &lt;address&gt; και links</li>
+                            </ul>
+                            <div class="code-example-inline">
+                                <pre><code>&lt;footer&gt;
+    &lt;p&gt;&amp;copy; 2024 Εταιρεία. Όλα τα δικαιώματα κατοχυρωμένα.&lt;/p&gt;
+    &lt;nav&gt;
+        &lt;a href="/privacy"&gt;Πολιτική Απορρήτου&lt;/a&gt;
+        &lt;a href="/terms"&gt;Όροι Χρήσης&lt;/a&gt;
+    &lt;/nav&gt;
+    &lt;address&gt;Email: info@example.com&lt;/address&gt;
+&lt;/footer&gt;</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Other Semantic Elements -->
+                <div class="theory-section">
+                    <h2>🔧 Άλλα Χρήσιμα Semantic Elements</h2>
+                    
+                    <div class="other-elements-grid">
+                        <div class="other-element">
+                            <code>&lt;figure&gt;</code> + <code>&lt;figcaption&gt;</code>
+                            <p>Εικόνα/διάγραμμα με λεζάντα</p>
+                            <div class="mini-demo">
+                                <figure style="margin:0;padding:10px;background:#f0f4f8;border-radius:8px;">
+                                    <div style="background:#cbd5e1;height:60px;border-radius:4px;display:flex;align-items:center;justify-content:center;">📷</div>
+                                    <figcaption style="text-align:center;font-size:0.85em;color:#64748b;margin-top:8px;">Λεζάντα εικόνας</figcaption>
+                                </figure>
+                            </div>
+                        </div>
+
+                        <div class="other-element">
+                            <code>&lt;time&gt;</code>
+                            <p>Ημερομηνία/ώρα (machine-readable)</p>
+                            <div class="mini-code">
+                                <code>&lt;time datetime="2024-01-15"&gt;15 Ιαν&lt;/time&gt;</code>
+                            </div>
+                        </div>
+
+                        <div class="other-element">
+                            <code>&lt;mark&gt;</code>
+                            <p>Επισημασμένο/highlighted κείμενο</p>
+                            <div class="mini-demo">
+                                <p style="margin:0;">Βρήκα το <mark>αποτέλεσμα</mark> που ψάχνεις.</p>
+                            </div>
+                        </div>
+
+                        <div class="other-element">
+                            <code>&lt;details&gt;</code> + <code>&lt;summary&gt;</code>
+                            <p>Expandable/collapsible content</p>
+                            <div class="mini-demo">
+                                <details style="background:#f0f4f8;padding:10px;border-radius:8px;">
+                                    <summary style="cursor:pointer;font-weight:bold;">Κάνε κλικ για περισσότερα</summary>
+                                    <p style="margin-top:10px;">Κρυφό περιεχόμενο που εμφανίζεται!</p>
+                                </details>
+                            </div>
+                        </div>
+
+                        <div class="other-element">
+                            <code>&lt;dialog&gt;</code>
+                            <p>Modal/dialog box</p>
+                            <div class="mini-code">
+                                <code>&lt;dialog open&gt;Content&lt;/dialog&gt;</code>
+                            </div>
+                        </div>
+
+                        <div class="other-element">
+                            <code>&lt;progress&gt;</code>
+                            <p>Progress bar</p>
+                            <div class="mini-demo">
+                                <progress value="70" max="100" style="width:100%;height:20px;"></progress>
+                            </div>
+                        </div>
+
+                        <div class="other-element">
+                            <code>&lt;meter&gt;</code>
+                            <p>Μέτρηση σε κλίμακα</p>
+                            <div class="mini-demo">
+                                <meter value="0.7" min="0" max="1" style="width:100%;height:20px;"></meter>
+                            </div>
+                        </div>
+
+                        <div class="other-element">
+                            <code>&lt;output&gt;</code>
+                            <p>Αποτέλεσμα υπολογισμού</p>
+                            <div class="mini-code">
+                                <code>&lt;output&gt;42&lt;/output&gt;</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section vs Article vs Div -->
+                <div class="theory-section">
+                    <h2>🤷 Section vs Article vs Div - Πότε τι;</h2>
+                    
+                    <div class="decision-guide">
+                        <div class="decision-card">
+                            <h4>📰 Χρησιμοποίησε &lt;article&gt; όταν:</h4>
+                            <ul>
+                                <li>Το περιεχόμενο μπορεί να σταθεί μόνο του</li>
+                                <li>Θα είχε νόημα αν το κοινοποιούσες</li>
+                                <li>Blog post, σχόλιο, προϊόν, news item</li>
+                            </ul>
+                            <div class="decision-example">
+                                <span>✅</span> Άρθρο blog, Σχόλιο, Κάρτα προϊόντος
+                            </div>
+                        </div>
+
+                        <div class="decision-card">
+                            <h4>📑 Χρησιμοποίησε &lt;section&gt; όταν:</h4>
+                            <ul>
+                                <li>Ομαδοποιείς θεματικά περιεχόμενο</li>
+                                <li>Έχει επικεφαλίδα (h2, h3...)</li>
+                                <li>Είναι μέρος ενός μεγαλύτερου περιεχομένου</li>
+                            </ul>
+                            <div class="decision-example">
+                                <span>✅</span> Chapters, Ενότητες σελίδας, Tabs
+                            </div>
+                        </div>
+
+                        <div class="decision-card">
+                            <h4>📦 Χρησιμοποίησε &lt;div&gt; όταν:</h4>
+                            <ul>
+                                <li>Χρειάζεσαι container για styling</li>
+                                <li>Δεν υπάρχει semantic σημασία</li>
+                                <li>Απλή ομαδοποίηση για CSS/JS</li>
+                            </ul>
+                            <div class="decision-example">
+                                <span>✅</span> Wrapper, Grid container, Styling group
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="decision-flowchart">
+                        <h4>🔀 Flowchart Απόφασης:</h4>
+                        <div class="flowchart">
+                            <div class="flow-step">
+                                <span class="flow-question">Μπορεί να σταθεί μόνο του;</span>
+                                <div class="flow-answers">
+                                    <span class="flow-yes">ΝΑΙ → <code>&lt;article&gt;</code></span>
+                                    <span class="flow-no">ΟΧΙ ↓</span>
+                                </div>
+                            </div>
+                            <div class="flow-step">
+                                <span class="flow-question">Έχει θεματική επικεφαλίδα;</span>
+                                <div class="flow-answers">
+                                    <span class="flow-yes">ΝΑΙ → <code>&lt;section&gt;</code></span>
+                                    <span class="flow-no">ΟΧΙ ↓</span>
+                                </div>
+                            </div>
+                            <div class="flow-step">
+                                <span class="flow-question">Χρειάζεται για styling/JS;</span>
+                                <div class="flow-answers">
+                                    <span class="flow-yes">ΝΑΙ → <code>&lt;div&gt;</code></span>
+                                    <span class="flow-no">ΟΧΙ → Μάλλον δεν χρειάζεται container</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Complete Example -->
+                <div class="theory-section">
+                    <h2>📋 Πλήρες Παράδειγμα Δομής</h2>
+                    
+                    <div class="code-block-wrapper">
+                        <div class="code-header">
+                            <span>Semantic HTML5 Layout</span>
+                            <button onclick="copyCode(this)" class="copy-btn">📋 Αντιγραφή</button>
+                        </div>
+                        <pre class="code-block"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="el"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Semantic Layout&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;Το Blog μου&lt;/h1&gt;
+        &lt;nav&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="/"&gt;Αρχική&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="/about"&gt;Σχετικά&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="/contact"&gt;Επικοινωνία&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+
+    &lt;main&gt;
+        &lt;article&gt;
+            &lt;header&gt;
+                &lt;h2&gt;Τίτλος Άρθρου&lt;/h2&gt;
+                &lt;p&gt;Δημοσιεύτηκε: &lt;time datetime="2024-01-15"&gt;15 Ιαν 2024&lt;/time&gt;&lt;/p&gt;
+            &lt;/header&gt;
+            
+            &lt;section&gt;
+                &lt;h3&gt;Εισαγωγή&lt;/h3&gt;
+                &lt;p&gt;Περιεχόμενο εισαγωγής...&lt;/p&gt;
+            &lt;/section&gt;
+            
+            &lt;section&gt;
+                &lt;h3&gt;Κύριο Θέμα&lt;/h3&gt;
+                &lt;p&gt;Περιεχόμενο κυρίου θέματος...&lt;/p&gt;
+                &lt;figure&gt;
+                    &lt;img src="image.jpg" alt="Περιγραφή"&gt;
+                    &lt;figcaption&gt;Λεζάντα εικόνας&lt;/figcaption&gt;
+                &lt;/figure&gt;
+            &lt;/section&gt;
+            
+            &lt;footer&gt;
+                &lt;p&gt;Συγγραφέας: Γιάννης&lt;/p&gt;
+                &lt;p&gt;Κατηγορία: Τεχνολογία&lt;/p&gt;
+            &lt;/footer&gt;
+        &lt;/article&gt;
+
+        &lt;aside&gt;
+            &lt;h3&gt;Σχετικά Άρθρα&lt;/h3&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Άρθρο 1&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Άρθρο 2&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/aside&gt;
+    &lt;/main&gt;
+
+    &lt;footer&gt;
+        &lt;p&gt;&amp;copy; 2024 Το Blog μου&lt;/p&gt;
+        &lt;address&gt;
+            Email: &lt;a href="mailto:info@blog.gr"&gt;info@blog.gr&lt;/a&gt;
+        &lt;/address&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                    </div>
+                </div>
+
+                <!-- Summary -->
+                <div class="theory-section">
+                    <h2>📋 Ανακεφαλαίωση</h2>
+                    
+                    <div class="summary-box">
+                        <div class="summary-item">
+                            <span class="check">✅</span>
+                            <p><code>&lt;header&gt;</code>: Κεφαλίδα (logo, nav, intro)</p>
+                        </div>
+                        <div class="summary-item">
+                            <span class="check">✅</span>
+                            <p><code>&lt;nav&gt;</code>: Κύρια πλοήγηση</p>
+                        </div>
+                        <div class="summary-item">
+                            <span class="check">✅</span>
+                            <p><code>&lt;main&gt;</code>: Κύριο περιεχόμενο (μόνο 1!)</p>
+                        </div>
+                        <div class="summary-item">
+                            <span class="check">✅</span>
+                            <p><code>&lt;article&gt;</code>: Αυτόνομο περιεχόμενο (blog post, comment)</p>
+                        </div>
+                        <div class="summary-item">
+                            <span class="check">✅</span>
+                            <p><code>&lt;section&gt;</code>: Θεματική ενότητα (με επικεφαλίδα)</p>
+                        </div>
+                        <div class="summary-item">
+                            <span class="check">✅</span>
+                            <p><code>&lt;aside&gt;</code>: Πλευρικό/συμπληρωματικό περιεχόμενο</p>
+                        </div>
+                        <div class="summary-item">
+                            <span class="check">✅</span>
+                            <p><code>&lt;footer&gt;</code>: Υποσέλιδο (copyright, links)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="next-section">
+                    <button class="btn btn-primary" onclick="showTab('interactive')">🎮 Πειραματίσου →</button>
+                </div>
+            </section>
+
+            <!-- ============================================ -->
+            <!-- INTERACTIVE TAB -->
+            <!-- ============================================ -->
+            <section id="interactive" class="tab-content">
+                <h2>🎮 Δημιούργησε Semantic Layout</h2>
+                
+                <div class="editor-container">
+                    <div class="editor-header">
+                        <h3>📝 Editor</h3>
+                        <div class="editor-actions">
+                            <button onclick="runCode()" class="btn btn-success">▶️ Εκτέλεση</button>
+                            <button onclick="resetEditor()" class="btn btn-secondary">🔄 Reset</button>
+                            <button onclick="saveCode()" class="btn btn-primary">💾 Αποθήκευση</button>
+                        </div>
+                    </div>
+                    
+                    <div class="editor-main single-editor">
+                        <div class="editor-panel active">
+                            <textarea id="code-editor" spellcheck="false"><!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <title>Semantic Blog Layout</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            color: #1e293b;
+            background: #f8fafc;
+        }
+        
+        /* Header Styles */
+        body > header {
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        body > header h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        
+        /* Navigation */
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 10px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: background 0.3s;
+        }
+        
+        nav a:hover {
+            background: rgba(255,255,255,0.2);
+        }
+        
+        /* Main Layout */
+        main {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        
+        /* Article Styles */
+        article {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        article header {
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+        
+        article header h2 {
+            color: #2563eb;
+            margin-bottom: 5px;
+        }
+        
+        article header time {
+            color: #64748b;
+            font-size: 0.9em;
+        }
+        
+        article section {
+            margin: 20px 0;
+        }
+        
+        article section h3 {
+            color: #1e40af;
+            margin-bottom: 10px;
+            padding-left: 10px;
+            border-left: 3px solid #2563eb;
+        }
+        
+        article figure {
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        article figure img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        
+        article figure figcaption {
+            margin-top: 10px;
+            color: #64748b;
+            font-style: italic;
+        }
+        
+        article > footer {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 2px solid #e2e8f0;
+            color: #64748b;
+            font-size: 0.9em;
+        }
+        
+        /* Aside Styles */
+        aside {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            height: fit-content;
+        }
+        
+        aside h3 {
+            color: #7c3aed;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        
+        aside ul {
+            list-style: none;
+        }
+        
+        aside li {
+            padding: 10px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        aside a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+        
+        aside a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Details/Summary */
+        details {
+            background: #f0f4f8;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+            color: #2563eb;
+        }
+        
+        /* Footer Styles */
+        body > footer {
+            background: #1e293b;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 40px;
+        }
+        
+        body > footer a {
+            color: #a5f3fc;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            main {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🚀 Tech Blog</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Αρχική</a></li>
+                <li><a href="#">Άρθρα</a></li>
+                <li><a href="#">Tutorials</a></li>
+                <li><a href="#">Επικοινωνία</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <article>
+            <header>
+                <h2>Μαθαίνοντας Semantic HTML5</h2>
+                <p>Δημοσιεύτηκε: <time datetime="2024-01-15">15 Ιανουαρίου 2024</time></p>
+            </header>
+            
+            <section>
+                <h3>Εισαγωγή</h3>
+                <p>
+                    Το Semantic HTML είναι η πρακτική χρήσης HTML elements που 
+                    περιγράφουν το νόημα του περιεχομένου τους. Αντί να χρησιμοποιούμε 
+                    γενικά &lt;div&gt; παντού, επιλέγουμε elements που "λένε" 
+                    τι περιέχουν.
+                </p>
+            </section>
+            
+            <section>
+                <h3>Γιατί είναι Σημαντικό;</h3>
+                <p>
+                    Η χρήση semantic HTML βελτιώνει την προσβασιμότητα, το SEO, 
+                    και κάνει τον κώδικα πιο κατανοητό για άλλους developers.
+                </p>
+                
+                <figure>
+                    <img src="https://via.placeholder.com/600x300/2563eb/ffffff?text=Semantic+HTML+Diagram" alt="Διάγραμμα Semantic HTML">
+                    <figcaption>Σχηματική απεικόνιση semantic layout</figcaption>
+                </figure>
+            </section>
+            
+            <section>
+                <h3>Παραδείγματα Elements</h3>
+                
+                <details>
+                    <summary>📌 Κάνε κλικ για να δεις τα βασικά elements</summary>
+                    <ul style="margin-top:10px;">
+                        <li><strong>header</strong> - Κεφαλίδα</li>
+                        <li><strong>nav</strong> - Πλοήγηση</li>
+                        <li><strong>main</strong> - Κύριο περιεχόμενο</li>
+                        <li><strong>article</strong> - Αυτόνομο άρθρο</li>
+                        <li><strong>section</strong> - Ενότητα</li>
+                        <li><strong>aside</strong> - Πλευρικό περιεχόμενο</li>
+                        <li><strong>footer</strong> - Υποσέλιδο</li>
+                    </ul>
+                </details>
+            </section>
+            
+            <footer>
+                <p>✍️ Συγγραφέας: <strong>WebDev Team</strong></p>
+                <p>🏷️ Κατηγορίες: HTML, Web Development, Best Practices</p>
+            </footer>
+        </article>
+
+        <aside>
+            <h3>📚 Σχετικά Άρθρα</h3>
+            <ul>
+                <li><a href="#">Εισαγωγή στην HTML5</a></li>
+                <li><a href="#">CSS Layout Techniques</a></li>
+                <li><a href="#">Accessibility Best Practices</a></li>
+                <li><a href="#">SEO για Αρχάριους</a></li>
+            </ul>
+            
+            <h3 style="margin-top:20px;">📊 Πρόοδος Ανάγνωσης</h3>
+            <progress value="75" max="100" style="width:100%;margin-top:10px;"></progress>
+            <p style="font-size:0.9em;color:#64748b;">75% ολοκληρωμένο</p>
+        </aside>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Tech Blog - Όλα τα δικαιώματα κατοχυρωμένα</p>
+        <address>
+            📧 <a href="mailto:info@techblog.gr">info@techblog.gr</a> | 
+            📞 <a href="tel:+302101234567">210-123-4567</a>
+        </address>
+    </footer>
+</body>
+</html></textarea>
+                        </div>
+                        <div class="preview-container">
+                            <div class="preview-header">
+                                <h4>🖥️ Αποτέλεσμα</h4>
+                            </div>
+                            <iframe id="preview-frame"></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Challenges -->
+                <div class="challenges-section">
+                    <h3>🎯 Προκλήσεις:</h3>
+                    <div class="mini-challenges">
+                        <div class="mini-challenge">1️⃣ Πρόσθεσε δεύτερο &lt;article&gt; με νέο άρθρο</div>
+                        <div class="mini-challenge">2️⃣ Πρόσθεσε &lt;figure&gt; με εικόνα και λεζάντα</div>
+                        <div class="mini-challenge">3️⃣ Βάλε περισσότερα links στο aside</div>
+                        <div class="mini-challenge">4️⃣ Πρόσθεσε ακόμα ένα &lt;details&gt; με FAQ</div>
+                        <div class="mini-challenge">5️⃣ Φτιάξε footer nav με social links</div>
+                    </div>
+                </div>
+
+                <!-- Quick Insert -->
+                <div class="quick-reference">
+                    <h3>📋 Γρήγορη Εισαγωγή - Κάνε κλικ</h3>
+                    <div class="reference-grid">
+                        <div class="reference-item" onclick="insertSemanticCode('header')">
+                            <code>&lt;header&gt;</code>
+                        </div>
+                        <div class="reference-item" onclick="insertSemanticCode('nav')">
+                            <code>&lt;nav&gt;</code>
+                        </div>
+                        <div class="reference-item" onclick="insertSemanticCode('main')">
+                            <code>&lt;main&gt;</code>
+                        </div>
+                        <div class="reference-item" onclick="insertSemanticCode('article')">
+                            <code>&lt;article&gt;</code>
+                        </div>
+                        <div class="reference-item" onclick="insertSemanticCode('section')">
+                            <code>&lt;section&gt;</code>
+                        </div>
+                        <div class="reference-item" onclick="insertSemanticCode('aside')">
+                            <code>&lt;aside&gt;</code>
+                        </div>
+                        <div class="reference-item" onclick="insertSemanticCode('footer')">
+                            <code>&lt;footer&gt;</code>
+                        </div>
+                        <div class="reference-item" onclick="insertSemanticCode('figure')">
+                            <code>&lt;figure&gt;</code>
+                        </div>
+                        <div class="reference-item" onclick="insertSemanticCode('details')">
+                            <code>&lt;details&gt;</code>
+                        </div>
+                        <div class="reference-item" onclick="insertSemanticCode('time')">
+                            <code>&lt;time&gt;</code>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============================================ -->
+            <!-- EXERCISES TAB -->
+            <!-- ============================================ -->
+            <section id="exercises" class="tab-content">
+                <h2>✏️ Ασκήσεις</h2>
+                
+                <!-- Exercise 1 -->
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-number">1</span>
+                        <h3>Ποιο element πρέπει να χρησιμοποιήσω;</h3>
+                    </div>
+                    <p>Αντιστοίχισε κάθε περίπτωση με το σωστό semantic element:</p>
+                    
+                    <div class="matching-simple">
+                        <div class="match-row">
+                            <span>Logo και μενού στην κορυφή</span>
+                            <select class="match-select" data-correct="header">
+                                <option value="">Επίλεξε...</option>
+                                <option value="header">header</option>
+                                <option value="nav">nav</option>
+                                <option value="main">main</option>
+                                <option value="div">div</option>
+                            </select>
+                        </div>
+                        <div class="match-row">
+                            <span>Κύριο μενού πλοήγησης</span>
+                            <select class="match-select" data-correct="nav">
+                                <option value="">Επίλεξε...</option>
+                                <option value="header">header</option>
+                                <option value="nav">nav</option>
+                                <option value="menu">menu</option>
+                                <option value="ul">ul</option>
+                            </select>
+                        </div>
+                        <div class="match-row">
+                            <span>Blog post που μπορεί να κοινοποιηθεί</span>
+                            <select class="match-select" data-correct="article">
+                                <option value="">Επίλεξε...</option>
+                                <option value="section">section</option>
+                                <option value="article">article</option>
+                                <option value="div">div</option>
+                                <option value="post">post</option>
+                            </select>
+                        </div>
+                        <div class="match-row">
+                            <span>Sidebar με σχετικά links</span>
+                            <select class="match-select" data-correct="aside">
+                                <option value="">Επίλεξε...</option>
+                                <option value="sidebar">sidebar</option>
+                                <option value="aside">aside</option>
+                                <option value="nav">nav</option>
+                                <option value="section">section</option>
+                            </select>
+                        </div>
+                        <div class="match-row">
+                            <span>Copyright στο κάτω μέρος</span>
+                            <select class="match-select" data-correct="footer">
+                                <option value="">Επίλεξε...</option>
+                                <option value="bottom">bottom</option>
+                                <option value="footer">footer</option>
+                                <option value="copyright">copyright</option>
+                                <option value="end">end</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button onclick="checkExercise(1)" class="btn btn-primary">✅ Έλεγχος</button>
+                    <div id="result-1" class="exercise-result"></div>
+                </div>
+
+                <!-- Exercise 2 -->
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-number">2</span>
+                        <h3>Σωστό ή Λάθος;</h3>
+                    </div>
+                    
+                    <div class="true-false-quiz">
+                        <div class="tf-question">
+                            <span>Μπορούμε να έχουμε πολλά &lt;main&gt; σε μια σελίδα</span>
+                            <div class="tf-options">
+                                <label><input type="radio" name="tf1" value="true"> Σωστό</label>
+                                <label><input type="radio" name="tf1" value="false" data-correct="true"> Λάθος</label>
+                            </div>
+                        </div>
+                        <div class="tf-question">
+                            <span>Το &lt;article&gt; πρέπει πάντα να είναι μέσα σε &lt;main&gt;</span>
+                            <div class="tf-options">
+                                <label><input type="radio" name="tf2" value="true"> Σωστό</label>
+                                <label><input type="radio" name="tf2" value="false" data-correct="true"> Λάθος</label>
+                            </div>
+                        </div>
+                        <div class="tf-question">
+                            <span>Μπορούμε να βάλουμε &lt;header&gt; μέσα σε &lt;article&gt;</span>
+                            <div class="tf-options">
+                                <label><input type="radio" name="tf3" value="true" data-correct="true"> Σωστό</label>
+                                <label><input type="radio" name="tf3" value="false"> Λάθος</label>
+                            </div>
+                        </div>
+                        <div class="tf-question">
+                            <span>Το &lt;section&gt; πρέπει να έχει επικεφαλίδα (h2, h3...)</span>
+                            <div class="tf-options">
+                                <label><input type="radio" name="tf4" value="true" data-correct="true"> Σωστό</label>
+                                <label><input type="radio" name="tf4" value="false"> Λάθος</label>
+                            </div>
+                        </div>
+                        <div class="tf-question">
+                            <span>Το &lt;aside&gt; χρησιμοποιείται μόνο για sidebars</span>
+                            <div class="tf-options">
+                                <label><input type="radio" name="tf5" value="true"> Σωστό</label>
+                                <label><input type="radio" name="tf5" value="false" data-correct="true"> Λάθος</label>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="checkTrueFalse()" class="btn btn-primary">✅ Έλεγχος</button>
+                    <div id="result-2" class="exercise-result"></div>
+                </div>
+
+                <!-- Exercise 3 -->
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-number">3</span>
+                        <h3>Μετατροπή σε Semantic HTML</h3>
+                    </div>
+                    <p>Μετέτρεψε τον παρακάτω "div soup" σε semantic HTML:</p>
+                    
+                    <div class="code-comparison">
+                        <div class="code-before">
+                            <h4>❌ Πριν (divs)</h4>
+                            <pre><code>&lt;div id="header"&gt;
+    &lt;div id="logo"&gt;Logo&lt;/div&gt;
+    &lt;div id="menu"&gt;Menu&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="content"&gt;
+    &lt;div class="post"&gt;
+        &lt;div class="post-title"&gt;Title&lt;/div&gt;
+        &lt;div class="post-body"&gt;Content&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="sidebar"&gt;Links&lt;/div&gt;
+&lt;div id="footer"&gt;Copyright&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                    
+                    <textarea id="semantic-exercise" class="code-textarea" rows="18" placeholder="Γράψε τη semantic έκδοση εδώ..."></textarea>
+                    <div class="exercise-buttons">
+                        <button onclick="previewSemanticExercise()" class="btn btn-success">▶️ Προεπισκόπηση</button>
+                        <button onclick="checkSemanticExercise()" class="btn btn-primary">✅ Έλεγχος</button>
+                    </div>
+                    <div id="semantic-preview" class="exercise-preview"></div>
+                    <div id="result-3" class="exercise-result"></div>
+                </div>
+            </section>
+
+            <!-- ============================================ -->
+            <!-- QUIZ TAB -->
+            <!-- ============================================ -->
+            <section id="quiz" class="tab-content">
+                <h2>🎯 Quiz Semantic HTML</h2>
+                
+                <div class="quiz-intro">
+                    <p>Δοκίμασε τις γνώσεις σου στο Semantic HTML!</p>
+                    <div class="quiz-info">
+                        <span>📊 10 Ερωτήσεις</span>
+                        <span>🎯 Στόχος: 80%</span>
+                    </div>
+                </div>
+
+                <div id="quiz-container"></div>
+                <div id="quiz-results" style="display:none;">
+                    <div class="results-score"><span id="score-number">0</span>/10</div>
+                    <div id="results-message"></div>
+                    <button onclick="retakeQuiz()" class="btn btn-primary">🔄 Ξαναπροσπάθησε</button>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer Navigation -->
+    <footer class="lesson-footer">
+        <div class="container">
+            <div class="footer-nav">
+                <a href="text-elements.html" class="footer-link">← Στοιχεία Κειμένου</a>
+                <a href="multimedia.html" class="footer-link primary">Multimedia →</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="sub-script.js"></script>
+    <script>
+        // Quiz data for Semantic HTML
+        const quizData = [
+            {
+                question: "Ποιο element χρησιμοποιούμε για το κύριο περιεχόμενο;",
+                options: ["<content>", "<main>", "<body>", "<primary>"],
+                correct: 1
+            },
+            {
+                question: "Πόσα <main> elements επιτρέπονται ανά σελίδα;",
+                options: ["Όσα θέλουμε", "Μόνο 1", "Μόνο 2", "Κανένα"],
+                correct: 1
+            },
+            {
+                question: "Ποιο element χρησιμοποιούμε για blog posts;",
+                options: ["<section>", "<div>", "<article>", "<post>"],
+                correct: 2
+            },
+            {
+                question: "Το <nav> χρησιμοποιείται για:",
+                options: ["Κάθε σύνδεσμο", "Κύριο μενού πλοήγησης", "Footer only", "Images"],
+                correct: 1
+            },
+            {
+                question: "Ποια είναι η διαφορά <article> και <section>;",
+                options: [
+                    "Καμία",
+                    "article=αυτόνομο, section=θεματική ενότητα",
+                    "section=αυτόνομο, article=ενότητα",
+                    "Χρησιμοποιούνται μόνο σε blogs"
+                ],
+                correct: 1
+            },
+            {
+                question: "Το <aside> χρησιμοποιείται για:",
+                options: [
+                    "Κύριο περιεχόμενο",
+                    "Συμπληρωματικό/πλευρικό περιεχόμενο",
+                    "Footer",
+                    "Images"
+                ],
+                correct: 1
+            },
+            {
+                question: "Μπορούμε να βάλουμε <header> μέσα σε <article>;",
+                options: ["Όχι, ποτέ", "Ναι", "Μόνο με CSS", "Μόνο στο body"],
+                correct: 1
+            },
+            {
+                question: "Το <figure> χρησιμοποιείται με:",
+                options: ["<img>", "<figcaption>", "Και τα δύο", "Κανένα"],
+                correct: 2
+            },
+            {
+                question: "Γιατί είναι σημαντικό το Semantic HTML;",
+                options: [
+                    "Μόνο για SEO",
+                    "Accessibility, SEO, αναγνωσιμότητα",
+                    "Μόνο για styling",
+                    "Δεν είναι σημαντικό"
+                ],
+                correct: 1
+            },
+            {
+                question: "Ποιο element χρησιμοποιούμε για ημερομηνία/ώρα;",
+                options: ["<date>", "<datetime>", "<time>", "<when>"],
+                correct: 2
+            }
+        ];
+        
+        initQuiz(quizData);
+        
+        // Insert semantic code snippets
+        function insertSemanticCode(element) {
+            const templates = {
+                'header': '<header>\n    <h1>Τίτλος</h1>\n    <nav>\n        <a href="#">Link</a>\n    </nav>\n</header>',
+                'nav': '<nav>\n    <ul>\n        <li><a href="#">Αρχική</a></li>\n        <li><a href="#">Σχετικά</a></li>\n    </ul>\n</nav>',
+                'main': '<main>\n    <!-- Κύριο περιεχόμενο -->\n</main>',
+                'article': '<article>\n    <header>\n        <h2>Τίτλος Άρθρου</h2>\n        <time datetime="2024-01-15">15 Ιαν 2024</time>\n    </header>\n    <p>Περιεχόμενο...</p>\n    <footer>Συγγραφέας: ...</footer>\n</article>',
+                'section': '<section>\n    <h2>Τίτλος Ενότητας</h2>\n    <p>Περιεχόμενο...</p>\n</section>',
+                'aside': '<aside>\n    <h3>Σχετικά</h3>\n    <ul>\n        <li><a href="#">Link 1</a></li>\n    </ul>\n</aside>',
+                'footer': '<footer>\n    <p>&copy; 2024 Company</p>\n    <address>Email: info@example.com</address>\n</footer>',
+                'figure': '<figure>\n    <img src="image.jpg" alt="Περιγραφή">\n    <figcaption>Λεζάντα εικόνας</figcaption>\n</figure>',
+                'details': '<details>\n    <summary>Κάνε κλικ για περισσότερα</summary>\n    <p>Κρυφό περιεχόμενο...</p>\n</details>',
+                'time': '<time datetime="2024-01-15">15 Ιανουαρίου 2024</time>'
+            };
+            
+            const editor = document.getElementById('code-editor');
+            const start = editor.selectionStart;
+            const text = editor.value;
+            const code = templates[element] || `<${element}></${element}>`;
+            editor.value = text.substring(0, start) + '\n' + code + '\n' + text.substring(start);
+            editor.focus();
+            runCode();
+        }
+        
+        // Check True/False exercise
+        function checkTrueFalse() {
+            let correct = 0;
+            const questions = document.querySelectorAll('.tf-question');
+            
+            questions.forEach((q, i) => {
+                const selected = q.querySelector(`input[name="tf${i+1}"]:checked`);
+                const correctOption = q.querySelector(`input[data-correct="true"]`);
+                
+                // Reset styles
+                q.querySelectorAll('label').forEach(l => {
+                    l.classList.remove('correct', 'incorrect');
+                });
+                
+                if (selected) {
+                    if (selected === correctOption) {
+                        selected.parentElement.classList.add('correct');
+                        correct++;
+                    } else {
+                        selected.parentElement.classList.add('incorrect');
+                        correctOption.parentElement.classList.add('correct');
+                    }
+                }
+            });
+            
+            const result = document.getElementById('result-2');
+            result.innerHTML = correct === 5 ? '🎉 Όλα σωστά!' : `Σωστά: ${correct}/5`;
+            result.className = 'exercise-result ' + (correct === 5 ? 'success' : 'error');
+        }
+        
+        // Preview semantic exercise
+        function previewSemanticExercise() {
+            const code = document.getElementById('semantic-exercise').value;
+            const style = `<style>
+                body{font-family:Arial;padding:10px;}
+                header,nav,main,article,section,aside,footer{
+                    padding:10px;margin:5px;border-radius:5px;
+                }
+                header{background:#dbeafe;border:2px solid #2563eb;}
+                nav{background:#dcfce7;border:2px solid #10b981;}
+                main{background:#fef3c7;border:2px solid #f59e0b;}
+                article{background:#fee2e2;border:2px solid #ef4444;}
+                section{background:#e0e7ff;border:2px solid #6366f1;}
+                aside{background:#fce7f3;border:2px solid #ec4899;}
+                footer{background:#f3f4f6;border:2px solid #6b7280;}
+            </style>`;
+            document.getElementById('semantic-preview').innerHTML = 
+                `<iframe srcdoc="${style}${code.replace(/"/g,'&quot;')}" style="width:100%;height:400px;border:1px solid #ddd;border-radius:8px;"></iframe>`;
+        }
+        
+        // Check semantic exercise
+        function checkSemanticExercise() {
+            const code = document.getElementById('semantic-exercise').value.toLowerCase();
+            const result = document.getElementById('result-3');
+            
+            const checks = {
+                header: code.includes('<header'),
+                nav: code.includes('<nav'),
+                main: code.includes('<main'),
+                article: code.includes('<article'),
+                aside: code.includes('<aside'),
+                footer: code.includes('<footer')
+            };
+            
+            const score = Object.values(checks).filter(Boolean).length;
+            const missing = Object.entries(checks).filter(([k, v]) => !v).map(([k]) => `<${k}>`);
+            
+            if (score === 6) {
+                result.innerHTML = '🎉 Τέλεια μετατροπή! Χρησιμοποίησες όλα τα semantic elements!';
+                result.className = 'exercise-result success';
+            } else {
+                result.innerHTML = `Έχεις ${score}/6 elements. Λείπουν: ${missing.join(', ')}`;
+                result.className = 'exercise-result error';
+            }
+        }
+        
+        // Check matching exercises
+        function checkExercise(num) {
+            const result = document.getElementById(`result-${num}`);
+            const selects = document.querySelectorAll(`#exercises .exercise-item:nth-child(${num}) .match-select`);
+            
+            let correct = 0;
+            selects.forEach(sel => {
+                if (sel.value === sel.dataset.correct) {
+                    sel.classList.add('correct');
+                    sel.classList.remove('incorrect');
+                    correct++;
+                } else if (sel.value) {
+                    sel.classList.add('incorrect');
+                    sel.classList.remove('correct');
+                }
+            });
+            
+            result.innerHTML = correct === selects.length ? '🎉 Όλα σωστά!' : `Σωστά: ${correct}/${selects.length}`;
+            result.className = 'exercise-result ' + (correct === selects.length ? 'success' : 'error');
+        }
+    </script>
+</body>
+</html>

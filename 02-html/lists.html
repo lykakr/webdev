@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Λίστες HTML | WebDev Learning Hub</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/lesson.css">
+</head>
+<body>
+    <nav class="lesson-nav">
+        <div class="container">
+            <a href="../index.html" class="nav-logo"><span>🚀</span> WebDev Hub</a>
+            <div class="nav-breadcrumb">
+                <a href="../index.html">Αρχική</a> / <a href="index.html">HTML</a> / <span class="current">Λίστες</span>
+            </div>
+            <div class="nav-actions">
+                <button onclick="takeFullScreenshot()" class="btn-icon">📸</button>
+                <button onclick="exportToPDF()" class="btn-icon">📄</button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="lesson-header html-header">
+        <div class="container">
+            <div class="lesson-badge">HTML Lists</div>
+            <h1>📑 Λίστες HTML</h1>
+            <p class="lesson-subtitle">Οργάνωση πληροφοριών σε λίστες</p>
+        </div>
+    </header>
+
+    <main class="lesson-content">
+        <div class="container">
+            
+            <div class="tabs">
+                <button class="tab-btn active" onclick="showTab('theory')">📖 Θεωρία</button>
+                <button class="tab-btn" onclick="showTab('interactive')">🎮 Editor</button>
+                <button class="tab-btn" onclick="showTab('exercises')">✏️ Ασκήσεις</button>
+                <button class="tab-btn" onclick="showTab('quiz')">🎯 Quiz</button>
+            </div>
+
+            <!-- THEORY -->
+            <section id="theory" class="tab-content active">
+                <div class="theory-section">
+                    <h2>📑 Τύποι Λιστών</h2>
+                    
+                    <div class="list-types-grid">
+                        <!-- Unordered List -->
+                        <div class="list-type-card">
+                            <h3>📌 Unordered List (ul)</h3>
+                            <p>Λίστα με κουκκίδες - χωρίς σειρά</p>
+                            <div class="code-block-wrapper">
+                                <pre class="code-block"><code>&lt;ul&gt;
+    &lt;li&gt;Στοιχείο 1&lt;/li&gt;
+    &lt;li&gt;Στοιχείο 2&lt;/li&gt;
+    &lt;li&gt;Στοιχείο 3&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+                            </div>
+                            <div class="list-demo">
+                                <ul>
+                                    <li>Στοιχείο 1</li>
+                                    <li>Στοιχείο 2</li>
+                                    <li>Στοιχείο 3</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Ordered List -->
+                        <div class="list-type-card">
+                            <h3>🔢 Ordered List (ol)</h3>
+                            <p>Αριθμημένη λίστα - με σειρά</p>
+                            <div class="code-block-wrapper">
+                                <pre class="code-block"><code>&lt;ol&gt;
+    &lt;li&gt;Πρώτο&lt;/li&gt;
+    &lt;li&gt;Δεύτερο&lt;/li&gt;
+    &lt;li&gt;Τρίτο&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+                            </div>
+                            <div class="list-demo">
+                                <ol>
+                                    <li>Πρώτο</li>
+                                    <li>Δεύτερο</li>
+                                    <li>Τρίτο</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <!-- Description List -->
+                        <div class="list-type-card">
+                            <h3>📖 Description List (dl)</h3>
+                            <p>Λίστα ορισμών/περιγραφών</p>
+                            <div class="code-block-wrapper">
+                                <pre class="code-block"><code>&lt;dl&gt;
+    &lt;dt&gt;HTML&lt;/dt&gt;
+    &lt;dd&gt;Γλώσσα σήμανσης&lt;/dd&gt;
+    &lt;dt&gt;CSS&lt;/dt&gt;
+    &lt;dd&gt;Styling&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+                            </div>
+                            <div class="list-demo">
+                                <dl>
+                                    <dt><strong>HTML</strong></dt>
+                                    <dd>Γλώσσα σήμανσης</dd>
+                                    <dt><strong>CSS</strong></dt>
+                                    <dd>Styling</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="theory-section">
+                    <h2>⚙️ Attributes για Ordered Lists</h2>
+                    
+                    <div class="ol-attributes">
+                        <div class="attribute-example">
+                            <h4>type - Τύπος αρίθμησης</h4>
+                            <div class="ol-types">
+                                <div>
+                                    <code>type="1"</code>
+                                    <ol type="1"><li>Ένα</li><li>Δύο</li></ol>
+                                </div>
+                                <div>
+                                    <code>type="a"</code>
+                                    <ol type="a"><li>Ένα</li><li>Δύο</li></ol>
+                                </div>
+                                <div>
+                                    <code>type="A"</code>
+                                    <ol type="A"><li>Ένα</li><li>Δύο</li></ol>
+                                </div>
+                                <div>
+                                    <code>type="i"</code>
+                                    <ol type="i"><li>Ένα</li><li>Δύο</li></ol>
+                                </div>
+                                <div>
+                                    <code>type="I"</code>
+                                    <ol type="I"><li>Ένα</li><li>Δύο</li></ol>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="attribute-example">
+                            <h4>start - Αρχική τιμή</h4>
+                            <code>&lt;ol start="5"&gt;</code>
+                            <ol start="5"><li>Πέντε</li><li>Έξι</li><li>Εφτά</li></ol>
+                        </div>
+                        
+                        <div class="attribute-example">
+                            <h4>reversed - Αντίστροφη σειρά</h4>
+                            <code>&lt;ol reversed&gt;</code>
+                            <ol reversed><li>Τρία</li><li>Δύο</li><li>Ένα</li></ol>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="theory-section">
+                    <h2>🔄 Nested Lists (Ένθετες)</h2>
+                    
+                    <div class="nested-example">
+                        <div class="code-block-wrapper">
+                            <pre class="code-block"><code>&lt;ul&gt;
+    &lt;li&gt;Φρούτα
+        &lt;ul&gt;
+            &lt;li&gt;Μήλο&lt;/li&gt;
+            &lt;li&gt;Πορτοκάλι&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;Λαχανικά
+        &lt;ul&gt;
+            &lt;li&gt;Ντομάτα&lt;/li&gt;
+            &lt;li&gt;Αγγούρι&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+                        </div>
+                        <div class="nested-demo">
+                            <ul>
+                                <li>🍎 Φρούτα
+                                    <ul>
+                                        <li>Μήλο</li>
+                                        <li>Πορτοκάλι</li>
+                                        <li>Μπανάνα</li>
+                                    </ul>
+                                </li>
+                                <li>🥬 Λαχανικά
+                                    <ul>
+                                        <li>Ντομάτα</li>
+                                        <li>Αγγούρι</li>
+                                        <li>Πιπεριά</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="next-section">
+                    <button class="btn btn-primary" onclick="showTab('interactive')">🎮 Δοκίμασέ το →</button>
+                </div>
+            </section>
+
+            <!-- INTERACTIVE -->
+            <section id="interactive" class="tab-content">
+                <h2>🎮 Δημιούργησε Λίστες</h2>
+                
+                <div class="editor-container">
+                    <div class="editor-header">
+                        <h3>📝 Editor</h3>
+                        <div class="editor-actions">
+                            <button onclick="runCode()" class="btn btn-success">▶️ Εκτέλεση</button>
+                            <button onclick="resetEditor()" class="btn btn-secondary">🔄 Reset</button>
+                        </div>
+                    </div>
+                    
+                    <div class="editor-main single-editor">
+                        <div class="editor-panel active">
+                            <textarea id="code-editor" spellcheck="false"><!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <title>Λίστες HTML</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f0f4f8;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .list-box {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        h2 { color: #2563eb; }
+        ul, ol {
+            padding-left: 25px;
+        }
+        li {
+            padding: 5px 0;
+        }
+        /* Custom bullets */
+        .custom-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        .custom-list li::before {
+            content: "✅ ";
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📑 Παραδείγματα Λιστών</h1>
+        
+        <div class="list-box">
+            <h2>🛒 Λίστα Αγορών (ul)</h2>
+            <ul>
+                <li>Γάλα</li>
+                <li>Ψωμί</li>
+                <li>Τυρί</li>
+                <li>Αυγά</li>
+            </ul>
+        </div>
+        
+        <div class="list-box">
+            <h2>📋 Οδηγίες Συνταγής (ol)</h2>
+            <ol>
+                <li>Ζεστάνετε το φούρνο στους 180°C</li>
+                <li>Ανακατέψτε τα υλικά</li>
+                <li>Βάλτε στο ταψί</li>
+                <li>Ψήστε για 30 λεπτά</li>
+            </ol>
+        </div>
+        
+        <div class="list-box">
+            <h2>✅ Custom Bullets</h2>
+            <ul class="custom-list">
+                <li>Ολοκληρώθηκε το task 1</li>
+                <li>Ολοκληρώθηκε το task 2</li>
+                <li>Ολοκληρώθηκε το task 3</li>
+            </ul>
+        </div>
+        
+        <div class="list-box">
+            <h2>📚 Nested List</h2>
+            <ul>
+                <li>Web Development
+                    <ol>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                    </ol>
+                </li>
+                <li>Databases
+                    <ol>
+                        <li>MySQL</li>
+                        <li>MongoDB</li>
+                    </ol>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html></textarea>
+                        </div>
+                        <div class="preview-container">
+                            <div class="preview-header"><h4>🖥️ Αποτέλεσμα</h4></div>
+                            <iframe id="preview-frame"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- EXERCISES -->
+            <section id="exercises" class="tab-content">
+                <h2>✏️ Ασκήσεις</h2>
+                
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-number">1</span>
+                        <h3>Διάλεξε τον σωστό τύπο λίστας</h3>
+                    </div>
+                    
+                    <div class="matching-simple">
+                        <div class="match-row">
+                            <span>Βήματα μαγειρικής</span>
+                            <select class="match-select" data-correct="ol">
+                                <option value="">Επίλεξε...</option>
+                                <option value="ul">ul (κουκκίδες)</option>
+                                <option value="ol">ol (αριθμοί)</option>
+                                <option value="dl">dl (ορισμοί)</option>
+                            </select>
+                        </div>
+                        <div class="match-row">
+                            <span>Λίστα αγορών</span>
+                            <select class="match-select" data-correct="ul">
+                                <option value="">Επίλεξε...</option>
+                                <option value="ul">ul (κουκκίδες)</option>
+                                <option value="ol">ol (αριθμοί)</option>
+                                <option value="dl">dl (ορισμοί)</option>
+                            </select>
+                        </div>
+                        <div class="match-row">
+                            <span>Γλωσσάρι όρων</span>
+                            <select class="match-select" data-correct="dl">
+                                <option value="">Επίλεξε...</option>
+                                <option value="ul">ul (κουκκίδες)</option>
+                                <option value="ol">ol (αριθμοί)</option>
+                                <option value="dl">dl (ορισμοί)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button onclick="checkExercise(1)" class="btn btn-primary">✅ Έλεγχος</button>
+                    <div id="result-1" class="exercise-result"></div>
+                </div>
+            </section>
+
+            <!-- QUIZ -->
+            <section id="quiz" class="tab-content">
+                <h2>🎯 Quiz</h2>
+                <div id="quiz-container"></div>
+                <div id="quiz-results" style="display:none;">
+                    <div class="results-score"><span id="score-number">0</span>/5</div>
+                    <div id="results-message"></div>
+                    <button onclick="retakeQuiz()" class="btn btn-primary">🔄 Ξανά</button>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="lesson-footer">
+        <div class="container">
+            <div class="footer-nav">
+                <a href="tables.html" class="footer-link">← Πίνακες</a>
+                <a href="links.html" class="footer-link primary">Σύνδεσμοι →</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="sub-script.js"></script>
+    <script>
+        const quizData = [
+            {
+                question: "Το <ul> δημιουργεί:",
+                options: ["Αριθμημένη λίστα", "Λίστα με κουκκίδες", "Πίνακα", "Φόρμα"],
+                correct: 1
+            },
+            {
+                question: "Το <ol> σημαίνει:",
+                options: ["Ordered List", "Open List", "Old List", "Other List"],
+                correct: 0
+            },
+            {
+                question: "Κάθε στοιχείο λίστας είναι:",
+                options: ["<item>", "<li>", "<list>", "<el>"],
+                correct: 1
+            },
+            {
+                question: "Για ορισμούς χρησιμοποιούμε:",
+                options: ["<ul>", "<ol>", "<dl>", "<def>"],
+                correct: 2
+            },
+            {
+                question: "Το type='A' σε <ol> δίνει:",
+                options: ["Αριθμούς", "Κεφαλαία γράμματα", "Κουκκίδες", "Ρωμαϊκούς"],
+                correct: 1
+            }
+        ];
+        initQuiz(quizData);
+    </script>
+</body>
+</html>

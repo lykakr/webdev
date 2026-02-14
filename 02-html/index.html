@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML - Η Δομή του Web | WebDev Learning Hub</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/lesson.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="lesson-nav">
+        <div class="container">
+            <a href="../index.html" class="nav-logo">
+                <span>🚀</span> WebDev Hub
+            </a>
+            <div class="nav-breadcrumb">
+                <a href="../index.html">Αρχική</a>
+                <span>/</span>
+                <span class="current">HTML</span>
+            </div>
+            <div class="nav-actions">
+                <button onclick="takeFullScreenshot()" class="btn-icon" title="Screenshot">
+                    📸
+                </button>
+                <button onclick="exportToPDF()" class="btn-icon" title="Εξαγωγή PDF">
+                    📄
+                </button>
+                <button onclick="saveProgress()" class="btn-icon" title="Αποθήκευση">
+                    💾
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Lesson Header -->
+    <header class="lesson-header html-header">
+        <div class="container">
+            <div class="lesson-badge">Ενότητα 2</div>
+            <h1>📝 HTML - Η Δομή του Web</h1>
+            <p class="lesson-subtitle">
+                Μάθε τη γλώσσα σήμανσης που δομεί όλες τις ιστοσελίδες στον κόσμο
+            </p>
+            <div class="lesson-meta">
+                <span class="meta-item">📚 6 Υποενότητες</span>
+                <span class="meta-item">⏱️ ~2 ώρες</span>
+                <span class="meta-item">📊 Επίπεδο: Βασικό</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sub-sections Navigation -->
+    <section class="sub-sections">
+        <div class="container">
+            <h2>📑 Υποενότητες HTML</h2>
+            <div class="sub-sections-grid">
+                <a href="basics.html" class="sub-section-card">
+                    <span class="sub-icon">🏗️</span>
+                    <h3>Βασική Δομή</h3>
+                    <p>DOCTYPE, html, head, body</p>
+                    <span class="sub-status">Ξεκίνα εδώ</span>
+                </a>
+                <a href="text-elements.html" class="sub-section-card">
+                    <span class="sub-icon">📄</span>
+                    <h3>Στοιχεία Κειμένου</h3>
+                    <p>Headings, paragraphs, formatting</p>
+                </a>
+                <a href="links.html" class="sub-section-card">
+                    <span class="sub-icon">🔗</span>
+                    <h3>Σύνδεσμοι</h3>
+                    <p>Links, anchors, navigation</p>
+                </a>
+                <a href="images.html" class="sub-section-card">
+                    <span class="sub-icon">🖼️</span>
+                    <h3>Εικόνες</h3>
+                    <p>Images, figures, alt text</p>
+                </a>
+                <a href="lists.html" class="sub-section-card">
+                    <span class="sub-icon">📑</span>
+                    <h3>Λίστες</h3>
+                    <p>Ordered, unordered, description</p>
+                </a>
+                <a href="tables.html" class="sub-section-card">
+                    <span class="sub-icon">📊</span>
+                    <h3>Πίνακες</h3>
+                    <p>Tables, rows, cells</p>
+                </a>
+                <a href="forms.html" class="sub-section-card">
+                    <span class="sub-icon">📋</span>
+                    <h3>Φόρμες</h3>
+                    <p>Input, forms, validation</p>
+                </a>
+                <a href="semantic.html" class="sub-section-card">
+                    <span class="sub-icon">🏛️</span>
+                    <h3>Semantic HTML</h3>
+                    <p>Header, nav, main, footer</p>
+                </a>
+                <a href="multimedia.html" class="sub-section-card">
+                    <span class="sub-icon">🎬</span>
+                    <h3>Multimedia</h3>
+                    <p>Audio, video, embed</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="lesson-content">
+        <div class="container">
+            
+            <!-- Tab Navigation -->
+            <div class="tabs">
+                <button class="tab-btn active" onclick="showTab('theory')">
+                    📖 Θεωρία
+                </button>
+                <button class="tab-btn" onclick="showTab('interactive')">
+                    🎮 Διαδραστικό
+                </button>
+                <button class="tab-btn" onclick="showTab('exercises')">
+                    ✏️ Ασκήσεις
+                </button>
+                <button class="tab-btn" onclick="showTab('quiz')">
+                    🎯 Quiz
+                </button>
+                <button class="tab-btn" onclick="showTab('projects')">
+                    🚀 Projects
+                </button>
+            </div>
+
+            <!-- ============================================ -->
+            <!-- THEORY TAB -->
+            <!-- ============================================ -->
+            <section id="theory" class="tab-content active">
+                
+                <!-- Topic 1: What is HTML -->
+                <div class="theory-section">
+                    <h2>🌐 1. Τι είναι η HTML;</h2>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">💡</div>
+                        <div class="info-content">
+                            <p><strong>HTML (HyperText Markup Language)</strong> είναι η τυπική γλώσσα σήμανσης για τη δημιουργία ιστοσελίδων. Περιγράφει τη <em>δομή</em> μιας ιστοσελίδας χρησιμοποιώντας ετικέτες (tags).</p>
+                        </div>
+                    </div>
+
+                    <div class="key-points">
+                        <h3>🔑 Βασικά σημεία:</h3>
+                        <ul class="styled-list">
+                            <li><strong>HTML</strong> = HyperText Markup Language</li>
+                            <li>Δεν είναι γλώσσα προγραμματισμού, είναι γλώσσα <strong>σήμανσης</strong></li>
+                            <li>Χρησιμοποιεί <strong>ετικέτες (tags)</strong> για να ορίσει στοιχεία</li>
+                            <li>Οι browsers "διαβάζουν" την HTML και την εμφανίζουν</li>
+                            <li>Η τρέχουσα έκδοση είναι <strong>HTML5</strong></li>
+                        </ul>
+                    </div>
+
+                    <div class="history-timeline">
+                        <h3>📅 Σύντομη Ιστορία:</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <span class="year">1991</span>
+                                <p>Ο Tim Berners-Lee δημιουργεί την HTML</p>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="year">1995</span>
+                                <p>HTML 2.0 - Πρώτο επίσημο standard</p>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="year">1999</span>
+                                <p>HTML 4.01 - Ευρέως χρησιμοποιούμενη</p>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="year">2014</span>
+                                <p>HTML5 - Σύγχρονη έκδοση με multimedia</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Topic 2: HTML Structure -->
+                <div class="theory-section">
+                    <h2>🏗️ 2. Βασική Δομή HTML</h2>
+                    
+                    <div class="code-explanation">
+                        <div class="code-block-wrapper">
+                            <div class="code-header">
+                                <span>📄 index.html</span>
+                                <button onclick="copyCode(this)" class="copy-btn">📋 Αντιγραφή</button>
+                            </div>
+                            <pre class="code-block"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="el"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Η Πρώτη μου Σελίδα&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Καλώς ήρθες!&lt;/h1&gt;
+    &lt;p&gt;Αυτή είναι η πρώτη μου ιστοσελίδα.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        </div>
+                        
+                        <div class="code-annotations">
+                            <div class="annotation">
+                                <span class="annotation-tag">&lt;!DOCTYPE html&gt;</span>
+                                <p>Δηλώνει ότι είναι HTML5 έγγραφο</p>
+                            </div>
+                            <div class="annotation">
+                                <span class="annotation-tag">&lt;html&gt;</span>
+                                <p>Το ριζικό στοιχείο - περιέχει τα πάντα</p>
+                            </div>
+                            <div class="annotation">
+                                <span class="annotation-tag">&lt;head&gt;</span>
+                                <p>Μεταδεδομένα - δεν εμφανίζονται στη σελίδα</p>
+                            </div>
+                            <div class="annotation">
+                                <span class="annotation-tag">&lt;body&gt;</span>
+                                <p>Το περιεχόμενο που βλέπει ο χρήστης</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="visual-diagram">
+                        <h3>📊 Οπτική Αναπαράσταση:</h3>
+                        <div class="html-tree">
+                            <div class="tree-node root">
+                                <span>📄 html</span>
+                                <div class="tree-children">
+                                    <div class="tree-node head">
+                                        <span>🧠 head</span>
+                                        <div class="tree-children small">
+                                            <div class="tree-node">meta</div>
+                                            <div class="tree-node">title</div>
+                                            <div class="tree-node">link</div>
+                                        </div>
+                                    </div>
+                                    <div class="tree-node body">
+                                        <span>📝 body</span>
+                                        <div class="tree-children small">
+                                            <div class="tree-node">h1, h2...</div>
+                                            <div class="tree-node">p, div...</div>
+                                            <div class="tree-node">img, a...</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Topic 3: Tags and Elements -->
+                <div class="theory-section">
+                    <h2>🏷️ 3. Tags και Elements</h2>
+                    
+                    <div class="concept-comparison">
+                        <div class="comparison-box">
+                            <h4>Ετικέτα (Tag)</h4>
+                            <code>&lt;p&gt;</code> ή <code>&lt;/p&gt;</code>
+                            <p>Η ετικέτα ανοίγματος ή κλεισίματος</p>
+                        </div>
+                        <div class="comparison-box">
+                            <h4>Στοιχείο (Element)</h4>
+                            <code>&lt;p&gt;Κείμενο&lt;/p&gt;</code>
+                            <p>Ολόκληρο το στοιχείο με περιεχόμενο</p>
+                        </div>
+                        <div class="comparison-box">
+                            <h4>Ιδιότητα (Attribute)</h4>
+                            <code>&lt;a href="url"&gt;</code>
+                            <p>Επιπλέον πληροφορίες για το στοιχείο</p>
+                        </div>
+                    </div>
+
+                    <div class="anatomy-diagram">
+                        <h3>🔬 Ανατομία ενός Element:</h3>
+                        <div class="element-anatomy">
+                            <div class="anatomy-visual">
+                                <span class="opening-tag">&lt;a</span>
+                                <span class="attribute">href="https://google.com"</span>
+                                <span class="opening-tag">&gt;</span>
+                                <span class="content">Κάνε κλικ εδώ</span>
+                                <span class="closing-tag">&lt;/a&gt;</span>
+                            </div>
+                            <div class="anatomy-labels">
+                                <div class="label" style="left: 5%;">Opening Tag</div>
+                                <div class="label" style="left: 30%;">Attribute</div>
+                                <div class="label" style="left: 60%;">Content</div>
+                                <div class="label" style="left: 85%;">Closing Tag</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tag-types">
+                        <h3>📋 Τύποι Tags:</h3>
+                        <div class="tag-types-grid">
+                            <div class="tag-type">
+                                <h4>🔄 Κανονικά Tags</h4>
+                                <p>Έχουν άνοιγμα και κλείσιμο</p>
+                                <code>&lt;p&gt;...&lt;/p&gt;</code>
+                                <code>&lt;div&gt;...&lt;/div&gt;</code>
+                                <code>&lt;h1&gt;...&lt;/h1&gt;</code>
+                            </div>
+                            <div class="tag-type">
+                                <h4>⚡ Self-closing Tags</h4>
+                                <p>Κλείνουν μόνα τους</p>
+                                <code>&lt;img /&gt;</code>
+                                <code>&lt;br /&gt;</code>
+                                <code>&lt;input /&gt;</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Topic 4: Common HTML Tags -->
+                <div class="theory-section">
+                    <h2>📚 4. Συνήθη HTML Tags</h2>
+                    
+                    <div class="tags-reference">
+                        <div class="tags-category">
+                            <h4>📝 Κείμενο</h4>
+                            <table class="tags-table">
+                                <tr>
+                                    <td><code>&lt;h1&gt;-&lt;h6&gt;</code></td>
+                                    <td>Επικεφαλίδες (headings)</td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;p&gt;</code></td>
+                                    <td>Παράγραφος</td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;br&gt;</code></td>
+                                    <td>Αλλαγή γραμμής</td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;hr&gt;</code></td>
+                                    <td>Οριζόντια γραμμή</td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;strong&gt;</code></td>
+                                    <td>Έντονο κείμενο</td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;em&gt;</code></td>
+                                    <td>Πλάγιο κείμενο</td>
+                                </tr>
+                            </table>
+                        </div>
+                        
+                        <div class="tags-category">
+                            <h4>🔗 Σύνδεσμοι & Εικόνες</h4>
+                            <table class="tags-table">
+                                <tr>
+                                    <td><code>&lt;a&gt;</code></td>
+                                    <td>Σύνδεσμος (link)</td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;img&gt;</code></td>
+                                    <td>Εικόνα</td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;video&gt;</code></td>
+                                    <td>Βίντεο</td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;audio&gt;</code></td>
+                                    <td>Ήχος</td>
+                                </tr>
+                            </table>
+                        </div>
+                        
+                        <div class="tags-category">
+                            <h4>📑 Λίστες</h4>
+                            <table class="tags-table">
+                                <tr>
+                                    <td><code>&lt;ul&gt;</code></td>
+                                    <td>Unordered list (κουκκίδες)</td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;ol&gt;</code></td>
+                                    <td>Ordered list (αριθμοί)</td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;li&gt;</code></td>
+                                    <td>List item</td>
+                                </tr>
+                            </table>
+                        </div>
+                        
+                        <div class="tags-category">
+                            <h4>📦 Containers</h4>
+                            <table class="tags-table">
+                                <tr>
+                                    <td><code>&lt;div&gt;</code></td>
+                                    <td>Block container</td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;span&gt;</code></td>
+                                    <td>Inline container</td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;header&gt;</code></td>
+                                    <td>Κεφαλίδα σελίδας</td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;footer&gt;</code></td>
+                                    <td>Υποσέλιδο</td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;section&gt;</code></td>
+                                    <td>Ενότητα</td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;article&gt;</code></td>
+                                    <td>Άρθρο</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Topic 5: Attributes -->
+                <div class="theory-section">
+                    <h2>⚙️ 5. Ιδιότητες (Attributes)</h2>
+                    
+                    <div class="info-card warning">
+                        <div class="info-icon">⚠️</div>
+                        <div class="info-content">
+                            <p>Οι ιδιότητες παρέχουν <strong>επιπλέον πληροφορίες</strong> για τα HTML elements. Γράφονται πάντα στο <strong>opening tag</strong>.</p>
+                        </div>
+                    </div>
+
+                    <div class="attributes-grid">
+                        <div class="attribute-card">
+                            <h4>id</h4>
+                            <code>&lt;div id="header"&gt;</code>
+                            <p>Μοναδικό αναγνωριστικό</p>
+                        </div>
+                        <div class="attribute-card">
+                            <h4>class</h4>
+                            <code>&lt;p class="intro"&gt;</code>
+                            <p>Κατηγορία/ομάδα για styling</p>
+                        </div>
+                        <div class="attribute-card">
+                            <h4>href</h4>
+                            <code>&lt;a href="url"&gt;</code>
+                            <p>Διεύθυνση συνδέσμου</p>
+                        </div>
+                        <div class="attribute-card">
+                            <h4>src</h4>
+                            <code>&lt;img src="photo.jpg"&gt;</code>
+                            <p>Πηγή αρχείου</p>
+                        </div>
+                        <div class="attribute-card">
+                            <h4>alt</h4>
+                            <code>&lt;img alt="Περιγραφή"&gt;</code>
+                            <p>Εναλλακτικό κείμενο</p>
+                        </div>
+                        <div class="attribute-card">
+                            <h4>style</h4>
+                            <code>&lt;p style="color:red"&gt;</code>
+                            <p>Inline CSS styling</p>
+                        </div>
+                        <div class="attribute-card">
+                            <h4>title</h4>
+                            <code>&lt;abbr title="..."&gt;</code>
+                            <p>Tooltip κείμενο</p>
+                        </div>
+                        <div class="attribute-card">
+                            <h4>target</h4>
+                            <code>&lt;a target="_blank"&gt;</code>
+                            <p>Πού ανοίγει ο σύνδεσμος</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Summary -->
+                <div class="theory-section">
+                    <h2>📋 Ανακεφαλαίωση</h2>
+                    
+                    <div class="summary-box">
+                        <div class="summary-item">
+                            <span class="check">✅</span>
+                            <p>Η <strong>HTML</strong> είναι η γλώσσα σήμανσης για τη δομή ιστοσελίδων</p>
+                        </div>
+                        <div class="summary-item">
+                            <span class="check">✅</span>
+                            <p>Κάθε HTML έγγραφο ξεκινά με <strong>&lt;!DOCTYPE html&gt;</strong></p>
+                        </div>
+                        <div class="summary-item">
+                            <span class="check">✅</span>
+                            <p>Η δομή: <strong>&lt;html&gt;</strong> → <strong>&lt;head&gt;</strong> + <strong>&lt;body&gt;</strong></p>
+                        </div>
+                        <div class="summary-item">
+                            <span class="check">✅</span>
+                            <p>Τα <strong>tags</strong> ορίζουν τα στοιχεία, τα <strong>attributes</strong> τις ιδιότητες</p>
+                        </div>
+                        <div class="summary-item">
+                            <span class="check">✅</span>
+                            <p>Τα περισσότερα tags έχουν <strong>opening</strong> και <strong>closing</strong> tag</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="next-section">
+                    <p>Έτοιμος να γράψεις HTML; Πάμε στον editor! 👇</p>
+                    <button class="btn btn-primary" onclick="showTab('interactive')">
+                        🎮 Πάμε στο Διαδραστικό →
+                    </button>
+                </div>
+            </section>
+
+            <!-- ============================================ -->
+            <!-- INTERACTIVE TAB -->
+            <!-- ============================================ -->
+            <section id="interactive" class="tab-content">
+                <h2>🎮 Διαδραστικός Editor HTML</h2>
+                
+                <div class="interactive-intro">
+                    <p>Γράψε HTML κώδικα και δες αμέσως το αποτέλεσμα! Πειραματίσου ελεύθερα.</p>
+                </div>
+
+                <!-- Live Editor -->
+                <div class="editor-container">
+                    <div class="editor-header">
+                        <h3>📝 HTML Editor</h3>
+                        <div class="editor-actions">
+                            <button onclick="runHTMLCode()" class="btn btn-success">
+                                ▶️ Εκτέλεση
+                            </button>
+                            <button onclick="resetHTMLCode()" class="btn btn-secondary">
+                                🔄 Επαναφορά
+                            </button>
+                            <button onclick="saveCurrentCode()" class="btn btn-primary">
+                                💾 Αποθήκευση
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="editor-main single-editor">
+                        <div class="editor-panel active">
+                            <textarea id="html-only-editor" spellcheck="false"><!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <title>Η Σελίδα μου</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f0f4f8;
+        }
+        h1 { color: #2563eb; }
+        .highlight { 
+            background: #fef3c7; 
+            padding: 10px; 
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Καλώς ήρθες στην HTML!</h1>
+    
+    <p>Αυτή είναι μια <strong>παράγραφος</strong> με <em>μορφοποίηση</em>.</p>
+    
+    <h2>Μια λίστα:</h2>
+    <ul>
+        <li>Στοιχείο 1</li>
+        <li>Στοιχείο 2</li>
+        <li>Στοιχείο 3</li>
+    </ul>
+    
+    <div class="highlight">
+        <p>Αυτό είναι ένα highlighted box!</p>
+    </div>
+    
+    <h2>Ένας σύνδεσμος:</h2>
+    <a href="https://www.google.com" target="_blank">Πήγαινε στο Google</a>
+    
+    <h2>Μια εικόνα:</h2>
+    <img src="https://via.placeholder.com/200x100" alt="Placeholder εικόνα">
+    
+</body>
+</html></textarea>
+                        </div>
+                        
+                        <div class="preview-container">
+                            <div class="preview-header">
+                                <h4>🖥️ Αποτέλεσμα</h4>
+                                <div class="preview-actions">
+                                    <button onclick="openInNewTab()" class="btn-small">
+                                        🔗 Νέα Καρτέλα
+                                    </button>
+                                </div>
+                            </div>
+                            <iframe id="html-preview-frame"></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Reference -->
+                <div class="quick-reference">
+                    <h3>📋 Γρήγορη Αναφορά - Δοκίμασέ τα!</h3>
+                    <div class="reference-grid">
+                        <div class="reference-item" onclick="insertCode('<h1>Επικεφαλίδα</h1>')">
+                            <code>&lt;h1&gt;</code>
+                            <span>Επικεφαλίδα</span>
+                        </div>
+                        <div class="reference-item" onclick="insertCode('<p>Παράγραφος κειμένου</p>')">
+                            <code>&lt;p&gt;</code>
+                            <span>Παράγραφος</span>
+                        </div>
+                        <div class="reference-item" onclick="insertCode('<strong>Έντονο</strong>')">
+                            <code>&lt;strong&gt;</code>
+                            <span>Έντονο</span>
+                        </div>
+                        <div class="reference-item" onclick="insertCode('<em>Πλάγιο</em>')">
+                            <code>&lt;em&gt;</code>
+                            <span>Πλάγιο</span>
+                        </div>
+                        <div class="reference-item" onclick="insertCode('<a href=&quot;#&quot;>Σύνδεσμος</a>')">
+                            <code>&lt;a&gt;</code>
+                            <span>Σύνδεσμος</span>
+                        </div>
+                        <div class="reference-item" onclick="insertCode('<img src=&quot;https://via.placeholder.com/100&quot; alt=&quot;Εικόνα&quot;>')">
+                            <code>&lt;img&gt;</code>
+                            <span>Εικόνα</span>
+                        </div>
+                        <div class="reference-item" onclick="insertCode('<ul>\n    <li>Στοιχείο 1</li>\n    <li>Στοιχείο 2</li>\n</ul>')">
+                            <code>&lt;ul&gt;</code>
+                            <span>Λίστα</span>
+                        </div>
+                        <div class="reference-item" onclick="insertCode('<div class=&quot;box&quot;>\n    Περιεχόμενο\n</div>')">
+                            <code>&lt;div&gt;</code>
+                            <span>Container</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Challenges -->
+                <div class="challenges-section">
+                    <h3>🎯 Προκλήσεις</h3>
+                    
+                    <div class="challenge-list">
+                        <div class="challenge-item">
+                            <span class="challenge-number">1</span>
+                            <div class="challenge-content">
+                                <h4>Φτιάξε τον τίτλο σου</h4>
+                                <p>Άλλαξε το <code>&lt;h1&gt;</code> να έχει το όνομά σου!</p>
+                            </div>
+                            <span class="challenge-difficulty easy">Εύκολο</span>
+                        </div>
+                        
+                        <div class="challenge-item">
+                            <span class="challenge-number">2</span>
+                            <div class="challenge-content">
+                                <h4>Πρόσθεσε μια εικόνα</h4>
+                                <p>Χρησιμοποίησε το <code>&lt;img&gt;</code> με src και alt</p>
+                            </div>
+                            <span class="challenge-difficulty easy">Εύκολο</span>
+                        </div>
+                        
+                        <div class="challenge-item">
+                            <span class="challenge-number">3</span>
+                            <div class="challenge-content">
+                                <h4>Δημιούργησε πίνακα</h4>
+                                <p>Φτιάξε έναν πίνακα με 3 στήλες και 3 γραμμές</p>
+                            </div>
+                            <span class="challenge-difficulty medium">Μέτριο</span>
+                        </div>
+                        
+                        <div class="challenge-item">
+                            <span class="challenge-number">4</span>
+                            <div class="challenge-content">
+                                <h4>Semantic HTML</h4>
+                                <p>Χρησιμοποίησε header, main, footer αντί για div</p>
+                            </div>
+                            <span class="challenge-difficulty hard">Δύσκολο</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============================================ -->
+            <!-- EXERCISES TAB -->
+            <!-- ============================================ -->
+            <section id="exercises" class="tab-content">
+                <h2>✏️ Ασκήσεις HTML</h2>
+                
+                <div class="exercise-container">
+                    <!-- Exercise 1: Complete the code -->
+                    <div class="exercise-item">
+                        <div class="exercise-header">
+                            <span class="exercise-number">Άσκηση 1</span>
+                            <h3>Συμπλήρωσε τον κώδικα</h3>
+                        </div>
+                        <p>Συμπλήρωσε τα κενά για να δημιουργήσεις σωστή HTML:</p>
+                        
+                        <div class="code-exercise">
+                            <pre class="exercise-code"><code>&lt;!DOCTYPE <input type="text" class="code-input" data-answer="html" placeholder="...">&gt;
+&lt;<input type="text" class="code-input" data-answer="html" placeholder="..."> lang="el"&gt;
+&lt;head&gt;
+    &lt;<input type="text" class="code-input" data-answer="title" placeholder="...">&gt;Η Σελίδα μου&lt;/title&gt;
+&lt;/head&gt;
+&lt;<input type="text" class="code-input" data-answer="body" placeholder="...">&gt;
+    &lt;h1&gt;Καλώς ήρθες!&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        </div>
+                        <button onclick="checkCodeExercise(1)" class="btn btn-primary">✅ Έλεγχος</button>
+                        <div id="exercise1-result" class="exercise-result"></div>
+                    </div>
+
+                    <!-- Exercise 2: Fix the errors -->
+                    <div class="exercise-item">
+                        <div class="exercise-header">
+                            <span class="exercise-number">Άσκηση 2</span>
+                            <h3>Βρες τα λάθη</h3>
+                        </div>
+                        <p>Ο παρακάτω κώδικας έχει <strong>4 λάθη</strong>. Μπορείς να τα βρεις;</p>
+                        
+                        <div class="code-exercise">
+                            <textarea id="fix-errors-code" class="code-textarea" rows="10"><htm>
+<head>
+    <title>Test Page<title>
+</head>
+<body>
+    <h1>Welcome</h2>
+    <p>This is a paragraph
+    <img src="photo.jpg">
+</body>
+</html></textarea>
+                        </div>
+                        <button onclick="checkErrorsExercise()" class="btn btn-primary">✅ Έλεγχος</button>
+                        <button onclick="showErrorsHint()" class="btn btn-secondary">💡 Υπόδειξη</button>
+                        <div id="exercise2-result" class="exercise-result"></div>
+                    </div>
+
+                    <!-- Exercise 3: Match tags -->
+                    <div class="exercise-item">
+                        <div class="exercise-header">
+                            <span class="exercise-number">Άσκηση 3</span>
+                            <h3>Αντιστοίχισε τα Tags</h3>
+                        </div>
+                        <p>Αντιστοίχισε κάθε tag με τη σωστή περιγραφή:</p>
+                        
+                        <div class="matching-exercise-simple">
+                            <div class="match-row">
+                                <span class="match-tag">&lt;a&gt;</span>
+                                <select class="match-select" data-correct="link">
+                                    <option value="">-- Επίλεξε --</option>
+                                    <option value="heading">Επικεφαλίδα</option>
+                                    <option value="link">Σύνδεσμος</option>
+                                    <option value="image">Εικόνα</option>
+                                    <option value="paragraph">Παράγραφος</option>
+                                </select>
+                            </div>
+                            <div class="match-row">
+                                <span class="match-tag">&lt;img&gt;</span>
+                                <select class="match-select" data-correct="image">
+                                    <option value="">-- Επίλεξε --</option>
+                                    <option value="heading">Επικεφαλίδα</option>
+                                    <option value="link">Σύνδεσμος</option>
+                                    <option value="image">Εικόνα</option>
+                                    <option value="paragraph">Παράγραφος</option>
+                                </select>
+                            </div>
+                            <div class="match-row">
+                                <span class="match-tag">&lt;h1&gt;</span>
+                                <select class="match-select" data-correct="heading">
+                                    <option value="">-- Επίλεξε --</option>
+                                    <option value="heading">Επικεφαλίδα</option>
+                                    <option value="link">Σύνδεσμος</option>
+                                    <option value="image">Εικόνα</option>
+                                    <option value="paragraph">Παράγραφος</option>
+                                </select>
+                            </div>
+                            <div class="match-row">
+                                <span class="match-tag">&lt;p&gt;</span>
+                                <select class="match-select" data-correct="paragraph">
+                                    <option value="">-- Επίλεξε --</option>
+                                    <option value="heading">Επικεφαλίδα</option>
+                                    <option value="link">Σύνδεσμος</option>
+                                    <option value="image">Εικόνα</option>
+                                    <option value="paragraph">Παράγραφος</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button onclick="checkMatchingExercise()" class="btn btn-primary">✅ Έλεγχος</button>
+                        <div id="exercise3-result" class="exercise-result"></div>
+                    </div>
+
+                    <!-- Exercise 4: Write HTML -->
+                    <div class="exercise-item">
+                        <div class="exercise-header">
+                            <span class="exercise-number">Άσκηση 4</span>
+                            <h3>Γράψε HTML</h3>
+                        </div>
+                        <p>Δημιούργησε μια σελίδα που περιέχει:</p>
+                        <ul>
+                            <li>Μια επικεφαλίδα h1 με το κείμενο "Το Βιογραφικό μου"</li>
+                            <li>Μια παράγραφο με μια πρόταση για σένα</li>
+                            <li>Μια λίστα με 3 χόμπι σου</li>
+                        </ul>
+                        
+                        <div class="code-exercise">
+                            <textarea id="write-html-code" class="code-textarea" rows="12" placeholder="Γράψε τον HTML κώδικα εδώ..."></textarea>
+                        </div>
+                        <div class="exercise-buttons">
+                            <button onclick="previewWriteExercise()" class="btn btn-success">▶️ Προεπισκόπηση</button>
+                            <button onclick="checkWriteExercise()" class="btn btn-primary">✅ Έλεγχος</button>
+                        </div>
+                        <div id="write-preview" class="exercise-preview"></div>
+                        <div id="exercise4-result" class="exercise-result"></div>
+                    </div>
+                </div>
+
+                <div class="exercises-actions">
+                    <button onclick="saveExercises()" class="btn btn-success">
+                        💾 Αποθήκευση Ασκήσεων
+                    </button>
+                    <button onclick="exportExercises()" class="btn btn-secondary">
+                        📥 Εξαγωγή σε Αρχείο
+                    </button>
+                </div>
+            </section>
+
+            <!-- ============================================ -->
+            <!-- QUIZ TAB -->
+            <!-- ============================================ -->
+            <section id="quiz" class="tab-content">
+                <h2>🎯 Quiz HTML</h2>
+                
+                <div class="quiz-intro">
+                    <p>Δοκίμασε τις γνώσεις σου στην HTML!</p>
+                    <div class="quiz-info">
+                        <span>📊 10 Ερωτήσεις</span>
+                        <span>⏱️ Χωρίς χρονικό όριο</span>
+                        <span>🎯 Στόχος: 80%</span>
+                    </div>
+                </div>
+
+                <div id="quiz-container">
+                    <!-- Quiz questions will be generated by JavaScript -->
+                </div>
+
+                <div id="quiz-results" class="quiz-results" style="display: none;">
+                    <div class="results-header">
+                        <h3>📊 Αποτελέσματα Quiz</h3>
+                    </div>
+                    <div class="results-score">
+                        <span id="score-number">0</span>/10
+                    </div>
+                    <div id="results-message" class="results-message"></div>
+                    <div class="results-actions">
+                        <button onclick="retakeQuiz()" class="btn btn-primary">🔄 Ξαναπροσπάθησε</button>
+                        <button onclick="exportQuizResults()" class="btn btn-secondary">💾 Αποθήκευση</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============================================ -->
+            <!-- PROJECTS TAB -->
+            <!-- ============================================ -->
+            <section id="projects" class="tab-content">
+                <h2>🚀 HTML Projects</h2>
+                
+                <div class="projects-intro">
+                    <p>Δημιούργησε ολοκληρωμένες HTML σελίδες!</p>
+                </div>
+
+                <div class="projects-grid">
+                    <!-- Project 1 -->
+                    <div class="project-card">
+                        <div class="project-header">
+                            <span class="project-icon">👤</span>
+                            <div class="project-difficulty easy">⭐ Εύκολο</div>
+                        </div>
+                        <h3>Προσωπική Σελίδα</h3>
+                        <p>Δημιούργησε μια σελίδα "Σχετικά με εμένα" με φωτογραφία, βιογραφικό και χόμπι.</p>
+                        <div class="project-skills">
+                            <span class="skill-tag">Headings</span>
+                            <span class="skill-tag">Paragraphs</span>
+                            <span class="skill-tag">Images</span>
+                            <span class="skill-tag">Lists</span>
+                        </div>
+                        <div class="project-requirements">
+                            <h4>Απαιτήσεις:</h4>
+                            <ul>
+                                <li>Επικεφαλίδα με το όνομά σου</li>
+                                <li>Τουλάχιστον μία εικόνα</li>
+                                <li>2-3 παραγράφους</li>
+                                <li>Λίστα με χόμπι/ενδιαφέροντα</li>
+                            </ul>
+                        </div>
+                        <button onclick="startHTMLProject('personal')" class="btn btn-primary">
+                            🚀 Ξεκίνα
+                        </button>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-card">
+                        <div class="project-header">
+                            <span class="project-icon">🍳</span>
+                            <div class="project-difficulty medium">⭐⭐ Μέτριο</div>
+                        </div>
+                        <h3>Σελίδα Συνταγής</h3>
+                        <p>Φτιάξε μια σελίδα με την αγαπημένη σου συνταγή.</p>
+                        <div class="project-skills">
+                            <span class="skill-tag">Lists</span>
+                            <span class="skill-tag">Tables</span>
+                            <span class="skill-tag">Images</span>
+                        </div>
+                        <div class="project-requirements">
+                            <h4>Απαιτήσεις:</h4>
+                            <ul>
+                                <li>Τίτλος συνταγής</li>
+                                <li>Λίστα υλικών</li>
+                                <li>Αριθμημένα βήματα</li>
+                                <li>Πίνακας διατροφικών στοιχείων</li>
+                                <li>Εικόνα του πιάτου</li>
+                            </ul>
+                        </div>
+                        <button onclick="startHTMLProject('recipe')" class="btn btn-primary">
+                            🚀 Ξεκίνα
+                        </button>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="project-card">
+                        <div class="project-header">
+                            <span class="project-icon">📰</span>
+                            <div class="project-difficulty hard">⭐⭐⭐ Δύσκολο</div>
+                        </div>
+                        <h3>Σελίδα Ειδήσεων</h3>
+                        <p>Δημιούργησε μια σελίδα ειδήσεων με semantic HTML.</p>
+                        <div class="project-skills">
+                            <span class="skill-tag">Semantic HTML</span>
+                            <span class="skill-tag">Articles</span>
+                            <span class="skill-tag">Navigation</span>
+                        </div>
+                        <div class="project-requirements">
+                            <h4>Απαιτήσεις:</h4>
+                            <ul>
+                                <li>Header με λογότυπο και nav</li>
+                                <li>Τουλάχιστον 3 άρθρα</li>
+                                <li>Sidebar με κατηγορίες</li>
+                                <li>Footer με στοιχεία επικοινωνίας</li>
+                                <li>Χρήση semantic tags</li>
+                            </ul>
+                        </div>
+                        <button onclick="startHTMLProject('news')" class="btn btn-primary">
+                            🚀 Ξεκίνα
+                        </button>
+                    </div>
+                </div>
+
+                <div class="projects-submission">
+                    <h3>📤 Υποβολή Project</h3>
+                    <div class="submission-form">
+                        <input type="text" id="project-name" placeholder="Όνομα Project">
+                        <textarea id="project-notes" placeholder="Τι έμαθα / Σημειώσεις"></textarea>
+                        <button onclick="saveProject()" class="btn btn-success">
+                            💾 Αποθήκευση Project
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Progress Bar -->
+    <div class="lesson-progress-bar">
+        <div class="progress-fill" id="lesson-progress"></div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="lesson-footer">
+        <div class="container">
+            <div class="footer-nav">
+                <a href="../01-client-side-basics/index.html" class="footer-link">
+                    ← Client-Side Basics
+                </a>
+                <a href="../03-css/index.html" class="footer-link primary">
+                    Επόμενο: CSS →
+                </a>
+            </div>
+            <p class="footer-text">WebDev Learning Hub - Εφαρμογές Πληροφορικής Α' Λυκείου</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

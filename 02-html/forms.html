@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Φόρμες HTML | WebDev Learning Hub</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/lesson.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="lesson-nav">
+        <div class="container">
+            <a href="../index.html" class="nav-logo"><span>🚀</span> WebDev Hub</a>
+            <div class="nav-breadcrumb">
+                <a href="../index.html">Αρχική</a> / <a href="index.html">HTML</a> / <span class="current">Φόρμες</span>
+            </div>
+            <div class="nav-actions">
+                <button onclick="takeFullScreenshot()" class="btn-icon">📸</button>
+                <button onclick="exportToPDF()" class="btn-icon">📄</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="lesson-header html-header">
+        <div class="container">
+            <div class="lesson-badge">HTML Forms</div>
+            <h1>📋 Φόρμες HTML</h1>
+            <p class="lesson-subtitle">Συλλογή δεδομένων από τους χρήστες</p>
+        </div>
+    </header>
+
+    <!-- Main -->
+    <main class="lesson-content">
+        <div class="container">
+            
+            <div class="tabs">
+                <button class="tab-btn active" onclick="showTab('theory')">📖 Θεωρία</button>
+                <button class="tab-btn" onclick="showTab('interactive')">🎮 Editor</button>
+                <button class="tab-btn" onclick="showTab('exercises')">✏️ Ασκήσεις</button>
+                <button class="tab-btn" onclick="showTab('quiz')">🎯 Quiz</button>
+            </div>
+
+            <!-- THEORY -->
+            <section id="theory" class="tab-content active">
+                <div class="theory-section">
+                    <h2>📋 Τι είναι οι Φόρμες;</h2>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">💡</div>
+                        <div class="info-content">
+                            <p>Οι <strong>φόρμες (forms)</strong> επιτρέπουν στους χρήστες να εισάγουν δεδομένα: κείμενο, επιλογές, αρχεία κ.λπ. Χρησιμοποιούνται για login, εγγραφή, αναζήτηση, επικοινωνία.</p>
+                        </div>
+                    </div>
+
+                    <div class="code-block-wrapper">
+                        <div class="code-header"><span>Βασική Φόρμα</span></div>
+                        <pre class="code-block"><code>&lt;form action="/submit" method="POST"&gt;
+    &lt;label for="name"&gt;Όνομα:&lt;/label&gt;
+    &lt;input type="text" id="name" name="name" required&gt;
+    
+    &lt;label for="email"&gt;Email:&lt;/label&gt;
+    &lt;input type="email" id="email" name="email"&gt;
+    
+    &lt;button type="submit"&gt;Υποβολή&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+                    </div>
+                </div>
+
+                <div class="theory-section">
+                    <h2>📝 Τύποι Input</h2>
+                    
+                    <div class="input-types-grid">
+                        <div class="input-type-card">
+                            <h4>text</h4>
+                            <code>&lt;input type="text"&gt;</code>
+                            <div class="input-demo">
+                                <input type="text" placeholder="Κείμενο...">
+                            </div>
+                        </div>
+                        
+                        <div class="input-type-card">
+                            <h4>password</h4>
+                            <code>&lt;input type="password"&gt;</code>
+                            <div class="input-demo">
+                                <input type="password" placeholder="••••••">
+                            </div>
+                        </div>
+                        
+                        <div class="input-type-card">
+                            <h4>email</h4>
+                            <code>&lt;input type="email"&gt;</code>
+                            <div class="input-demo">
+                                <input type="email" placeholder="email@example.com">
+                            </div>
+                        </div>
+                        
+                        <div class="input-type-card">
+                            <h4>number</h4>
+                            <code>&lt;input type="number"&gt;</code>
+                            <div class="input-demo">
+                                <input type="number" placeholder="123">
+                            </div>
+                        </div>
+                        
+                        <div class="input-type-card">
+                            <h4>date</h4>
+                            <code>&lt;input type="date"&gt;</code>
+                            <div class="input-demo">
+                                <input type="date">
+                            </div>
+                        </div>
+                        
+                        <div class="input-type-card">
+                            <h4>checkbox</h4>
+                            <code>&lt;input type="checkbox"&gt;</code>
+                            <div class="input-demo">
+                                <label><input type="checkbox"> Επιλογή</label>
+                            </div>
+                        </div>
+                        
+                        <div class="input-type-card">
+                            <h4>radio</h4>
+                            <code>&lt;input type="radio"&gt;</code>
+                            <div class="input-demo">
+                                <label><input type="radio" name="demo"> A</label>
+                                <label><input type="radio" name="demo"> B</label>
+                            </div>
+                        </div>
+                        
+                        <div class="input-type-card">
+                            <h4>range</h4>
+                            <code>&lt;input type="range"&gt;</code>
+                            <div class="input-demo">
+                                <input type="range" min="0" max="100">
+                            </div>
+                        </div>
+                        
+                        <div class="input-type-card">
+                            <h4>color</h4>
+                            <code>&lt;input type="color"&gt;</code>
+                            <div class="input-demo">
+                                <input type="color" value="#2563eb">
+                            </div>
+                        </div>
+                        
+                        <div class="input-type-card">
+                            <h4>file</h4>
+                            <code>&lt;input type="file"&gt;</code>
+                            <div class="input-demo">
+                                <input type="file">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="theory-section">
+                    <h2>📑 Άλλα Form Elements</h2>
+                    
+                    <div class="other-elements">
+                        <div class="element-demo">
+                            <h4>&lt;textarea&gt;</h4>
+                            <code>&lt;textarea rows="4"&gt;&lt;/textarea&gt;</code>
+                            <textarea rows="3" placeholder="Πολλές γραμμές κειμένου..."></textarea>
+                        </div>
+                        
+                        <div class="element-demo">
+                            <h4>&lt;select&gt;</h4>
+                            <code>&lt;select&gt;&lt;option&gt;...&lt;/option&gt;&lt;/select&gt;</code>
+                            <select>
+                                <option>Επιλογή 1</option>
+                                <option>Επιλογή 2</option>
+                                <option>Επιλογή 3</option>
+                            </select>
+                        </div>
+                        
+                        <div class="element-demo">
+                            <h4>&lt;button&gt;</h4>
+                            <code>&lt;button type="submit"&gt;Κουμπί&lt;/button&gt;</code>
+                            <button type="button">Κουμπί</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="theory-section">
+                    <h2>⚙️ Σημαντικά Attributes</h2>
+                    
+                    <table class="attributes-table">
+                        <tr>
+                            <th>Attribute</th>
+                            <th>Χρήση</th>
+                            <th>Παράδειγμα</th>
+                        </tr>
+                        <tr>
+                            <td><code>required</code></td>
+                            <td>Υποχρεωτικό πεδίο</td>
+                            <td><code>&lt;input required&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>placeholder</code></td>
+                            <td>Κείμενο υπόδειξης</td>
+                            <td><code>&lt;input placeholder="Γράψε..."&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>value</code></td>
+                            <td>Προκαθορισμένη τιμή</td>
+                            <td><code>&lt;input value="default"&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>disabled</code></td>
+                            <td>Απενεργοποιημένο</td>
+                            <td><code>&lt;input disabled&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>readonly</code></td>
+                            <td>Μόνο ανάγνωση</td>
+                            <td><code>&lt;input readonly&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>min/max</code></td>
+                            <td>Ελάχιστη/Μέγιστη τιμή</td>
+                            <td><code>&lt;input type="number" min="0" max="100"&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>pattern</code></td>
+                            <td>Regular Expression</td>
+                            <td><code>&lt;input pattern="[A-Za-z]+"&gt;</code></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="next-section">
+                    <button class="btn btn-primary" onclick="showTab('interactive')">🎮 Δοκίμασέ το →</button>
+                </div>
+            </section>
+
+            <!-- INTERACTIVE -->
+            <section id="interactive" class="tab-content">
+                <h2>🎮 Δημιούργησε Φόρμες</h2>
+                
+                <div class="editor-container">
+                    <div class="editor-header">
+                        <h3>📝 Editor</h3>
+                        <div class="editor-actions">
+                            <button onclick="runCode()" class="btn btn-success">▶️ Εκτέλεση</button>
+                            <button onclick="resetEditor()" class="btn btn-secondary">🔄 Reset</button>
+                        </div>
+                    </div>
+                    
+                    <div class="editor-main single-editor">
+                        <div class="editor-panel active">
+                            <textarea id="code-editor" spellcheck="false"><!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <title>Φόρμα Εγγραφής</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f0f4f8;
+        }
+        .form-container {
+            max-width: 400px;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        h2 { color: #2563eb; margin-bottom: 20px; }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 2px solid #e2e8f0;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        input:focus, select:focus, textarea:focus {
+            border-color: #2563eb;
+            outline: none;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover { background: #1e40af; }
+        .checkbox-group label {
+            display: inline;
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>📋 Φόρμα Εγγραφής</h2>
+        
+        <form action="#" method="POST">
+            <label for="fullname">Ονοματεπώνυμο:</label>
+            <input type="text" id="fullname" name="fullname" required placeholder="π.χ. Γιάννης Παπαδόπουλος">
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required placeholder="email@example.com">
+            
+            <label for="password">Κωδικός:</label>
+            <input type="password" id="password" name="password" required minlength="6" placeholder="Τουλάχιστον 6 χαρακτήρες">
+            
+            <label for="birthdate">Ημ/νία Γέννησης:</label>
+            <input type="date" id="birthdate" name="birthdate">
+            
+            <label for="country">Χώρα:</label>
+            <select id="country" name="country">
+                <option value="">Επιλέξτε...</option>
+                <option value="gr">Ελλάδα</option>
+                <option value="cy">Κύπρος</option>
+                <option value="other">Άλλη</option>
+            </select>
+            
+            <label for="bio">Λίγα λόγια για σένα:</label>
+            <textarea id="bio" name="bio" rows="3" placeholder="Γράψε κάτι..."></textarea>
+            
+            <div class="checkbox-group">
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms">Αποδέχομαι τους όρους χρήσης</label>
+            </div>
+            
+            <button type="submit">🚀 Εγγραφή</button>
+        </form>
+    </div>
+</body>
+</html></textarea>
+                        </div>
+                        <div class="preview-container">
+                            <div class="preview-header"><h4>🖥️ Αποτέλεσμα</h4></div>
+                            <iframe id="preview-frame"></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="challenges-section">
+                    <h3>🎯 Προκλήσεις:</h3>
+                    <div class="mini-challenges">
+                        <div class="mini-challenge">1️⃣ Πρόσθεσε πεδίο τηλεφώνου (type="tel")</div>
+                        <div class="mini-challenge">2️⃣ Πρόσθεσε radio buttons για φύλο</div>
+                        <div class="mini-challenge">3️⃣ Πρόσθεσε range slider για ηλικία</div>
+                        <div class="mini-challenge">4️⃣ Κάνε το email να δείχνει error αν είναι λάθος</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- EXERCISES -->
+            <section id="exercises" class="tab-content">
+                <h2>✏️ Ασκήσεις</h2>
+                
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-number">1</span>
+                        <h3>Ποιος τύπος input;</h3>
+                    </div>
+                    <p>Επίλεξε τον σωστό type για κάθε περίπτωση:</p>
+                    
+                    <div class="matching-simple">
+                        <div class="match-row">
+                            <span>Κωδικός πρόσβασης</span>
+                            <select class="match-select" data-correct="password">
+                                <option value="">Επίλεξε...</option>
+                                <option value="text">text</option>
+                                <option value="password">password</option>
+                                <option value="email">email</option>
+                            </select>
+                        </div>
+                        <div class="match-row">
+                            <span>Διεύθυνση email</span>
+                            <select class="match-select" data-correct="email">
+                                <option value="">Επίλεξε...</option>
+                                <option value="text">text</option>
+                                <option value="password">password</option>
+                                <option value="email">email</option>
+                            </select>
+                        </div>
+                        <div class="match-row">
+                            <span>Ημερομηνία γέννησης</span>
+                            <select class="match-select" data-correct="date">
+                                <option value="">Επίλεξε...</option>
+                                <option value="text">text</option>
+                                <option value="number">number</option>
+                                <option value="date">date</option>
+                            </select>
+                        </div>
+                        <div class="match-row">
+                            <span>Ηλικία (αριθμός)</span>
+                            <select class="match-select" data-correct="number">
+                                <option value="">Επίλεξε...</option>
+                                <option value="text">text</option>
+                                <option value="number">number</option>
+                                <option value="date">date</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button onclick="checkExercise(1)" class="btn btn-primary">✅ Έλεγχος</button>
+                    <div id="result-1" class="exercise-result"></div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-number">2</span>
+                        <h3>Γράψε τη φόρμα</h3>
+                    </div>
+                    <p>Δημιούργησε μια φόρμα επικοινωνίας με: Όνομα, Email, Μήνυμα (textarea), Κουμπί</p>
+                    
+                    <textarea id="form-exercise" class="code-textarea" rows="10" placeholder="Γράψε HTML εδώ..."></textarea>
+                    <div class="exercise-buttons">
+                        <button onclick="previewFormExercise()" class="btn btn-success">▶️ Προεπισκόπηση</button>
+                        <button onclick="checkFormExercise()" class="btn btn-primary">✅ Έλεγχος</button>
+                    </div>
+                    <div id="form-preview" class="exercise-preview"></div>
+                    <div id="result-2" class="exercise-result"></div>
+                </div>
+            </section>
+
+            <!-- QUIZ -->
+            <section id="quiz" class="tab-content">
+                <h2>🎯 Quiz</h2>
+                <div id="quiz-container"></div>
+                <div id="quiz-results" style="display:none;">
+                    <div class="results-score"><span id="score-number">0</span>/5</div>
+                    <div id="results-message"></div>
+                    <button onclick="retakeQuiz()" class="btn btn-primary">🔄 Ξανά</button>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="lesson-footer">
+        <div class="container">
+            <div class="footer-nav">
+                <a href="semantic.html" class="footer-link">← Semantic HTML</a>
+                <a href="tables.html" class="footer-link primary">Πίνακες →</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="sub-script.js"></script>
+    <script>
+        const quizData = [
+            {
+                question: "Ποιο tag δημιουργεί φόρμα;",
+                options: ["<input>", "<form>", "<field>", "<formdata>"],
+                correct: 1
+            },
+            {
+                question: "Τι type χρησιμοποιούμε για κωδικό;",
+                options: ["text", "secret", "password", "hidden"],
+                correct: 2
+            },
+            {
+                question: "Το attribute 'required' κάνει:",
+                options: ["Απόκρυψη πεδίου", "Υποχρεωτικό πεδίο", "Μόνο ανάγνωση", "Validation"],
+                correct: 1
+            },
+            {
+                question: "Για πολλές γραμμές κειμένου χρησιμοποιούμε:",
+                options: ["<input type='text'>", "<textarea>", "<text>", "<multiline>"],
+                correct: 1
+            },
+            {
+                question: "Το <select> δημιουργεί:",
+                options: ["Text field", "Dropdown menu", "Checkbox", "Button"],
+                correct: 1
+            }
+        ];
+        initQuiz(quizData);
+    </script>
+</body>
+</html>

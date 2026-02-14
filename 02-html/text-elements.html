@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Στοιχεία Κειμένου HTML | WebDev Learning Hub</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/lesson.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="lesson-nav">
+        <div class="container">
+            <a href="../index.html" class="nav-logo"><span>🚀</span> WebDev Hub</a>
+            <div class="nav-breadcrumb">
+                <a href="../index.html">Αρχική</a> / <a href="index.html">HTML</a> / <span class="current">Στοιχεία Κειμένου</span>
+            </div>
+            <div class="nav-actions">
+                <button onclick="takeFullScreenshot()" class="btn-icon">📸</button>
+                <button onclick="exportToPDF()" class="btn-icon">📄</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="lesson-header html-header">
+        <div class="container">
+            <div class="lesson-badge">HTML Text</div>
+            <h1>📄 Στοιχεία Κειμένου HTML</h1>
+            <p class="lesson-subtitle">Επικεφαλίδες, παράγραφοι και μορφοποίηση κειμένου</p>
+            <div class="lesson-meta">
+                <span class="meta-item">⏱️ ~30 λεπτά</span>
+                <span class="meta-item">📊 Βασικό</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="lesson-content">
+        <div class="container">
+            
+            <!-- Tabs -->
+            <div class="tabs">
+                <button class="tab-btn active" onclick="showTab('theory')">📖 Θεωρία</button>
+                <button class="tab-btn" onclick="showTab('interactive')">🎮 Editor</button>
+                <button class="tab-btn" onclick="showTab('exercises')">✏️ Ασκήσεις</button>
+                <button class="tab-btn" onclick="showTab('quiz')">🎯 Quiz</button>
+            </div>
+
+            <!-- ============================================ -->
+            <!-- THEORY TAB -->
+            <!-- ============================================ -->
+            <section id="theory" class="tab-content active">
+                
+                <!-- Headings Section -->
+                <div class="theory-section">
+                    <h2>📌 1. Επικεφαλίδες (Headings)</h2>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">💡</div>
+                        <div class="info-content">
+                            <p>Οι <strong>επικεφαλίδες</strong> (h1-h6) οργανώνουν το περιεχόμενο της σελίδας σε ενότητες. Το <code>&lt;h1&gt;</code> είναι η μεγαλύτερη και σημαντικότερη, ενώ το <code>&lt;h6&gt;</code> η μικρότερη.</p>
+                        </div>
+                    </div>
+
+                    <div class="headings-showcase">
+                        <div class="heading-item">
+                            <code>&lt;h1&gt;</code>
+                            <h1 style="margin:0;font-size:2em;">Heading 1</h1>
+                            <span class="heading-info">Κύριος τίτλος - 1 ανά σελίδα</span>
+                        </div>
+                        <div class="heading-item">
+                            <code>&lt;h2&gt;</code>
+                            <h2 style="margin:0;font-size:1.5em;">Heading 2</h2>
+                            <span class="heading-info">Κύριες ενότητες</span>
+                        </div>
+                        <div class="heading-item">
+                            <code>&lt;h3&gt;</code>
+                            <h3 style="margin:0;font-size:1.17em;">Heading 3</h3>
+                            <span class="heading-info">Υποενότητες</span>
+                        </div>
+                        <div class="heading-item">
+                            <code>&lt;h4&gt;</code>
+                            <h4 style="margin:0;font-size:1em;">Heading 4</h4>
+                            <span class="heading-info">Μικρότερες ενότητες</span>
+                        </div>
+                        <div class="heading-item">
+                            <code>&lt;h5&gt;</code>
+                            <h5 style="margin:0;font-size:0.83em;">Heading 5</h5>
+                            <span class="heading-info">Σπάνια χρησιμοποιείται</span>
+                        </div>
+                        <div class="heading-item">
+                            <code>&lt;h6&gt;</code>
+                            <h6 style="margin:0;font-size:0.67em;">Heading 6</h6>
+                            <span class="heading-info">Μικρότερη επικεφαλίδα</span>
+                        </div>
+                    </div>
+
+                    <div class="info-card warning">
+                        <div class="info-icon">⚠️</div>
+                        <div class="info-content">
+                            <p><strong>Σημαντικό για SEO:</strong></p>
+                            <ul>
+                                <li>Χρησιμοποίησε <strong>μόνο ένα &lt;h1&gt;</strong> ανά σελίδα</li>
+                                <li>Ακολούθησε <strong>ιεραρχική σειρά</strong> (h1 → h2 → h3...)</li>
+                                <li>Μην παραλείπεις επίπεδα (πχ. h1 → h3 χωρίς h2)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="code-block-wrapper">
+                        <div class="code-header">
+                            <span>Σωστή Ιεραρχία</span>
+                            <button onclick="copyCode(this)" class="copy-btn">📋 Αντιγραφή</button>
+                        </div>
+                        <pre class="code-block"><code>&lt;h1&gt;Τίτλος Σελίδας&lt;/h1&gt;
+
+&lt;h2&gt;Ενότητα 1&lt;/h2&gt;
+    &lt;h3&gt;Υποενότητα 1.1&lt;/h3&gt;
+    &lt;h3&gt;Υποενότητα 1.2&lt;/h3&gt;
+
+&lt;h2&gt;Ενότητα 2&lt;/h2&gt;
+    &lt;h3&gt;Υποενότητα 2.1&lt;/h3&gt;
+        &lt;h4&gt;Λεπτομέρεια 2.1.1&lt;/h4&gt;</code></pre>
+                    </div>
+                </div>
+
+                <!-- Paragraphs Section -->
+                <div class="theory-section">
+                    <h2>📝 2. Παράγραφοι & Κείμενο</h2>
+                    
+                    <div class="text-elements-grid">
+                        <div class="text-element-card">
+                            <div class="element-tag">&lt;p&gt;</div>
+                            <h4>Παράγραφος</h4>
+                            <p>Βασικό block element για κείμενο</p>
+                            <div class="element-demo">
+                                <p style="margin:0;padding:10px;background:#f0f4f8;border-radius:5px;">Αυτή είναι μια παράγραφος κειμένου.</p>
+                            </div>
+                            <code>&lt;p&gt;Κείμενο παραγράφου&lt;/p&gt;</code>
+                        </div>
+
+                        <div class="text-element-card">
+                            <div class="element-tag">&lt;br&gt;</div>
+                            <h4>Line Break</h4>
+                            <p>Αλλαγή γραμμής (self-closing)</p>
+                            <div class="element-demo">
+                                <p style="margin:0;padding:10px;background:#f0f4f8;border-radius:5px;">Πρώτη γραμμή<br>Δεύτερη γραμμή</p>
+                            </div>
+                            <code>Γραμμή 1&lt;br&gt;Γραμμή 2</code>
+                        </div>
+
+                        <div class="text-element-card">
+                            <div class="element-tag">&lt;hr&gt;</div>
+                            <h4>Horizontal Rule</h4>
+                            <p>Οριζόντια γραμμή διαχωρισμού</p>
+                            <div class="element-demo">
+                                <hr style="margin:10px 0;border:none;border-top:2px solid #cbd5e1;">
+                            </div>
+                            <code>&lt;hr&gt;</code>
+                        </div>
+
+                        <div class="text-element-card">
+                            <div class="element-tag">&lt;pre&gt;</div>
+                            <h4>Preformatted</h4>
+                            <p>Διατηρεί κενά και αλλαγές γραμμής</p>
+                            <div class="element-demo">
+                                <pre style="margin:0;padding:10px;background:#1e293b;color:#e2e8f0;border-radius:5px;font-size:0.85em;">Κείμενο
+    με κενά
+        και tabs</pre>
+                            </div>
+                            <code>&lt;pre&gt;formatted text&lt;/pre&gt;</code>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text Formatting Section -->
+                <div class="theory-section">
+                    <h2>✨ 3. Μορφοποίηση Κειμένου</h2>
+                    
+                    <div class="formatting-table">
+                        <table class="styled-table">
+                            <thead>
+                                <tr>
+                                    <th>Tag</th>
+                                    <th>Περιγραφή</th>
+                                    <th>Αποτέλεσμα</th>
+                                    <th>Χρήση</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>&lt;strong&gt;</code></td>
+                                    <td>Σημαντικό κείμενο</td>
+                                    <td><strong>Έντονο</strong></td>
+                                    <td>Σημασιολογική έμφαση</td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;b&gt;</code></td>
+                                    <td>Bold (χωρίς σημασία)</td>
+                                    <td><b>Έντονο</b></td>
+                                    <td>Μόνο οπτική έμφαση</td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;em&gt;</code></td>
+                                    <td>Emphasis (τονισμός)</td>
+                                    <td><em>Πλάγια</em></td>
+                                    <td>Σημασιολογικός τονισμός</td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;i&gt;</code></td>
+                                    <td>Italic (χωρίς σημασία)</td>
+                                    <td><i>Πλάγια</i></td>
+                                    <td>Τεχνικοί όροι, ξένες λέξεις</td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;u&gt;</code></td>
+                                    <td>Underline</td>
+                                    <td><u>Υπογραμμισμένο</u></td>
+                                    <td>⚠️ Αποφυγή (μπερδεύεται με links)</td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;mark&gt;</code></td>
+                                    <td>Highlight</td>
+                                    <td><mark>Επισημασμένο</mark></td>
+                                    <td>Αποτελέσματα αναζήτησης</td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;small&gt;</code></td>
+                                    <td>Μικρότερο κείμενο</td>
+                                    <td><small>Μικρό</small></td>
+                                    <td>Copyright, disclaimers</td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;del&gt;</code></td>
+                                    <td>Deleted (διαγραμμένο)</td>
+                                    <td><del>Διαγραμμένο</del></td>
+                                    <td>Αλλαγές, τιμές</td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;ins&gt;</code></td>
+                                    <td>Inserted (προστέθηκε)</td>
+                                    <td><ins>Νέο</ins></td>
+                                    <td>Προσθήκες σε κείμενο</td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;sub&gt;</code></td>
+                                    <td>Subscript</td>
+                                    <td>H<sub>2</sub>O</td>
+                                    <td>Χημικοί τύποι</td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;sup&gt;</code></td>
+                                    <td>Superscript</td>
+                                    <td>x<sup>2</sup></td>
+                                    <td>Εκθέτες, footnotes</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="code-block-wrapper">
+                        <div class="code-header"><span>Παραδείγματα Μορφοποίησης</span></div>
+                        <pre class="code-block"><code>&lt;p&gt;Αυτό είναι &lt;strong&gt;πολύ σημαντικό&lt;/strong&gt; κείμενο.&lt;/p&gt;
+
+&lt;p&gt;Η λέξη &lt;em&gt;emphasis&lt;/em&gt; σημαίνει τονισμός.&lt;/p&gt;
+
+&lt;p&gt;Τιμή: &lt;del&gt;50€&lt;/del&gt; &lt;ins&gt;35€&lt;/ins&gt;&lt;/p&gt;
+
+&lt;p&gt;Η χημική φόρμουλα του νερού είναι H&lt;sub&gt;2&lt;/sub&gt;O&lt;/p&gt;
+
+&lt;p&gt;Η εξίσωση: E = mc&lt;sup&gt;2&lt;/sup&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;mark&gt;Αυτό είναι highlighted&lt;/mark&gt; κείμενο.&lt;/p&gt;</code></pre>
+                    </div>
+                </div>
+
+                <!-- Quotations Section -->
+                <div class="theory-section">
+                    <h2>💬 4. Παραθέσεις (Quotations)</h2>
+                    
+                    <div class="quotations-grid">
+                        <div class="quote-type-card">
+                            <h4>&lt;blockquote&gt;</h4>
+                            <p>Μεγάλο απόσπασμα (block element)</p>
+                            <div class="quote-demo">
+                                <blockquote style="border-left:4px solid #2563eb;padding-left:20px;margin:0;color:#64748b;font-style:italic;">
+                                    "Η φαντασία είναι πιο σημαντική από τη γνώση."
+                                    <cite style="display:block;margin-top:10px;font-style:normal;">— Albert Einstein</cite>
+                                </blockquote>
+                            </div>
+                            <div class="code-example-small">
+                                <code>&lt;blockquote&gt;"Quote..."&lt;cite&gt;Author&lt;/cite&gt;&lt;/blockquote&gt;</code>
+                            </div>
+                        </div>
+
+                        <div class="quote-type-card">
+                            <h4>&lt;q&gt;</h4>
+                            <p>Σύντομο inline απόσπασμα</p>
+                            <div class="quote-demo">
+                                <p style="margin:0;">Ο Σωκράτης είπε <q style="color:#2563eb;">Γνῶθι σεαυτόν</q> στους μαθητές του.</p>
+                            </div>
+                            <div class="code-example-small">
+                                <code>&lt;p&gt;Είπε &lt;q&gt;κείμενο&lt;/q&gt; στους...&lt;/p&gt;</code>
+                            </div>
+                        </div>
+
+                        <div class="quote-type-card">
+                            <h4>&lt;cite&gt;</h4>
+                            <p>Τίτλος έργου ή συγγραφέας</p>
+                            <div class="quote-demo">
+                                <p style="margin:0;">Το βιβλίο <cite style="font-style:italic;color:#2563eb;">1984</cite> του George Orwell.</p>
+                            </div>
+                            <div class="code-example-small">
+                                <code>&lt;cite&gt;Τίτλος Έργου&lt;/cite&gt;</code>
+                            </div>
+                        </div>
+
+                        <div class="quote-type-card">
+                            <h4>&lt;abbr&gt;</h4>
+                            <p>Συντομογραφία με επεξήγηση</p>
+                            <div class="quote-demo">
+                                <p style="margin:0;">Η <abbr title="HyperText Markup Language" style="border-bottom:1px dotted;cursor:help;">HTML</abbr> είναι γλώσσα σήμανσης.</p>
+                            </div>
+                            <div class="code-example-small">
+                                <code>&lt;abbr title="Full Text"&gt;ABBR&lt;/abbr&gt;</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Code Elements Section -->
+                <div class="theory-section">
+                    <h2>💻 5. Στοιχεία Κώδικα</h2>
+                    
+                    <div class="code-elements-grid">
+                        <div class="code-element-card">
+                            <h4>&lt;code&gt;</h4>
+                            <p>Inline κώδικας</p>
+                            <div class="element-demo dark">
+                                Χρησιμοποίησε το <code style="background:#1e293b;color:#a5f3fc;padding:2px 6px;border-radius:4px;">console.log()</code> για debugging.
+                            </div>
+                        </div>
+
+                        <div class="code-element-card">
+                            <h4>&lt;pre&gt;&lt;code&gt;</h4>
+                            <p>Block κώδικα (combo)</p>
+                            <div class="element-demo dark">
+                                <pre style="background:#1e293b;color:#e2e8f0;padding:15px;border-radius:8px;margin:0;"><code>function hello() {
+    console.log("Hello!");
+}</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="code-element-card">
+                            <h4>&lt;kbd&gt;</h4>
+                            <p>Keyboard input</p>
+                            <div class="element-demo">
+                                Πάτησε <kbd style="background:#1e293b;color:white;padding:3px 8px;border-radius:4px;font-family:monospace;">Ctrl</kbd> + <kbd style="background:#1e293b;color:white;padding:3px 8px;border-radius:4px;font-family:monospace;">C</kbd> για αντιγραφή.
+                            </div>
+                        </div>
+
+                        <div class="code-element-card">
+                            <h4>&lt;samp&gt;</h4>
+                            <p>Sample output</p>
+                            <div class="element-demo dark">
+                                <p style="margin:0;">Output: <samp style="background:#1e293b;color:#10b981;padding:2px 6px;border-radius:4px;">Hello World!</samp></p>
+                            </div>
+                        </div>
+
+                        <div class="code-element-card">
+                            <h4>&lt;var&gt;</h4>
+                            <p>Μαθηματική μεταβλητή</p>
+                            <div class="element-demo">
+                                <p style="margin:0;">Η εξίσωση: <var style="font-style:italic;color:#2563eb;">x</var> = <var style="font-style:italic;color:#2563eb;">y</var> + 5</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="code-block-wrapper">
+                        <div class="code-header"><span>Παράδειγμα Κώδικα σε HTML</span></div>
+                        <pre class="code-block"><code>&lt;!-- Inline code --&gt;
+&lt;p&gt;Η συνάρτηση &lt;code&gt;alert()&lt;/code&gt; εμφανίζει μήνυμα.&lt;/p&gt;
+
+&lt;!-- Block of code --&gt;
+&lt;pre&gt;&lt;code&gt;
+function greet(name) {
+    return "Hello, " + name;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;!-- Keyboard shortcuts --&gt;
+&lt;p&gt;Πάτησε &lt;kbd&gt;Ctrl&lt;/kbd&gt; + &lt;kbd&gt;S&lt;/kbd&gt; για αποθήκευση.&lt;/p&gt;</code></pre>
+                    </div>
+                </div>
+
+                <!-- Address & Contact Section -->
+                <div class="theory-section">
+                    <h2>📮 6. Στοιχεία Επικοινωνίας</h2>
+                    
+                    <div class="contact-element">
+                        <h4>&lt;address&gt;</h4>
+                        <p>Πληροφορίες επικοινωνίας (συνήθως στο footer)</p>
+                        
+                        <div class="address-demo">
+                            <address style="font-style:normal;background:#f8fafc;padding:20px;border-radius:10px;border-left:4px solid #2563eb;">
+                                <strong>WebDev Learning Hub</strong><br>
+                                Οδός Τεχνολογίας 123<br>
+                                Αθήνα, 10000<br>
+                                <a href="mailto:info@webdevhub.gr">info@webdevhub.gr</a><br>
+                                <a href="tel:+302101234567">210-123-4567</a>
+                            </address>
+                        </div>
+
+                        <div class="code-block-wrapper">
+                            <pre class="code-block"><code>&lt;address&gt;
+    &lt;strong&gt;Όνομα Εταιρείας&lt;/strong&gt;&lt;br&gt;
+    Διεύθυνση 123&lt;br&gt;
+    Πόλη, ΤΚ&lt;br&gt;
+    &lt;a href="mailto:email@example.com"&gt;email@example.com&lt;/a&gt;
+&lt;/address&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Summary -->
+                <div class="theory-section">
+                    <h2>📋 Ανακεφαλαίωση</h2>
+                    
+                    <div class="summary-box">
+                        <div class="summary-item">
+                            <span class="check">✅</span>
+                            <p><code>&lt;h1&gt;</code> - <code>&lt;h6&gt;</code>: Επικεφαλίδες (h1 μόνο μία φορά!)</p>
+                        </div>
+                        <div class="summary-item">
+                            <span class="check">✅</span>
+                            <p><code>&lt;p&gt;</code>: Παράγραφοι κειμένου</p>
+                        </div>
+                        <div class="summary-item">
+                            <span class="check">✅</span>
+                            <p><code>&lt;strong&gt;</code>/<code>&lt;em&gt;</code>: Σημασιολογική έμφαση</p>
+                        </div>
+                        <div class="summary-item">
+                            <span class="check">✅</span>
+                            <p><code>&lt;blockquote&gt;</code>/<code>&lt;q&gt;</code>: Παραθέσεις</p>
+                        </div>
+                        <div class="summary-item">
+                            <span class="check">✅</span>
+                            <p><code>&lt;code&gt;</code>/<code>&lt;pre&gt;</code>: Για κώδικα</p>
+                        </div>
+                        <div class="summary-item">
+                            <span class="check">✅</span>
+                            <p><code>&lt;br&gt;</code>/<code>&lt;hr&gt;</code>: Αλλαγή γραμμής / Οριζόντια γραμμή</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="next-section">
+                    <button class="btn btn-primary" onclick="showTab('interactive')">🎮 Πειραματίσου →</button>
+                </div>
+            </section>
+
+            <!-- ============================================ -->
+            <!-- INTERACTIVE TAB -->
+            <!-- ============================================ -->
+            <section id="interactive" class="tab-content">
+                <h2>🎮 Πειραματίσου με Κείμενο</h2>
+                
+                <div class="editor-container">
+                    <div class="editor-header">
+                        <h3>📝 Editor</h3>
+                        <div class="editor-actions">
+                            <button onclick="runCode()" class="btn btn-success">▶️ Εκτέλεση</button>
+                            <button onclick="resetEditor()" class="btn btn-secondary">🔄 Reset</button>
+                            <button onclick="saveCode()" class="btn btn-primary">💾 Αποθήκευση</button>
+                        </div>
+                    </div>
+                    
+                    <div class="editor-main single-editor">
+                        <div class="editor-panel active">
+                            <textarea id="code-editor" spellcheck="false"><!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <title>Στοιχεία Κειμένου</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.8;
+            padding: 30px;
+            max-width: 800px;
+            margin: 0 auto;
+            background: #f8fafc;
+            color: #1e293b;
+        }
+        
+        h1 {
+            color: #2563eb;
+            border-bottom: 3px solid #2563eb;
+            padding-bottom: 10px;
+        }
+        
+        h2 {
+            color: #1e40af;
+            margin-top: 40px;
+        }
+        
+        h3 { color: #3b82f6; }
+        
+        p {
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+        
+        blockquote {
+            background: linear-gradient(135deg, #dbeafe, #e0e7ff);
+            border-left: 5px solid #2563eb;
+            padding: 20px 25px;
+            margin: 20px 0;
+            border-radius: 0 10px 10px 0;
+            font-style: italic;
+        }
+        
+        blockquote cite {
+            display: block;
+            margin-top: 10px;
+            font-style: normal;
+            color: #64748b;
+        }
+        
+        code {
+            background: #1e293b;
+            color: #a5f3fc;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: 'Consolas', monospace;
+        }
+        
+        pre {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 10px;
+            overflow-x: auto;
+        }
+        
+        pre code {
+            background: none;
+            padding: 0;
+        }
+        
+        kbd {
+            background: #374151;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 5px;
+            font-family: 'Consolas', monospace;
+            box-shadow: 0 2px 0 #1f2937;
+        }
+        
+        mark {
+            background: #fef08a;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        
+        .price {
+            font-size: 1.5em;
+        }
+        .price del { color: #ef4444; }
+        .price ins { 
+            color: #10b981; 
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        address {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #2563eb;
+            font-style: normal;
+            margin-top: 30px;
+        }
+        
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(to right, #2563eb, #7c3aed);
+            margin: 30px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>📄 Μάθε HTML - Στοιχεία Κειμένου</h1>
+    
+    <p>
+        Η <strong>HTML</strong> (HyperText Markup Language) είναι η τυπική γλώσσα
+        για τη δημιουργία ιστοσελίδων. Σε αυτό το μάθημα θα δούμε πώς να 
+        <em>μορφοποιούμε</em> κείμενο.
+    </p>
+    
+    <h2>Γιατί είναι σημαντική η σωστή δομή;</h2>
+    
+    <p>
+        Η σωστή χρήση των HTML elements βοηθά στην <mark>προσβασιμότητα</mark> 
+        και στο <abbr title="Search Engine Optimization">SEO</abbr>.
+    </p>
+    
+    <blockquote>
+        "Η απλότητα είναι η απόλυτη πολυπλοκότητα."
+        <cite>— Leonardo da Vinci</cite>
+    </blockquote>
+    
+    <h2>Παράδειγμα Κώδικα</h2>
+    
+    <p>Για να εμφανίσεις μήνυμα στην κονσόλα, χρησιμοποίησε:</p>
+    
+    <pre><code>function sayHello(name) {
+    console.log("Γεια σου, " + name + "!");
+}
+
+sayHello("Κόσμε");</code></pre>
+    
+    <p>
+        Πάτησε <kbd>F12</kbd> για να ανοίξεις τα Developer Tools, 
+        ή <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>I</kbd>.
+    </p>
+    
+    <hr>
+    
+    <h2>Ειδική Προσφορά!</h2>
+    
+    <p class="price">
+        Τιμή: <del>99€</del> <ins>49€</ins> 🎉
+    </p>
+    
+    <h3>Χημική Φόρμουλα</h3>
+    <p>
+        Η χημική φόρμουλα του νερού είναι H<sub>2</sub>O, 
+        ενώ η εξίσωση του Einstein είναι E = mc<sup>2</sup>.
+    </p>
+    
+    <hr>
+    
+    <address>
+        <strong>WebDev Learning Hub</strong><br>
+        Λεωφόρος Τεχνολογίας 123<br>
+        Αθήνα, 10000<br>
+        📧 <a href="mailto:info@webdevhub.gr">info@webdevhub.gr</a><br>
+        📞 <a href="tel:+302101234567">210-123-4567</a>
+    </address>
+</body>
+</html></textarea>
+                        </div>
+                        <div class="preview-container">
+                            <div class="preview-header">
+                                <h4>🖥️ Αποτέλεσμα</h4>
+                            </div>
+                            <iframe id="preview-frame"></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Challenges -->
+                <div class="challenges-section">
+                    <h3>🎯 Προκλήσεις:</h3>
+                    <div class="mini-challenges">
+                        <div class="mini-challenge">1️⃣ Πρόσθεσε μια h3 υποενότητα</div>
+                        <div class="mini-challenge">2️⃣ Πρόσθεσε δικό σου blockquote με αγαπημένο απόφθεγμα</div>
+                        <div class="mini-challenge">3️⃣ Γράψε μια παράγραφο με &lt;strong&gt; και &lt;em&gt;</div>
+                        <div class="mini-challenge">4️⃣ Πρόσθεσε ένα keyboard shortcut με &lt;kbd&gt;</div>
+                        <div class="mini-challenge">5️⃣ Φτιάξε μια τιμή με &lt;del&gt; και &lt;ins&gt;</div>
+                    </div>
+                </div>
+
+                <!-- Quick Reference -->
+                <div class="quick-reference">
+                    <h3>📋 Γρήγορη Αναφορά - Κάνε κλικ για εισαγωγή</h3>
+                    <div class="reference-grid">
+                        <div class="reference-item" onclick="insertTextCode('<h2>Τίτλος</h2>')">
+                            <code>&lt;h2&gt;</code>
+                            <span>Heading</span>
+                        </div>
+                        <div class="reference-item" onclick="insertTextCode('<p>Παράγραφος κειμένου</p>')">
+                            <code>&lt;p&gt;</code>
+                            <span>Paragraph</span>
+                        </div>
+                        <div class="reference-item" onclick="insertTextCode('<strong>σημαντικό</strong>')">
+                            <code>&lt;strong&gt;</code>
+                            <span>Bold</span>
+                        </div>
+                        <div class="reference-item" onclick="insertTextCode('<em>τονισμένο</em>')">
+                            <code>&lt;em&gt;</code>
+                            <span>Emphasis</span>
+                        </div>
+                        <div class="reference-item" onclick="insertTextCode('<mark>highlighted</mark>')">
+                            <code>&lt;mark&gt;</code>
+                            <span>Highlight</span>
+                        </div>
+                        <div class="reference-item" onclick="insertTextCode('<code>κώδικας</code>')">
+                            <code>&lt;code&gt;</code>
+                            <span>Code</span>
+                        </div>
+                        <div class="reference-item" onclick="insertTextCode('<blockquote>\n    &quot;Quote text&quot;\n    <cite>— Author</cite>\n</blockquote>')">
+                            <code>&lt;blockquote&gt;</code>
+                            <span>Quote</span>
+                        </div>
+                        <div class="reference-item" onclick="insertTextCode('<kbd>Ctrl</kbd>')">
+                            <code>&lt;kbd&gt;</code>
+                            <span>Keyboard</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============================================ -->
+            <!-- EXERCISES TAB -->
+            <!-- ============================================ -->
+            <section id="exercises" class="tab-content">
+                <h2>✏️ Ασκήσεις</h2>
+                
+                <!-- Exercise 1 -->
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-number">1</span>
+                        <h3>Αντιστοίχισε τα tags</h3>
+                    </div>
+                    <p>Ποιο tag χρησιμοποιείται για καθεμία περίπτωση;</p>
+                    
+                    <div class="matching-simple">
+                        <div class="match-row">
+                            <span>Κύριος τίτλος σελίδας</span>
+                            <select class="match-select" data-correct="h1">
+                                <option value="">Επίλεξε...</option>
+                                <option value="h1">h1</option>
+                                <option value="p">p</option>
+                                <option value="strong">strong</option>
+                                <option value="title">title</option>
+                            </select>
+                        </div>
+                        <div class="match-row">
+                            <span>Σημαντικό/Έντονο κείμενο</span>
+                            <select class="match-select" data-correct="strong">
+                                <option value="">Επίλεξε...</option>
+                                <option value="b">b</option>
+                                <option value="strong">strong</option>
+                                <option value="em">em</option>
+                                <option value="mark">mark</option>
+                            </select>
+                        </div>
+                        <div class="match-row">
+                            <span>Inline κώδικας</span>
+                            <select class="match-select" data-correct="code">
+                                <option value="">Επίλεξε...</option>
+                                <option value="pre">pre</option>
+                                <option value="code">code</option>
+                                <option value="kbd">kbd</option>
+                                <option value="var">var</option>
+                            </select>
+                        </div>
+                        <div class="match-row">
+                            <span>Μεγάλη παράθεση</span>
+                            <select class="match-select" data-correct="blockquote">
+                                <option value="">Επίλεξε...</option>
+                                <option value="q">q</option>
+                                <option value="cite">cite</option>
+                                <option value="blockquote">blockquote</option>
+                                <option value="quote">quote</option>
+                            </select>
+                        </div>
+                        <div class="match-row">
+                            <span>Keyboard shortcut</span>
+                            <select class="match-select" data-correct="kbd">
+                                <option value="">Επίλεξε...</option>
+                                <option value="key">key</option>
+                                <option value="code">code</option>
+                                <option value="kbd">kbd</option>
+                                <option value="button">button</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button onclick="checkExercise(1)" class="btn btn-primary">✅ Έλεγχος</button>
+                    <div id="result-1" class="exercise-result"></div>
+                </div>
+
+                <!-- Exercise 2 -->
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-number">2</span>
+                        <h3>Συμπλήρωσε τα κενά</h3>
+                    </div>
+                    
+                    <div class="fill-code">
+                        <pre><code>&lt;!-- Κύριος τίτλος --&gt;
+&lt;<input type="text" class="code-input" data-answer="h1" size="2">&gt;Μάθε HTML&lt;/h1&gt;
+
+&lt;!-- Παράγραφος με έντονο κείμενο --&gt;
+&lt;p&gt;Η HTML είναι &lt;<input type="text" class="code-input" data-answer="strong" size="6">&gt;σημαντική&lt;/strong&gt;!&lt;/p&gt;
+
+&lt;!-- Highlighted text --&gt;
+&lt;p&gt;Αυτό είναι &lt;<input type="text" class="code-input" data-answer="mark" size="4">&gt;σημαδεμένο&lt;/mark&gt; κείμενο.&lt;/p&gt;
+
+&lt;!-- Subscript --&gt;
+&lt;p&gt;H&lt;<input type="text" class="code-input" data-answer="sub" size="3">&gt;2&lt;/sub&gt;O είναι το νερό.&lt;/p&gt;</code></pre>
+                    </div>
+                    <button onclick="checkExercise(2)" class="btn btn-primary">✅ Έλεγχος</button>
+                    <div id="result-2" class="exercise-result"></div>
+                </div>
+
+                <!-- Exercise 3 -->
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-number">3</span>
+                        <h3>Γράψε ένα άρθρο</h3>
+                    </div>
+                    <p>Δημιούργησε ένα μικρό άρθρο που περιλαμβάνει:</p>
+                    <ul>
+                        <li>Έναν τίτλο h1</li>
+                        <li>Δύο υπότιτλους h2</li>
+                        <li>Τουλάχιστον 2 παραγράφους</li>
+                        <li>Κείμενο με strong και em</li>
+                        <li>Μια παράθεση (blockquote)</li>
+                    </ul>
+                    
+                    <textarea id="article-exercise" class="code-textarea" rows="15" placeholder="Γράψε HTML εδώ..."></textarea>
+                    <div class="exercise-buttons">
+                        <button onclick="previewArticleExercise()" class="btn btn-success">▶️ Προεπισκόπηση</button>
+                        <button onclick="checkArticleExercise()" class="btn btn-primary">✅ Έλεγχος</button>
+                    </div>
+                    <div id="article-preview" class="exercise-preview"></div>
+                    <div id="result-3" class="exercise-result"></div>
+                </div>
+            </section>
+
+            <!-- ============================================ -->
+            <!-- QUIZ TAB -->
+            <!-- ============================================ -->
+            <section id="quiz" class="tab-content">
+                <h2>🎯 Quiz Στοιχείων Κειμένου</h2>
+                
+                <div class="quiz-intro">
+                    <p>Δοκίμασε τις γνώσεις σου!</p>
+                    <div class="quiz-info">
+                        <span>📊 8 Ερωτήσεις</span>
+                        <span>🎯 Στόχος: 75%</span>
+                    </div>
+                </div>
+
+                <div id="quiz-container"></div>
+                <div id="quiz-results" style="display:none;">
+                    <div class="results-score"><span id="score-number">0</span>/8</div>
+                    <div id="results-message"></div>
+                    <button onclick="retakeQuiz()" class="btn btn-primary">🔄 Ξαναπροσπάθησε</button>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer Navigation -->
+    <footer class="lesson-footer">
+        <div class="container">
+            <div class="footer-nav">
+                <a href="images.html" class="footer-link">← Εικόνες</a>
+                <a href="semantic.html" class="footer-link primary">Semantic HTML →</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="sub-script.js"></script>
+    <script>
+        // Quiz data for text elements
+        const quizData = [
+            {
+                question: "Πόσες φορές πρέπει να χρησιμοποιούμε το <h1> σε μια σελίδα;",
+                options: ["Όσες θέλουμε", "Μόνο 1", "Μόνο 2", "Καθόλου"],
+                correct: 1
+            },
+            {
+                question: "Ποια είναι η διαφορά <strong> και <b>;",
+                options: [
+                    "Καμία διαφορά",
+                    "strong = σημασιολογική σημασία, b = μόνο οπτική",
+                    "b = σημασιολογική, strong = οπτική",
+                    "Το strong δεν υπάρχει"
+                ],
+                correct: 1
+            },
+            {
+                question: "Για μεγάλη παράθεση χρησιμοποιούμε:",
+                options: ["<q>", "<quote>", "<blockquote>", "<cite>"],
+                correct: 2
+            },
+            {
+                question: "Το <br> κάνει:",
+                options: ["Bold text", "Αλλαγή γραμμής", "Break section", "Background reset"],
+                correct: 1
+            },
+            {
+                question: "Για subscript (H₂O) χρησιμοποιούμε:",
+                options: ["<sub>", "<sup>", "<small>", "<down>"],
+                correct: 0
+            },
+            {
+                question: "Το <code> χρησιμοποιείται για:",
+                options: ["Χρώματα", "Κώδικα/τεχνικούς όρους", "Εικόνες", "Links"],
+                correct: 1
+            },
+            {
+                question: "Το <kbd> χρησιμοποιείται για:",
+                options: ["Keyboards for sale", "Keyboard input/shortcuts", "Καραόκε", "Κώδικα"],
+                correct: 1
+            },
+            {
+                question: "Για highlighted κείμενο χρησιμοποιούμε:",
+                options: ["<highlight>", "<hl>", "<mark>", "<yellow>"],
+                correct: 2
+            }
+        ];
+        
+        initQuiz(quizData);
+        
+        // Extra functions for this page
+        function insertTextCode(code) {
+            const editor = document.getElementById('code-editor');
+            const start = editor.selectionStart;
+            const text = editor.value;
+            editor.value = text.substring(0, start) + code + text.substring(start);
+            editor.focus();
+            runCode();
+        }
+        
+        function previewArticleExercise() {
+            const code = document.getElementById('article-exercise').value;
+            const style = `<style>body{font-family:Arial,sans-serif;padding:20px;line-height:1.6;}h1{color:#2563eb;}h2{color:#1e40af;}blockquote{border-left:4px solid #2563eb;padding-left:15px;color:#64748b;font-style:italic;}</style>`;
+            document.getElementById('article-preview').innerHTML = `<iframe srcdoc="${style}${code.replace(/"/g,'&quot;')}" style="width:100%;height:300px;border:1px solid #ddd;border-radius:8px;"></iframe>`;
+        }
+        
+        function checkArticleExercise() {
+            const code = document.getElementById('article-exercise').value.toLowerCase();
+            const result = document.getElementById('result-3');
+            
+            const checks = {
+                h1: code.includes('<h1'),
+                h2: (code.match(/<h2/g) || []).length >= 2,
+                p: (code.match(/<p/g) || []).length >= 2,
+                strong: code.includes('<strong'),
+                em: code.includes('<em'),
+                blockquote: code.includes('<blockquote')
+            };
+            
+            const score = Object.values(checks).filter(Boolean).length;
+            const missing = Object.entries(checks).filter(([k, v]) => !v).map(([k]) => k);
+            
+            if (score === 6) {
+                result.innerHTML = '🎉 Τέλειο άρθρο! Έχεις όλα τα στοιχεία!';
+                result.className = 'exercise-result success';
+            } else {
+                result.innerHTML = `Έχεις ${score}/6 στοιχεία. Λείπουν: ${missing.join(', ')}`;
+                result.className = 'exercise-result error';
+            }
+        }
+        
+        // Check exercises
+        function checkExercise(num) {
+            const result = document.getElementById(`result-${num}`);
+            
+            if (num === 1 || num === 2) {
+                // For matching and fill-in exercises
+                let correct = 0;
+                let total = 0;
+                
+                // Check code inputs
+                const inputs = document.querySelectorAll(`#exercises .exercise-item:nth-child(${num}) .code-input`);
+                inputs.forEach(input => {
+                    total++;
+                    const answer = input.dataset.answer.toLowerCase();
+                    const value = input.value.trim().toLowerCase();
+                    
+                    if (value === answer) {
+                        input.classList.add('correct');
+                        input.classList.remove('incorrect');
+                        correct++;
+                    } else if (value) {
+                        input.classList.add('incorrect');
+                        input.classList.remove('correct');
+                    }
+                });
+                
+                // Check select elements
+                const selects = document.querySelectorAll(`#exercises .exercise-item:nth-child(${num}) .match-select`);
+                selects.forEach(sel => {
+                    total++;
+                    if (sel.value === sel.dataset.correct) {
+                        sel.classList.add('correct');
+                        sel.classList.remove('incorrect');
+                        correct++;
+                    } else if (sel.value) {
+                        sel.classList.add('incorrect');
+                        sel.classList.remove('correct');
+                    }
+                });
+                
+                if (total > 0) {
+                    result.innerHTML = correct === total ? '🎉 Όλα σωστά!' : `Σωστά: ${correct}/${total}`;
+                    result.className = 'exercise-result ' + (correct === total ? 'success' : 'error');
+                }
+            }
+        }
+    </script>
+</body>
+</html>

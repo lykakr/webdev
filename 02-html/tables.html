@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Πίνακες HTML | WebDev Learning Hub</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/lesson.css">
+</head>
+<body>
+    <nav class="lesson-nav">
+        <div class="container">
+            <a href="../index.html" class="nav-logo"><span>🚀</span> WebDev Hub</a>
+            <div class="nav-breadcrumb">
+                <a href="../index.html">Αρχική</a> / <a href="index.html">HTML</a> / <span class="current">Πίνακες</span>
+            </div>
+            <div class="nav-actions">
+                <button onclick="takeFullScreenshot()" class="btn-icon">📸</button>
+                <button onclick="exportToPDF()" class="btn-icon">📄</button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="lesson-header html-header">
+        <div class="container">
+            <div class="lesson-badge">HTML Tables</div>
+            <h1>📊 Πίνακες HTML</h1>
+            <p class="lesson-subtitle">Οργάνωση δεδομένων σε γραμμές και στήλες</p>
+        </div>
+    </header>
+
+    <main class="lesson-content">
+        <div class="container">
+            
+            <div class="tabs">
+                <button class="tab-btn active" onclick="showTab('theory')">📖 Θεωρία</button>
+                <button class="tab-btn" onclick="showTab('interactive')">🎮 Editor</button>
+                <button class="tab-btn" onclick="showTab('exercises')">✏️ Ασκήσεις</button>
+                <button class="tab-btn" onclick="showTab('quiz')">🎯 Quiz</button>
+            </div>
+
+            <!-- THEORY -->
+            <section id="theory" class="tab-content active">
+                <div class="theory-section">
+                    <h2>📊 Δομή Πίνακα</h2>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">💡</div>
+                        <div class="info-content">
+                            <p>Οι πίνακες χρησιμοποιούνται για να εμφανίσουμε <strong>δεδομένα</strong> σε οργανωμένη μορφή γραμμών και στηλών.</p>
+                        </div>
+                    </div>
+
+                    <div class="table-structure">
+                        <div class="code-block-wrapper">
+                            <div class="code-header"><span>Βασική Δομή Πίνακα</span></div>
+                            <pre class="code-block"><code>&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Κεφαλίδα 1&lt;/th&gt;
+            &lt;th&gt;Κεφαλίδα 2&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Δεδομένα 1&lt;/td&gt;
+            &lt;td&gt;Δεδομένα 2&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+                        </div>
+                        
+                        <div class="table-demo">
+                            <table class="demo-table">
+                                <thead>
+                                    <tr><th>Κεφαλίδα 1</th><th>Κεφαλίδα 2</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Δεδομένα 1</td><td>Δεδομένα 2</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="theory-section">
+                    <h2>🏷️ Table Tags</h2>
+                    
+                    <div class="tags-explanation">
+                        <div class="tag-box">
+                            <code>&lt;table&gt;</code>
+                            <p>Ορίζει τον πίνακα</p>
+                        </div>
+                        <div class="tag-box">
+                            <code>&lt;thead&gt;</code>
+                            <p>Κεφαλίδα πίνακα</p>
+                        </div>
+                        <div class="tag-box">
+                            <code>&lt;tbody&gt;</code>
+                            <p>Σώμα πίνακα</p>
+                        </div>
+                        <div class="tag-box">
+                            <code>&lt;tfoot&gt;</code>
+                            <p>Υποσέλιδο πίνακα</p>
+                        </div>
+                        <div class="tag-box">
+                            <code>&lt;tr&gt;</code>
+                            <p>Table Row (γραμμή)</p>
+                        </div>
+                        <div class="tag-box">
+                            <code>&lt;th&gt;</code>
+                            <p>Table Header (κεφαλίδα κελιού)</p>
+                        </div>
+                        <div class="tag-box">
+                            <code>&lt;td&gt;</code>
+                            <p>Table Data (κελί δεδομένων)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="theory-section">
+                    <h2>🔗 Colspan & Rowspan</h2>
+                    
+                    <p>Μπορούμε να συγχωνεύσουμε κελιά:</p>
+                    
+                    <div class="span-examples">
+                        <div class="span-example">
+                            <h4>colspan (οριζόντια)</h4>
+                            <code>&lt;td colspan="2"&gt;</code>
+                            <table class="demo-table small">
+                                <tr><td colspan="2" style="background:#dbeafe;">Colspan 2</td></tr>
+                                <tr><td>A</td><td>B</td></tr>
+                            </table>
+                        </div>
+                        
+                        <div class="span-example">
+                            <h4>rowspan (κάθετα)</h4>
+                            <code>&lt;td rowspan="2"&gt;</code>
+                            <table class="demo-table small">
+                                <tr><td rowspan="2" style="background:#dbeafe;">Rowspan</td><td>A</td></tr>
+                                <tr><td>B</td></tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="theory-section">
+                    <h2>📋 Παράδειγμα Πλήρους Πίνακα</h2>
+                    
+                    <table class="demo-table full-example">
+                        <caption>📚 Βαθμολογία Μαθητών</caption>
+                        <thead>
+                            <tr>
+                                <th>Όνομα</th>
+                                <th>Μαθηματικά</th>
+                                <th>Φυσική</th>
+                                <th>Πληροφορική</th>
+                                <th>Μ.Ο.</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Γιάννης</td>
+                                <td>18</td>
+                                <td>17</td>
+                                <td>20</td>
+                                <td><strong>18.3</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Μαρία</td>
+                                <td>19</td>
+                                <td>18</td>
+                                <td>19</td>
+                                <td><strong>18.7</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Νίκος</td>
+                                <td>16</td>
+                                <td>15</td>
+                                <td>18</td>
+                                <td><strong>16.3</strong></td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th>Μέσος Όρος</th>
+                                <td>17.7</td>
+                                <td>16.7</td>
+                                <td>19</td>
+                                <td><strong>17.8</strong></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+
+                <div class="next-section">
+                    <button class="btn btn-primary" onclick="showTab('interactive')">🎮 Δοκίμασέ το →</button>
+                </div>
+            </section>
+
+            <!-- INTERACTIVE -->
+            <section id="interactive" class="tab-content">
+                <h2>🎮 Δημιούργησε Πίνακες</h2>
+                
+                <div class="editor-container">
+                    <div class="editor-header">
+                        <h3>📝 Editor</h3>
+                        <div class="editor-actions">
+                            <button onclick="runCode()" class="btn btn-success">▶️ Εκτέλεση</button>
+                            <button onclick="resetEditor()" class="btn btn-secondary">🔄 Reset</button>
+                        </div>
+                    </div>
+                    
+                    <div class="editor-main single-editor">
+                        <div class="editor-panel active">
+                            <textarea id="code-editor" spellcheck="false"><!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <title>Πίνακες HTML</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f0f4f8;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        caption {
+            padding: 15px;
+            font-size: 1.3em;
+            font-weight: bold;
+            background: #2563eb;
+            color: white;
+        }
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        th {
+            background: #1e40af;
+            color: white;
+        }
+        tr:hover {
+            background: #f0f4f8;
+        }
+        tfoot {
+            background: #f8fafc;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <caption>🛒 Λίστα Προϊόντων</caption>
+        <thead>
+            <tr>
+                <th>Προϊόν</th>
+                <th>Κατηγορία</th>
+                <th>Τιμή</th>
+                <th>Απόθεμα</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Laptop</td>
+                <td>Ηλεκτρονικά</td>
+                <td>€899</td>
+                <td>15</td>
+            </tr>
+            <tr>
+                <td>Ακουστικά</td>
+                <td>Ηλεκτρονικά</td>
+                <td>€49</td>
+                <td>50</td>
+            </tr>
+            <tr>
+                <td>Πληκτρολόγιο</td>
+                <td>Περιφερειακά</td>
+                <td>€79</td>
+                <td>25</td>
+            </tr>
+            <tr>
+                <td>Ποντίκι</td>
+                <td>Περιφερειακά</td>
+                <td>€29</td>
+                <td>40</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2">Σύνολο Προϊόντων:</td>
+                <td colspan="2">4</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html></textarea>
+                        </div>
+                        <div class="preview-container">
+                            <div class="preview-header"><h4>🖥️ Αποτέλεσμα</h4></div>
+                            <iframe id="preview-frame"></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="challenges-section">
+                    <h3>🎯 Προκλήσεις:</h3>
+                    <div class="mini-challenges">
+                        <div class="mini-challenge">1️⃣ Πρόσθεσε μια νέα στήλη "Έκπτωση"</div>
+                        <div class="mini-challenge">2️⃣ Πρόσθεσε 2 νέα προϊόντα</div>
+                        <div class="mini-challenge">3️⃣ Χρησιμοποίησε colspan στο tfoot</div>
+                        <div class="mini-challenge">4️⃣ Άλλαξε τα χρώματα του πίνακα</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- EXERCISES -->
+            <section id="exercises" class="tab-content">
+                <h2>✏️ Ασκήσεις</h2>
+                
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-number">1</span>
+                        <h3>Ποιο tag κάνει τι;</h3>
+                    </div>
+                    
+                    <div class="matching-simple">
+                        <div class="match-row">
+                            <code>&lt;tr&gt;</code>
+                            <select class="match-select" data-correct="row">
+                                <option value="">Επίλεξε...</option>
+                                <option value="row">Γραμμή</option>
+                                <option value="cell">Κελί</option>
+                                <option value="header">Κεφαλίδα</option>
+                            </select>
+                        </div>
+                        <div class="match-row">
+                            <code>&lt;td&gt;</code>
+                            <select class="match-select" data-correct="cell">
+                                <option value="">Επίλεξε...</option>
+                                <option value="row">Γραμμή</option>
+                                <option value="cell">Κελί</option>
+                                <option value="header">Κεφαλίδα</option>
+                            </select>
+                        </div>
+                        <div class="match-row">
+                            <code>&lt;th&gt;</code>
+                            <select class="match-select" data-correct="header">
+                                <option value="">Επίλεξε...</option>
+                                <option value="row">Γραμμή</option>
+                                <option value="cell">Κελί</option>
+                                <option value="header">Κεφαλίδα κελιού</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button onclick="checkExercise(1)" class="btn btn-primary">✅ Έλεγχος</button>
+                    <div id="result-1" class="exercise-result"></div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-number">2</span>
+                        <h3>Φτιάξε πίνακα ωρολογίου</h3>
+                    </div>
+                    <p>Δημιούργησε πίνακα με: Ώρα, Δευτέρα, Τρίτη, Τετάρτη και 3 γραμμές μαθημάτων</p>
+                    
+                    <textarea id="table-exercise" class="code-textarea" rows="12" placeholder="<table>...</table>"></textarea>
+                    <div class="exercise-buttons">
+                        <button onclick="previewTableExercise()" class="btn btn-success">▶️ Προεπισκόπηση</button>
+                        <button onclick="checkTableExercise()" class="btn btn-primary">✅ Έλεγχος</button>
+                    </div>
+                    <div id="table-preview" class="exercise-preview"></div>
+                    <div id="result-2" class="exercise-result"></div>
+                </div>
+            </section>
+
+            <!-- QUIZ -->
+            <section id="quiz" class="tab-content">
+                <h2>🎯 Quiz</h2>
+                <div id="quiz-container"></div>
+                <div id="quiz-results" style="display:none;">
+                    <div class="results-score"><span id="score-number">0</span>/5</div>
+                    <div id="results-message"></div>
+                    <button onclick="retakeQuiz()" class="btn btn-primary">🔄 Ξανά</button>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="lesson-footer">
+        <div class="container">
+            <div class="footer-nav">
+                <a href="forms.html" class="footer-link">← Φόρμες</a>
+                <a href="lists.html" class="footer-link primary">Λίστες →</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="sub-script.js"></script>
+    <script>
+        const quizData = [
+            {
+                question: "Ποιο tag δημιουργεί πίνακα;",
+                options: ["<tbl>", "<table>", "<grid>", "<tab>"],
+                correct: 1
+            },
+            {
+                question: "Το <tr> σημαίνει:",
+                options: ["Table Row", "Table Right", "Table Reset", "Text Row"],
+                correct: 0
+            },
+            {
+                question: "Η διαφορά <th> και <td>:",
+                options: ["Καμία", "th=header, td=data", "th=κόκκινο", "td=header"],
+                correct: 1
+            },
+            {
+                question: "Το colspan='3' κάνει:",
+                options: ["3 στήλες", "Συγχωνεύει 3 κελιά οριζόντια", "3 γραμμές", "Τίποτα"],
+                correct: 1
+            },
+            {
+                question: "Το <thead> περιέχει:",
+                options: ["Δεδομένα", "Κεφαλίδες στηλών", "Υποσέλιδο", "Εικόνες"],
+                correct: 1
+            }
+        ];
+        initQuiz(quizData);
+    </script>
+</body>
+</html>

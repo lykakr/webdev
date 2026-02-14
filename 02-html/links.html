@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Σύνδεσμοι HTML | WebDev Learning Hub</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/lesson.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="lesson-nav">
+        <div class="container">
+            <a href="../index.html" class="nav-logo"><span>🚀</span> WebDev Hub</a>
+            <div class="nav-breadcrumb">
+                <a href="../index.html">Αρχική</a> / <a href="index.html">HTML</a> / <span class="current">Σύνδεσμοι</span>
+            </div>
+            <div class="nav-actions">
+                <button onclick="takeFullScreenshot()" class="btn-icon">📸</button>
+                <button onclick="exportToPDF()" class="btn-icon">📄</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="lesson-header html-header">
+        <div class="container">
+            <div class="lesson-badge">HTML Links</div>
+            <h1>🔗 Σύνδεσμοι HTML</h1>
+            <p class="lesson-subtitle">Συνδέοντας σελίδες και πόρους στο Web</p>
+            <div class="lesson-meta">
+                <span class="meta-item">⏱️ ~25 λεπτά</span>
+                <span class="meta-item">📊 Βασικό</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="lesson-content">
+        <div class="container">
+            
+            <!-- Tabs -->
+            <div class="tabs">
+                <button class="tab-btn active" onclick="showTab('theory')">📖 Θεωρία</button>
+                <button class="tab-btn" onclick="showTab('interactive')">🎮 Editor</button>
+                <button class="tab-btn" onclick="showTab('exercises')">✏️ Ασκήσεις</button>
+                <button class="tab-btn" onclick="showTab('quiz')">🎯 Quiz</button>
+            </div>
+
+            <!-- THEORY TAB -->
+            <section id="theory" class="tab-content active">
+                
+                <!-- What are Links -->
+                <div class="theory-section">
+                    <h2>🔗 Τι είναι οι Σύνδεσμοι;</h2>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">💡</div>
+                        <div class="info-content">
+                            <p>Οι <strong>σύνδεσμοι (links)</strong> είναι η βάση του World Wide Web! Επιτρέπουν στους χρήστες να πλοηγούνται από σελίδα σε σελίδα, να κατεβάζουν αρχεία ή να στέλνουν email.</p>
+                        </div>
+                    </div>
+
+                    <div class="code-block-wrapper">
+                        <div class="code-header">
+                            <span>Βασική σύνταξη</span>
+                            <button onclick="copyCode(this)" class="copy-btn">📋 Αντιγραφή</button>
+                        </div>
+                        <pre class="code-block"><code>&lt;a href="https://www.google.com"&gt;Πήγαινε στο Google&lt;/a&gt;</code></pre>
+                    </div>
+
+                    <div class="anatomy-breakdown">
+                        <h3>🔬 Ανάλυση του &lt;a&gt; tag:</h3>
+                        <div class="anatomy-visual-link">
+                            <span class="part tag">&lt;a</span>
+                            <span class="part attr">href="URL"</span>
+                            <span class="part tag">&gt;</span>
+                            <span class="part content">Κείμενο Συνδέσμου</span>
+                            <span class="part tag">&lt;/a&gt;</span>
+                        </div>
+                        <div class="anatomy-legend">
+                            <div class="legend-item">
+                                <span class="color-box tag"></span>
+                                <span>Tag</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="color-box attr"></span>
+                                <span>Attribute (href = hypertext reference)</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="color-box content"></span>
+                                <span>Ορατό κείμενο (clickable)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Types of Links -->
+                <div class="theory-section">
+                    <h2>📂 Τύποι Συνδέσμων</h2>
+                    
+                    <div class="link-types-grid">
+                        <!-- External Links -->
+                        <div class="link-type-card">
+                            <div class="link-type-header external">
+                                <span class="icon">🌐</span>
+                                <h3>External Links</h3>
+                            </div>
+                            <p>Σύνδεσμοι σε άλλες ιστοσελίδες</p>
+                            <div class="code-example-small">
+                                <code>&lt;a href="https://google.com"&gt;Google&lt;/a&gt;</code>
+                            </div>
+                            <div class="link-demo">
+                                <a href="https://google.com" target="_blank">Google ↗</a>
+                            </div>
+                        </div>
+
+                        <!-- Internal Links -->
+                        <div class="link-type-card">
+                            <div class="link-type-header internal">
+                                <span class="icon">📁</span>
+                                <h3>Internal Links</h3>
+                            </div>
+                            <p>Σύνδεσμοι σε σελίδες του ίδιου site</p>
+                            <div class="code-example-small">
+                                <code>&lt;a href="about.html"&gt;Σχετικά&lt;/a&gt;</code>
+                            </div>
+                            <div class="link-demo">
+                                <a href="#">Σχετικά με εμάς</a>
+                            </div>
+                        </div>
+
+                        <!-- Anchor Links -->
+                        <div class="link-type-card">
+                            <div class="link-type-header anchor">
+                                <span class="icon">⚓</span>
+                                <h3>Anchor Links</h3>
+                            </div>
+                            <p>Σύνδεσμοι σε σημείο της ίδιας σελίδας</p>
+                            <div class="code-example-small">
+                                <code>&lt;a href="#section2"&gt;Ενότητα 2&lt;/a&gt;</code>
+                            </div>
+                            <div class="link-demo">
+                                <a href="#types">Πήγαινε στους τύπους ↓</a>
+                            </div>
+                        </div>
+
+                        <!-- Email Links -->
+                        <div class="link-type-card">
+                            <div class="link-type-header email">
+                                <span class="icon">📧</span>
+                                <h3>Email Links</h3>
+                            </div>
+                            <p>Ανοίγει το email client</p>
+                            <div class="code-example-small">
+                                <code>&lt;a href="mailto:info@example.com"&gt;Email&lt;/a&gt;</code>
+                            </div>
+                            <div class="link-demo">
+                                <a href="mailto:test@example.com">Στείλε Email 📧</a>
+                            </div>
+                        </div>
+
+                        <!-- Phone Links -->
+                        <div class="link-type-card">
+                            <div class="link-type-header phone">
+                                <span class="icon">📞</span>
+                                <h3>Phone Links</h3>
+                            </div>
+                            <p>Κλήση σε κινητά</p>
+                            <div class="code-example-small">
+                                <code>&lt;a href="tel:+302101234567"&gt;Κάλεσε&lt;/a&gt;</code>
+                            </div>
+                            <div class="link-demo">
+                                <a href="tel:+302101234567">📞 210-123-4567</a>
+                            </div>
+                        </div>
+
+                        <!-- Download Links -->
+                        <div class="link-type-card">
+                            <div class="link-type-header download">
+                                <span class="icon">📥</span>
+                                <h3>Download Links</h3>
+                            </div>
+                            <p>Κατέβασμα αρχείων</p>
+                            <div class="code-example-small">
+                                <code>&lt;a href="file.pdf" download&gt;Κατέβασε&lt;/a&gt;</code>
+                            </div>
+                            <div class="link-demo">
+                                <a href="#" download>📥 Κατέβασε PDF</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Important Attributes -->
+                <div class="theory-section" id="types">
+                    <h2>⚙️ Σημαντικά Attributes</h2>
+                    
+                    <div class="attributes-table-container">
+                        <table class="styled-table">
+                            <thead>
+                                <tr>
+                                    <th>Attribute</th>
+                                    <th>Τιμές</th>
+                                    <th>Περιγραφή</th>
+                                    <th>Παράδειγμα</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>href</code></td>
+                                    <td>URL</td>
+                                    <td>Ο προορισμός του συνδέσμου</td>
+                                    <td><code>href="page.html"</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>target</code></td>
+                                    <td>_blank, _self, _parent, _top</td>
+                                    <td>Πού ανοίγει ο σύνδεσμος</td>
+                                    <td><code>target="_blank"</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>title</code></td>
+                                    <td>Κείμενο</td>
+                                    <td>Tooltip όταν περνάει ο κέρσορας</td>
+                                    <td><code>title="Περισσότερα..."</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>download</code></td>
+                                    <td>filename (προαιρετικό)</td>
+                                    <td>Κατέβασμα αντί για άνοιγμα</td>
+                                    <td><code>download="report.pdf"</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>rel</code></td>
+                                    <td>noopener, nofollow, κλπ</td>
+                                    <td>Σχέση με τον προορισμό</td>
+                                    <td><code>rel="noopener"</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="info-card warning">
+                        <div class="info-icon">⚠️</div>
+                        <div class="info-content">
+                            <p><strong>Σημαντικό:</strong> Όταν χρησιμοποιείς <code>target="_blank"</code>, πρόσθεσε πάντα <code>rel="noopener noreferrer"</code> για ασφάλεια!</p>
+                            <code>&lt;a href="..." target="_blank" rel="noopener noreferrer"&gt;</code>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Relative vs Absolute Paths -->
+                <div class="theory-section">
+                    <h2>📍 Σχετικές vs Απόλυτες Διαδρομές</h2>
+                    
+                    <div class="paths-comparison">
+                        <div class="path-type">
+                            <h3>🌐 Απόλυτη Διαδρομή (Absolute)</h3>
+                            <p>Πλήρης URL με πρωτόκολλο</p>
+                            <div class="code-example-small">
+                                <code>https://www.example.com/page.html</code>
+                            </div>
+                            <ul>
+                                <li>✅ Για εξωτερικά sites</li>
+                                <li>✅ Λειτουργεί παντού</li>
+                                <li>❌ Μεγαλύτερος κώδικας</li>
+                            </ul>
+                        </div>
+
+                        <div class="path-type">
+                            <h3>📁 Σχετική Διαδρομή (Relative)</h3>
+                            <p>Σε σχέση με την τρέχουσα σελίδα</p>
+                            <div class="path-examples">
+                                <div class="path-ex">
+                                    <code>page.html</code>
+                                    <span>Ίδιος φάκελος</span>
+                                </div>
+                                <div class="path-ex">
+                                    <code>images/photo.jpg</code>
+                                    <span>Υποφάκελος</span>
+                                </div>
+                                <div class="path-ex">
+                                    <code>../index.html</code>
+                                    <span>Προηγούμενος φάκελος</span>
+                                </div>
+                                <div class="path-ex">
+                                    <code>/about.html</code>
+                                    <span>Από τη ρίζα του site</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="folder-structure-demo">
+                        <h4>📁 Παράδειγμα Δομής Φακέλων:</h4>
+                        <pre class="folder-tree">
+website/
+├── index.html          ← Είσαι εδώ
+├── about.html
+├── css/
+│   └── styles.css
+├── images/
+│   └── logo.png
+└── pages/
+    ├── contact.html
+    └── services.html
+                        </pre>
+                        <div class="path-from-index">
+                            <p>Από το <code>index.html</code>:</p>
+                            <ul>
+                                <li><code>about.html</code> → about.html</li>
+                                <li><code>css/styles.css</code> → CSS αρχείο</li>
+                                <li><code>pages/contact.html</code> → Επικοινωνία</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Example -->
+                <div class="theory-section">
+                    <h2>🧭 Παράδειγμα Navigation Menu</h2>
+                    
+                    <div class="code-block-wrapper">
+                        <div class="code-header"><span>Navigation Menu</span></div>
+                        <pre class="code-block"><code>&lt;nav&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="index.html"&gt;Αρχική&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="about.html"&gt;Σχετικά&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="services.html"&gt;Υπηρεσίες&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="contact.html"&gt;Επικοινωνία&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+                    </div>
+                    
+                    <div class="nav-demo">
+                        <nav class="demo-nav">
+                            <a href="#">Αρχική</a>
+                            <a href="#">Σχετικά</a>
+                            <a href="#">Υπηρεσίες</a>
+                            <a href="#">Επικοινωνία</a>
+                        </nav>
+                    </div>
+                </div>
+
+                <!-- Summary -->
+                <div class="theory-section">
+                    <h2>📋 Ανακεφαλαίωση</h2>
+                    
+                    <div class="summary-box">
+                        <div class="summary-item">
+                            <span class="check">✅</span>
+                            <p>Το <code>&lt;a&gt;</code> tag δημιουργεί συνδέσμους</p>
+                        </div>
+                        <div class="summary-item">
+                            <span class="check">✅</span>
+                            <p>Το <code>href</code> ορίζει τον προορισμό</p>
+                        </div>
+                        <div class="summary-item">
+                            <span class="check">✅</span>
+                            <p><code>target="_blank"</code> ανοίγει σε νέα καρτέλα</p>
+                        </div>
+                        <div class="summary-item">
+                            <span class="check">✅</span>
+                            <p><code>mailto:</code> και <code>tel:</code> για email/τηλέφωνο</p>
+                        </div>
+                        <div class="summary-item">
+                            <span class="check">✅</span>
+                            <p><code>#id</code> για anchor links στην ίδια σελίδα</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="next-section">
+                    <button class="btn btn-primary" onclick="showTab('interactive')">🎮 Πειραματίσου →</button>
+                </div>
+            </section>
+
+            <!-- INTERACTIVE TAB -->
+            <section id="interactive" class="tab-content">
+                <h2>🎮 Δημιούργησε Συνδέσμους</h2>
+                
+                <div class="editor-container">
+                    <div class="editor-header">
+                        <h3>📝 Editor</h3>
+                        <div class="editor-actions">
+                            <button onclick="runCode()" class="btn btn-success">▶️ Εκτέλεση</button>
+                            <button onclick="resetEditor()" class="btn btn-secondary">🔄 Reset</button>
+                            <button onclick="saveCode()" class="btn btn-primary">💾 Αποθήκευση</button>
+                        </div>
+                    </div>
+                    
+                    <div class="editor-main single-editor">
+                        <div class="editor-panel active">
+                            <textarea id="code-editor" spellcheck="false"><!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <title>Σύνδεσμοι HTML</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            padding: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            margin: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+        h1 { color: #2563eb; text-align: center; }
+        h2 { color: #1e40af; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; }
+        
+        /* Navigation Styles */
+        nav {
+            background: #1e293b;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        nav a:hover {
+            background: #2563eb;
+        }
+        
+        /* Link Styles */
+        .links-section {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .links-section a {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+        .links-section a:hover {
+            background: #1e40af;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.4);
+        }
+        
+        /* Special Links */
+        .email-link { background: #ef4444 !important; }
+        .phone-link { background: #10b981 !important; }
+        .download-link { background: #f59e0b !important; }
+        
+        /* Anchor Section */
+        .section {
+            padding: 40px 20px;
+            margin: 20px 0;
+            background: #f0f4f8;
+            border-radius: 10px;
+            border-left: 4px solid #2563eb;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔗 Παραδείγματα Συνδέσμων</h1>
+        
+        <!-- Navigation Menu -->
+        <nav>
+            <a href="#section1">Ενότητα 1</a>
+            <a href="#section2">Ενότητα 2</a>
+            <a href="#section3">Ενότητα 3</a>
+            <a href="#contact">Επικοινωνία</a>
+        </nav>
+        
+        <!-- External Links -->
+        <h2>🌐 Εξωτερικοί Σύνδεσμοι</h2>
+        <div class="links-section">
+            <a href="https://www.google.com" target="_blank" rel="noopener">Google</a>
+            <a href="https://www.wikipedia.org" target="_blank" rel="noopener">Wikipedia</a>
+            <a href="https://www.github.com" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        
+        <!-- Special Links -->
+        <h2>📧 Ειδικοί Σύνδεσμοι</h2>
+        <div class="links-section">
+            <a href="mailto:info@example.com" class="email-link">📧 Στείλε Email</a>
+            <a href="tel:+302101234567" class="phone-link">📞 Κάλεσέ μας</a>
+            <a href="#" download="sample.pdf" class="download-link">📥 Κατέβασε PDF</a>
+        </div>
+        
+        <!-- Anchor Sections -->
+        <div class="section" id="section1">
+            <h2>📌 Ενότητα 1</h2>
+            <p>Αυτή είναι η πρώτη ενότητα. Πάτησε τους συνδέσμους στο menu για να δεις πώς δουλεύουν τα anchor links!</p>
+        </div>
+        
+        <div class="section" id="section2">
+            <h2>📌 Ενότητα 2</h2>
+            <p>Αυτή είναι η δεύτερη ενότητα. Τα anchor links χρησιμοποιούν το # ακολουθούμενο από το id του στοιχείου.</p>
+        </div>
+        
+        <div class="section" id="section3">
+            <h2>📌 Ενότητα 3</h2>
+            <p>Αυτή είναι η τρίτη ενότητα. Πολύ χρήσιμο για one-page websites!</p>
+        </div>
+        
+        <div class="section" id="contact">
+            <h2>📞 Επικοινωνία</h2>
+            <p>Email: <a href="mailto:info@example.com">info@example.com</a></p>
+            <p>Τηλ: <a href="tel:+302101234567">210-123-4567</a></p>
+            <p><a href="#top">↑ Πίσω στην κορυφή</a></p>
+        </div>
+    </div>
+</body>
+</html></textarea>
+                        </div>
+                        <div class="preview-container">
+                            <div class="preview-header">
+                                <h4>🖥️ Αποτέλεσμα</h4>
+                            </div>
+                            <iframe id="preview-frame"></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Challenges -->
+                <div class="challenges-section">
+                    <h3>🎯 Προκλήσεις:</h3>
+                    <div class="mini-challenges">
+                        <div class="mini-challenge">1️⃣ Πρόσθεσε σύνδεσμο στο YouTube</div>
+                        <div class="mini-challenge">2️⃣ Φτιάξε σύνδεσμο που ανοίγει σε νέα καρτέλα</div>
+                        <div class="mini-challenge">3️⃣ Δημιούργησε ακόμα μια ενότητα (#section4)</div>
+                        <div class="mini-challenge">4️⃣ Πρόσθεσε title attribute με tooltip</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- EXERCISES TAB -->
+            <section id="exercises" class="tab-content">
+                <h2>✏️ Ασκήσεις</h2>
+                
+                <!-- Exercise 1 -->
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-number">1</span>
+                        <h3>Συμπλήρωσε τα κενά</h3>
+                    </div>
+                    <p>Συμπλήρωσε τα attributes για τους συνδέσμους:</p>
+                    
+                    <div class="fill-code">
+                        <pre><code>&lt;!-- Εξωτερικός σύνδεσμος σε νέα καρτέλα --&gt;
+&lt;a <input type="text" class="code-input" data-answer="href" size="4">="https://google.com" <input type="text" class="code-input" data-answer="target" size="6">="_blank"&gt;Google&lt;/a&gt;
+
+&lt;!-- Email σύνδεσμος --&gt;
+&lt;a href="<input type="text" class="code-input" data-answer="mailto" size="6">:info@test.com"&gt;Email&lt;/a&gt;
+
+&lt;!-- Anchor link --&gt;
+&lt;a href="<input type="text" class="code-input" data-answer="#" size="1">about"&gt;Σχετικά&lt;/a&gt;</code></pre>
+                    </div>
+                    <button onclick="checkExercise(1)" class="btn btn-primary">✅ Έλεγχος</button>
+                    <div id="result-1" class="exercise-result"></div>
+                </div>
+
+                <!-- Exercise 2 -->
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-number">2</span>
+                        <h3>Αντιστοίχισε τον τύπο συνδέσμου</h3>
+                    </div>
+                    
+                    <div class="matching-simple">
+                        <div class="match-row">
+                            <code>href="https://..."</code>
+                            <select class="match-select" data-correct="external">
+                                <option value="">Επίλεξε...</option>
+                                <option value="external">Εξωτερικός σύνδεσμος</option>
+                                <option value="email">Email σύνδεσμος</option>
+                                <option value="anchor">Anchor link</option>
+                                <option value="phone">Τηλέφωνο</option>
+                            </select>
+                        </div>
+                        <div class="match-row">
+                            <code>href="mailto:..."</code>
+                            <select class="match-select" data-correct="email">
+                                <option value="">Επίλεξε...</option>
+                                <option value="external">Εξωτερικός σύνδεσμος</option>
+                                <option value="email">Email σύνδεσμος</option>
+                                <option value="anchor">Anchor link</option>
+                                <option value="phone">Τηλέφωνο</option>
+                            </select>
+                        </div>
+                        <div class="match-row">
+                            <code>href="#section"</code>
+                            <select class="match-select" data-correct="anchor">
+                                <option value="">Επίλεξε...</option>
+                                <option value="external">Εξωτερικός σύνδεσμος</option>
+                                <option value="email">Email σύνδεσμος</option>
+                                <option value="anchor">Anchor link</option>
+                                <option value="phone">Τηλέφωνο</option>
+                            </select>
+                        </div>
+                        <div class="match-row">
+                            <code>href="tel:..."</code>
+                            <select class="match-select" data-correct="phone">
+                                <option value="">Επίλεξε...</option>
+                                <option value="external">Εξωτερικός σύνδεσμος</option>
+                                <option value="email">Email σύνδεσμος</option>
+                                <option value="anchor">Anchor link</option>
+                                <option value="phone">Τηλέφωνο</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button onclick="checkExercise(2)" class="btn btn-primary">✅ Έλεγχος</button>
+                    <div id="result-2" class="exercise-result"></div>
+                </div>
+
+                <!-- Exercise 3 -->
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-number">3</span>
+                        <h3>Γράψε Navigation Menu</h3>
+                    </div>
+                    <p>Δημιούργησε ένα navigation menu με 4 συνδέσμους: Αρχική, Υπηρεσίες, Σχετικά, Επικοινωνία</p>
+                    
+                    <textarea id="nav-exercise" class="code-textarea" rows="8" placeholder="<nav>
+    ...
+</nav>"></textarea>
+                    <div class="exercise-buttons">
+                        <button onclick="previewNavExercise()" class="btn btn-success">▶️ Προεπισκόπηση</button>
+                        <button onclick="checkNavExercise()" class="btn btn-primary">✅ Έλεγχος</button>
+                    </div>
+                    <div id="nav-preview" class="exercise-preview"></div>
+                    <div id="result-3" class="exercise-result"></div>
+                </div>
+            </section>
+
+            <!-- QUIZ TAB -->
+            <section id="quiz" class="tab-content">
+                <h2>🎯 Quiz Συνδέσμων</h2>
+                <div id="quiz-container"></div>
+                <div id="quiz-results" style="display:none;">
+                    <div class="results-score"><span id="score-number">0</span>/5</div>
+                    <div id="results-message"></div>
+                    <button onclick="retakeQuiz()" class="btn btn-primary">🔄 Ξανά</button>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer Navigation -->
+    <footer class="lesson-footer">
+        <div class="container">
+            <div class="footer-nav">
+                <a href="lists.html" class="footer-link">← Λίστες</a>
+                <a href="images.html" class="footer-link primary">Εικόνες →</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="sub-script.js"></script>
+    <script>
+        // Quiz data for links
+        const quizData = [
+            {
+                question: "Ποιο tag δημιουργεί σύνδεσμο;",
+                options: ["<link>", "<a>", "<href>", "<url>"],
+                correct: 1
+            },
+            {
+                question: "Το href σημαίνει:",
+                options: ["Hypertext Reference", "HTML Reference", "Hyper Reader", "Home Reference"],
+                correct: 0
+            },
+            {
+                question: "Για να ανοίξει σε νέα καρτέλα χρησιμοποιούμε:",
+                options: ["target='new'", "target='_blank'", "open='new'", "newtab='true'"],
+                correct: 1
+            },
+            {
+                question: "Για email σύνδεσμο χρησιμοποιούμε:",
+                options: ["email:", "mail:", "mailto:", "@:"],
+                correct: 2
+            },
+            {
+                question: "Τo # στο href χρησιμοποιείται για:",
+                options: ["Εξωτερικά links", "Anchor links", "Email", "Download"],
+                correct: 1
+            }
+        ];
+        
+        initQuiz(quizData);
+        
+        // Extra functions for exercises
+        function previewNavExercise() {
+            const code = document.getElementById('nav-exercise').value;
+            const style = `<style>nav{background:#1e293b;padding:15px;border-radius:8px;}nav a{color:white;text-decoration:none;padding:10px 15px;margin:5px;display:inline-block;}nav a:hover{background:#2563eb;border-radius:5px;}</style>`;
+            document.getElementById('nav-preview').innerHTML = `<iframe srcdoc="${style}${code.replace(/"/g,'&quot;')}" style="width:100%;height:80px;border:1px solid #ddd;border-radius:8px;"></iframe>`;
+        }
+        
+        function checkNavExercise() {
+            const code = document.getElementById('nav-exercise').value.toLowerCase();
+            const result = document.getElementById('result-3');
+            const checks = {
+                nav: code.includes('<nav'),
+                links: (code.match(/<a/g) || []).length >= 4,
+                href: code.includes('href=')
+            };
+            const score = Object.values(checks).filter(Boolean).length;
+            result.innerHTML = score === 3 ? '🎉 Τέλειο navigation!' : `Έχεις ${score}/3 στοιχεία (nav, 4+ links, href)`;
+            result.className = 'exercise-result ' + (score === 3 ? 'success' : 'error');
+        }
+    </script>
+</body>
+</html>

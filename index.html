@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebDev Learning Hub - Εφαρμογές Πληροφορικής Α' Λυκείου</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+<!-- Μέσα στο header, πριν το </header> -->
+<header class="main-header">
+    <div class="container">
+        <div class="header-content">
+            <div class="header-top">
+                <div class="logo">
+                    <span class="logo-icon">🚀</span>
+                    <h1>WebDev Learning Hub</h1>
+                </div>
+                <div class="header-actions">
+                    <button onclick="toggleUserMenu()" class="btn-icon user-menu-btn" id="userMenuBtn" title="Μενού χρήστη">
+                        👤 <span class="student-name-display"></span>
+                    </button>
+                </div>
+            </div>
+            <p class="subtitle">Εφαρμογές Πληροφορικής - Α' Λυκείου</p>
+        </div>
+    </div>
+</header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2 class="hero-title">Καλώς ήρθες στον κόσμο της Ανάπτυξης Ιστοσελίδων!</h2>
+            <p class="hero-description">
+                Μάθε να δημιουργείς εντυπωσιακές ιστοσελίδες με HTML, CSS και JavaScript. 
+                Πειραματίσου, εξασκήσου και δημιούργησε τα δικά σου projects!
+            </p>
+            <div class="hero-stats">
+                <div class="stat-card">
+                    <span class="stat-number">6</span>
+                    <span class="stat-label">Ενότητες</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">40+</span>
+                    <span class="stat-label">Μαθήματα</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">∞</span>
+                    <span class="stat-label">Δυνατότητες</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Navigation Sections -->
+    <main class="main-content">
+        <div class="container">
+            <h2 class="section-title">Ενότητες Μαθημάτων</h2>
+            
+            <!-- Section 1: Client-Side Basics -->
+            <div class="module-card">
+                <div class="module-header">
+                    <span class="module-icon">🎨</span>
+                    <h3>Βασικά του Client-Side Σχεδιασμού</h3>
+                    <span class="module-badge">Εισαγωγή</span>
+                </div>
+                <p class="module-description">
+                    Κατανόησε τις βασικές έννοιες του client-side web development και πώς λειτουργεί ο browser.
+                </p>
+                <div class="module-links">
+                    <a href="01-client-side-basics/index.html" class="btn btn-primary">
+                        Ξεκίνα την Ενότητα →
+                    </a>
+                </div>
+                <div class="module-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 0%"></div>
+                    </div>
+                    <span class="progress-text">0% Ολοκληρωμένο</span>
+                </div>
+            </div>
+
+            <!-- Section 2: HTML -->
+            <div class="module-card">
+                <div class="module-header">
+                    <span class="module-icon">📝</span>
+                    <h3>HTML - Η Δομή του Web</h3>
+                    <span class="module-badge">Βασικό</span>
+                </div>
+                <p class="module-description">
+                    Μάθε τη γλώσσα σήμανσης που δομεί όλες τις ιστοσελίδες. Από βασικά tags μέχρι πολύπλοκες φόρμες.
+                </p>
+                <div class="module-topics">
+                    <h4>Θέματα:</h4>
+                    <div class="topics-grid">
+                        <a href="02-html/index.html" class="topic-link">
+                            <span class="topic-icon">📖</span>
+                            Επισκόπηση HTML
+                        </a>
+                        <a href="02-html/forms.html" class="topic-link">
+                            <span class="topic-icon">📋</span>
+                            Φόρμες
+                        </a>
+                        <a href="02-html/tables.html" class="topic-link">
+                            <span class="topic-icon">📊</span>
+                            Πίνακες
+                        </a>
+                        <a href="02-html/lists.html" class="topic-link">
+                            <span class="topic-icon">📑</span>
+                            Λίστες
+                        </a>
+                        <a href="02-html/links.html" class="topic-link">
+                            <span class="topic-icon">🔗</span>
+                            Σύνδεσμοι
+                        </a>
+                        <a href="02-html/multimedia.html" class="topic-link">
+                            <span class="topic-icon">🎬</span>
+                            Multimedia
+                        </a>
+                    </div>
+                </div>
+                <div class="module-links">
+                    <a href="02-html/index.html" class="btn btn-primary">
+                        Ξεκίνα το HTML →
+                    </a>
+                </div>
+                <div class="module-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 0%"></div>
+                    </div>
+                    <span class="progress-text">0% Ολοκληρωμένο</span>
+                </div>
+            </div>
+
+            <!-- Section 3: CSS -->
+            <div class="module-card">
+                <div class="module-header">
+                    <span class="module-icon">🎨</span>
+                    <h3>CSS - Το Στυλ του Web</h3>
+                    <span class="module-badge">Δημιουργικό</span>
+                </div>
+                <p class="module-description">
+                    Δώσε ζωή και χρώμα στις ιστοσελίδες σου. Μάθε να δημιουργείς εντυπωσιακά σχέδια και layouts.
+                </p>
+                <div class="module-topics">
+                    <h4>Θέματα:</h4>
+                    <div class="topics-grid">
+                        <a href="03-css/index.html" class="topic-link">
+                            <span class="topic-icon">📖</span>
+                            Επισκόπηση CSS
+                        </a>
+                        <a href="03-css/how-to-use.html" class="topic-link">
+                            <span class="topic-icon">🔧</span>
+                            Πώς τη χρησιμοποιώ
+                        </a>
+                        <a href="03-css/selectors.html" class="topic-link">
+                            <span class="topic-icon">🎯</span>
+                            Επιλογείς
+                        </a>
+                        <a href="03-css/priorities.html" class="topic-link">
+                            <span class="topic-icon">⚖️</span>
+                            Προτεραιότητες
+                        </a>
+                        <a href="03-css/colors-backgrounds.html" class="topic-link">
+                            <span class="topic-icon">🌈</span>
+                            Χρώματα & Φόντο
+                        </a>
+                        <a href="03-css/text-fonts.html" class="topic-link">
+                            <span class="topic-icon">✍️</span>
+                            Κείμενο
+                        </a>
+                        <a href="03-css/borders.html" class="topic-link">
+                            <span class="topic-icon">🔲</span>
+                            Περιγράμματα
+                        </a>
+                        <a href="03-css/box-model.html" class="topic-link">
+                            <span class="topic-icon">📦</span>
+                            Box Model
+                        </a>
+                        <a href="03-css/display.html" class="topic-link">
+                            <span class="topic-icon">👁️</span>
+                            Display
+                        </a>
+                        <a href="03-css/position.html" class="topic-link">
+                            <span class="topic-icon">📍</span>
+                            Position
+                        </a>
+                        <a href="03-css/float-clear.html" class="topic-link">
+                            <span class="topic-icon">🎈</span>
+                            Float & Clear
+                        </a>
+                    </div>
+                </div>
+                <div class="module-links">
+                    <a href="03-css/index.html" class="btn btn-primary">
+                        Ξεκίνα το CSS →
+                    </a>
+                </div>
+                <div class="module-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 0%"></div>
+                    </div>
+                    <span class="progress-text">0% Ολοκληρωμένο</span>
+                </div>
+            </div>
+
+            <!-- Section 4: JavaScript -->
+            <div class="module-card">
+                <div class="module-header">
+                    <span class="module-icon">⚡</span>
+                    <h3>JavaScript - Η Δύναμη του Web</h3>
+                    <span class="module-badge">Προχωρημένο</span>
+                </div>
+                <p class="module-description">
+                    Κάνε τις ιστοσελίδες σου διαδραστικές! Μάθε τη γλώσσα προγραμματισμού που τρέχει στον browser.
+                </p>
+                <div class="module-topics">
+                    <h4>Θέματα:</h4>
+                    <div class="topics-grid">
+                        <a href="04-javascript/index.html" class="topic-link">
+                            <span class="topic-icon">📖</span>
+                            Επισκόπηση JavaScript
+                        </a>
+                        <a href="04-javascript/intro-examples.html" class="topic-link">
+                            <span class="topic-icon">🌟</span>
+                            Εισαγωγή & Παραδείγματα
+                        </a>
+                        <a href="04-javascript/dom.html" class="topic-link">
+                            <span class="topic-icon">🌳</span>
+                            DOM & Επιλογή Αντικειμένων
+                        </a>
+                        <a href="04-javascript/inline-internal-external.html" class="topic-link">
+                            <span class="topic-icon">📄</span>
+                            Inline, Internal & External
+                        </a>
+                        <a href="04-javascript/console-output.html" class="topic-link">
+                            <span class="topic-icon">💬</span>
+                            Κονσόλα & Έξοδοι
+                        </a>
+                        <a href="04-javascript/variables-types.html" class="topic-link">
+                            <span class="topic-icon">📊</span>
+                            Μεταβλητές & Τύποι
+                        </a>
+                        <a href="04-javascript/functions.html" class="topic-link">
+                            <span class="topic-icon">⚙️</span>
+                            Συναρτήσεις
+                        </a>
+                        <a href="04-javascript/objects.html" class="topic-link">
+                            <span class="topic-icon">🎁</span>
+                            Αντικείμενα
+                        </a>
+                        <a href="04-javascript/arrays.html" class="topic-link">
+                            <span class="topic-icon">📚</span>
+                            Πίνακες
+                        </a>
+                        <a href="04-javascript/logical-operators.html" class="topic-link">
+                            <span class="topic-icon">🔣</span>
+                            Λογικές Εκφράσεις
+                        </a>
+                        <a href="04-javascript/conditions.html" class="topic-link">
+                            <span class="topic-icon">🔀</span>
+                            Προϋποθέσεις (if/else)
+                        </a>
+                        <a href="04-javascript/practice.html" class="topic-link">
+                            <span class="topic-icon">💪</span>
+                            Εξάσκηση
+                        </a>
+                        <a href="04-javascript/while-loop.html" class="topic-link">
+                            <span class="topic-icon">🔄</span>
+                            Βρόχος While
+                        </a>
+                        <a href="04-javascript/for-loop.html" class="topic-link">
+                            <span class="topic-icon">🔁</span>
+                            Βρόχος For
+                        </a>
+                        <a href="04-javascript/projects.html" class="topic-link">
+                            <span class="topic-icon">🚀</span>
+                            Projects Εξάσκησης
+                        </a>
+                    </div>
+                </div>
+                <div class="module-links">
+                    <a href="04-javascript/index.html" class="btn btn-primary">
+                        Ξεκίνα το JavaScript →
+                    </a>
+                </div>
+                <div class="module-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 0%"></div>
+                    </div>
+                    <span class="progress-text">0% Ολοκληρωμένο</span>
+                </div>
+            </div>
+
+            <!-- Section 5: Server-Side Development -->
+            <div class="module-card">
+                <div class="module-header">
+                    <span class="module-icon">🖥️</span>
+                    <h3>Server-Side Development</h3>
+                    <span class="module-badge">Προχωρημένο</span>
+                </div>
+                <p class="module-description">
+                    Ανακάλυψε τον κόσμο του backend development. Μάθε τις σύγχρονες τεχνολογίες που χρησιμοποιούν οι επαγγελματίες.
+                </p>
+                <div class="module-topics">
+                    <h4>Θέματα:</h4>
+                    <div class="topics-grid">
+                        <a href="05-server-side/index.html" class="topic-link">
+                            <span class="topic-icon">📖</span>
+                            Επισκόπηση Server-Side
+                        </a>
+                        <a href="05-server-side/nodejs.html" class="topic-link">
+                            <span class="topic-icon">🟢</span>
+                            Node.js
+                        </a>
+                        <a href="05-server-side/react.html" class="topic-link">
+                            <span class="topic-icon">⚛️</span>
+                            React
+                        </a>
+                        <a href="05-server-side/nextjs.html" class="topic-link">
+                            <span class="topic-icon">▲</span>
+                            Next.js
+                        </a>
+                        <a href="05-server-side/typescript.html" class="topic-link">
+                            <span class="topic-icon">🔷</span>
+                            TypeScript
+                        </a>
+                        <a href="05-server-side/databases.html" class="topic-link">
+                            <span class="topic-icon">🗄️</span>
+                            Βάσεις Δεδομένων
+                        </a>
+                        <a href="05-server-side/apis.html" class="topic-link">
+                            <span class="topic-icon">🔌</span>
+                            APIs & REST
+                        </a>
+                    </div>
+                </div>
+                <div class="module-links">
+                    <a href="05-server-side/index.html" class="btn btn-primary">
+                        Εξερεύνησε το Server-Side →
+                    </a>
+                </div>
+                <div class="module-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 0%"></div>
+                    </div>
+                    <span class="progress-text">0% Ολοκληρωμένο</span>
+                </div>
+            </div>
+
+            <!-- Section 6: Resources -->
+            <div class="module-card">
+                <div class="module-header">
+                    <span class="module-icon">📚</span>
+                    <h3>Πόροι & Εργαλεία</h3>
+                    <span class="module-badge">Βοήθεια</span>
+                </div>
+                <p class="module-description">
+                    Χρήσιμοι σύνδεσμοι, εργαλεία, tutorials και πηγές για να συνεχίσεις τη μάθηση.
+                </p>
+                <div class="module-links">
+                    <a href="06-resources/index.html" class="btn btn-primary">
+                        Δες τους Πόρους →
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Quick Links Section -->
+    <section class="quick-links">
+        <div class="container">
+            <h2 class="section-title">Γρήγορες Πρόσβαση</h2>
+            <div class="quick-links-grid">
+                <a href="#" class="quick-link-card" onclick="loadStudentProgress(); return false;">
+                    <span class="quick-icon">👤</span>
+                    <h3>Η Πρόοδός μου</h3>
+                    <p>Δες την πρόοδό σου</p>
+                </a>
+                <a href="#" class="quick-link-card" onclick="showSavedWork(); return false;">
+                    <span class="quick-icon">💾</span>
+                    <h3>Αποθηκευμένα</h3>
+                    <p>Ο κώδικάς σου</p>
+                </a>
+                <a href="06-resources/index.html" class="quick-link-card">
+                    <span class="quick-icon">🔗</span>
+                    <h3>Χρήσιμα Links</h3>
+                    <p>Εξωτερικοί πόροι</p>
+                </a>
+                <a href="#" class="quick-link-card" onclick="showHelp(); return false;">
+                    <span class="quick-icon">❓</span>
+                    <h3>Βοήθεια</h3>
+                    <p>Οδηγίες χρήσης</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>WebDev Learning Hub</h4>
+                    <p>Εκπαιδευτική πλατφόρμα για το μάθημα Εφαρμογές Πληροφορικής</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Γρήγορα Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="01-client-side-basics/index.html">Client-Side Basics</a></li>
+                        <li><a href="02-html/index.html">HTML</a></li>
+                        <li><a href="03-css/index.html">CSS</a></li>
+                        <li><a href="04-javascript/index.html">JavaScript</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Πόροι</h4>
+                    <ul class="footer-links">
+                        <li><a href="06-resources/index.html">Χρήσιμοι Σύνδεσμοι</a></li>
+                        <li><a href="https://github.com" target="_blank">GitHub Repository</a></li>
+                        <li><a href="#" onclick="showHelp(); return false;">Οδηγίες Χρήσης</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 WebDev Learning Hub - Εφαρμογές Πληροφορικής Α' Λυκείου</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal for Student Name -->
+    <div id="studentModal" class="modal">
+        <div class="modal-content">
+            <h2>Καλώς ήρθες!</h2>
+            <p>Παρακαλώ εισάγαγε το όνομά σου για να αποθηκεύεται η πρόοδός σου:</p>
+            <input type="text" id="studentName" placeholder="Το όνομά σου">
+            <button onclick="saveStudentName()" class="btn btn-primary">Αποθήκευση</button>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

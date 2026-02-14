@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Βασική Δομή HTML | WebDev Learning Hub</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/lesson.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="lesson-nav">
+        <div class="container">
+            <a href="../index.html" class="nav-logo">
+                <span>🚀</span> WebDev Hub
+            </a>
+            <div class="nav-breadcrumb">
+                <a href="../index.html">Αρχική</a>
+                <span>/</span>
+                <a href="index.html">HTML</a>
+                <span>/</span>
+                <span class="current">Βασική Δομή</span>
+            </div>
+            <div class="nav-actions">
+                <button onclick="takeFullScreenshot()" class="btn-icon" title="Screenshot">📸</button>
+                <button onclick="exportToPDF()" class="btn-icon" title="PDF">📄</button>
+                <button onclick="saveProgress()" class="btn-icon" title="Αποθήκευση">💾</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="lesson-header html-header">
+        <div class="container">
+            <div class="lesson-badge">HTML Basics</div>
+            <h1>🏗️ Βασική Δομή HTML</h1>
+            <p class="lesson-subtitle">DOCTYPE, html, head, body - Τα θεμέλια κάθε ιστοσελίδας</p>
+            <div class="lesson-meta">
+                <span class="meta-item">⏱️ ~20 λεπτά</span>
+                <span class="meta-item">📊 Αρχάριο</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="lesson-content">
+        <div class="container">
+            
+            <!-- Tabs -->
+            <div class="tabs">
+                <button class="tab-btn active" onclick="showTab('theory')">📖 Θεωρία</button>
+                <button class="tab-btn" onclick="showTab('interactive')">🎮 Editor</button>
+                <button class="tab-btn" onclick="showTab('exercises')">✏️ Ασκήσεις</button>
+                <button class="tab-btn" onclick="showTab('quiz')">🎯 Quiz</button>
+            </div>
+
+            <!-- THEORY -->
+            <section id="theory" class="tab-content active">
+                <div class="theory-section">
+                    <h2>📄 Η Δομή ενός HTML Εγγράφου</h2>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">💡</div>
+                        <div class="info-content">
+                            <p>Κάθε HTML έγγραφο έχει μια <strong>συγκεκριμένη δομή</strong> που πρέπει να ακολουθείται. Αυτή η δομή λέει στον browser πώς να "διαβάσει" τη σελίδα.</p>
+                        </div>
+                    </div>
+
+                    <div class="code-block-wrapper">
+                        <div class="code-header">
+                            <span>📄 Βασική Δομή</span>
+                            <button onclick="copyCode(this)" class="copy-btn">📋 Αντιγραφή</button>
+                        </div>
+                        <pre class="code-block"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="el"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Τίτλος Σελίδας&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- Το περιεχόμενο της σελίδας --&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                    </div>
+                </div>
+
+                <div class="theory-section">
+                    <h2>🔍 Ανάλυση κάθε στοιχείου</h2>
+                    
+                    <div class="element-cards">
+                        <div class="element-card">
+                            <div class="element-header">
+                                <code>&lt;!DOCTYPE html&gt;</code>
+                            </div>
+                            <div class="element-body">
+                                <h4>Document Type Declaration</h4>
+                                <ul>
+                                    <li>Πρέπει να είναι <strong>πρώτο</strong> στο αρχείο</li>
+                                    <li>Λέει στον browser ότι είναι HTML5</li>
+                                    <li>Δεν είναι HTML tag, είναι δήλωση</li>
+                                    <li>Δεν χρειάζεται closing tag</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="element-card">
+                            <div class="element-header">
+                                <code>&lt;html lang="el"&gt;</code>
+                            </div>
+                            <div class="element-body">
+                                <h4>Root Element</h4>
+                                <ul>
+                                    <li>Περιέχει <strong>όλα</strong> τα άλλα elements</li>
+                                    <li>Το <code>lang</code> ορίζει τη γλώσσα</li>
+                                    <li>"el" = Ελληνικά, "en" = Αγγλικά</li>
+                                    <li>Βοηθά στην προσβασιμότητα</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="element-card">
+                            <div class="element-header">
+                                <code>&lt;head&gt;</code>
+                            </div>
+                            <div class="element-body">
+                                <h4>Κεφαλή Εγγράφου</h4>
+                                <ul>
+                                    <li>Μεταδεδομένα (metadata)</li>
+                                    <li><strong>Δεν εμφανίζεται</strong> στη σελίδα</li>
+                                    <li>Περιέχει: title, meta, link, style</li>
+                                    <li>Πληροφορίες για browser & μηχανές αναζήτησης</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="element-card">
+                            <div class="element-header">
+                                <code>&lt;body&gt;</code>
+                            </div>
+                            <div class="element-body">
+                                <h4>Σώμα Εγγράφου</h4>
+                                <ul>
+                                    <li>Το <strong>ορατό περιεχόμενο</strong></li>
+                                    <li>Κείμενα, εικόνες, links, κλπ</li>
+                                    <li>Ότι βλέπει ο χρήστης</li>
+                                    <li>Μόνο ένα body ανά σελίδα</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="theory-section">
+                    <h2>🧠 Τι μπαίνει στο &lt;head&gt;;</h2>
+                    
+                    <div class="head-elements-grid">
+                        <div class="head-element">
+                            <code>&lt;meta charset="UTF-8"&gt;</code>
+                            <p>Κωδικοποίηση χαρακτήρων (για ελληνικά!)</p>
+                        </div>
+                        <div class="head-element">
+                            <code>&lt;meta name="viewport"...&gt;</code>
+                            <p>Responsive σε κινητά</p>
+                        </div>
+                        <div class="head-element">
+                            <code>&lt;title&gt;...&lt;/title&gt;</code>
+                            <p>Τίτλος στην καρτέλα browser</p>
+                        </div>
+                        <div class="head-element">
+                            <code>&lt;meta name="description"...&gt;</code>
+                            <p>Περιγραφή για Google</p>
+                        </div>
+                        <div class="head-element">
+                            <code>&lt;link rel="stylesheet"...&gt;</code>
+                            <p>Σύνδεση με CSS αρχείο</p>
+                        </div>
+                        <div class="head-element">
+                            <code>&lt;style&gt;...&lt;/style&gt;</code>
+                            <p>Internal CSS</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="next-section">
+                    <button class="btn btn-primary" onclick="showTab('interactive')">
+                        🎮 Δοκίμασέ το →
+                    </button>
+                </div>
+            </section>
+
+            <!-- INTERACTIVE -->
+            <section id="interactive" class="tab-content">
+                <h2>🎮 Πειραματίσου με τη Δομή HTML</h2>
+                
+                <div class="editor-container">
+                    <div class="editor-header">
+                        <h3>📝 Editor</h3>
+                        <div class="editor-actions">
+                            <button onclick="runCode()" class="btn btn-success">▶️ Εκτέλεση</button>
+                            <button onclick="resetEditor()" class="btn btn-secondary">🔄 Reset</button>
+                            <button onclick="saveCode()" class="btn btn-primary">💾 Αποθήκευση</button>
+                        </div>
+                    </div>
+                    
+                    <div class="editor-main single-editor">
+                        <div class="editor-panel active">
+                            <textarea id="code-editor" spellcheck="false"><!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Η Πρώτη μου Σελίδα</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f0f4f8;
+        }
+        h1 {
+            color: #2563eb;
+        }
+    </style>
+</head>
+<body>
+    <h1>Γεια σου Κόσμε!</h1>
+    <p>Αυτή είναι η πρώτη μου HTML σελίδα.</p>
+    
+    <!-- Δοκίμασε να προσθέσεις περισσότερο περιεχόμενο εδώ -->
+    
+</body>
+</html></textarea>
+                        </div>
+                        <div class="preview-container">
+                            <div class="preview-header">
+                                <h4>🖥️ Αποτέλεσμα</h4>
+                            </div>
+                            <iframe id="preview-frame"></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="challenges-section">
+                    <h3>🎯 Δοκίμασε αυτά:</h3>
+                    <div class="mini-challenges">
+                        <div class="mini-challenge" onclick="loadChallenge(1)">
+                            <span>1️⃣</span> Άλλαξε τον τίτλο (title)
+                        </div>
+                        <div class="mini-challenge" onclick="loadChallenge(2)">
+                            <span>2️⃣</span> Άλλαξε το lang σε "en"
+                        </div>
+                        <div class="mini-challenge" onclick="loadChallenge(3)">
+                            <span>3️⃣</span> Πρόσθεσε meta description
+                        </div>
+                        <div class="mini-challenge" onclick="loadChallenge(4)">
+                            <span>4️⃣</span> Άλλαξε το background color
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- EXERCISES -->
+            <section id="exercises" class="tab-content">
+                <h2>✏️ Ασκήσεις</h2>
+                
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-number">1</span>
+                        <h3>Συμπλήρωσε τη δομή</h3>
+                    </div>
+                    <div class="fill-code">
+                        <pre><code>&lt;!<input type="text" class="code-input" data-answer="DOCTYPE" size="8"> html&gt;
+&lt;<input type="text" class="code-input" data-answer="html" size="4"> lang="el"&gt;
+&lt;<input type="text" class="code-input" data-answer="head" size="4">&gt;
+    &lt;title&gt;Test&lt;/title&gt;
+&lt;/head&gt;
+&lt;<input type="text" class="code-input" data-answer="body" size="4">&gt;
+    &lt;h1&gt;Hello&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                    </div>
+                    <button onclick="checkExercise(1)" class="btn btn-primary">✅ Έλεγχος</button>
+                    <div id="result-1" class="exercise-result"></div>
+                </div>
+
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-number">2</span>
+                        <h3>Τι κάνει κάθε element;</h3>
+                    </div>
+                    <div class="matching-simple">
+                        <div class="match-row">
+                            <code>&lt;!DOCTYPE html&gt;</code>
+                            <select class="match-select" data-correct="doctype">
+                                <option value="">Επίλεξε...</option>
+                                <option value="doctype">Δηλώνει HTML5</option>
+                                <option value="title">Τίτλος σελίδας</option>
+                                <option value="content">Περιεχόμενο</option>
+                            </select>
+                        </div>
+                        <div class="match-row">
+                            <code>&lt;head&gt;</code>
+                            <select class="match-select" data-correct="meta">
+                                <option value="">Επίλεξε...</option>
+                                <option value="meta">Μεταδεδομένα</option>
+                                <option value="content">Ορατό περιεχόμενο</option>
+                                <option value="doctype">Δηλώνει HTML5</option>
+                            </select>
+                        </div>
+                        <div class="match-row">
+                            <code>&lt;body&gt;</code>
+                            <select class="match-select" data-correct="content">
+                                <option value="">Επίλεξε...</option>
+                                <option value="meta">Μεταδεδομένα</option>
+                                <option value="content">Ορατό περιεχόμενο</option>
+                                <option value="title">Τίτλος σελίδας</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button onclick="checkExercise(2)" class="btn btn-primary">✅ Έλεγχος</button>
+                    <div id="result-2" class="exercise-result"></div>
+                </div>
+            </section>
+
+            <!-- QUIZ -->
+            <section id="quiz" class="tab-content">
+                <h2>🎯 Mini Quiz</h2>
+                <div id="quiz-container"></div>
+                <div id="quiz-results" style="display:none;">
+                    <div class="results-score"><span id="score-number">0</span>/5</div>
+                    <div id="results-message"></div>
+                    <button onclick="retakeQuiz()" class="btn btn-primary">🔄 Ξανά</button>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer Nav -->
+    <footer class="lesson-footer">
+        <div class="container">
+            <div class="footer-nav">
+                <a href="index.html" class="footer-link">← Πίσω στην HTML</a>
+                <a href="text-elements.html" class="footer-link primary">Στοιχεία Κειμένου →</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="sub-script.js"></script>
+    <script>
+        // Page-specific quiz questions
+        const quizData = [
+            {
+                question: "Τι πρέπει να είναι πρώτο σε κάθε HTML αρχείο;",
+                options: ["<html>", "<!DOCTYPE html>", "<head>", "<body>"],
+                correct: 1
+            },
+            {
+                question: "Πού γράφουμε τον τίτλο της σελίδας;",
+                options: ["<body>", "<title>", "<h1>", "<header>"],
+                correct: 1
+            },
+            {
+                question: "Το <head> περιέχει:",
+                options: ["Ορατό περιεχόμενο", "Μεταδεδομένα", "Εικόνες", "Links"],
+                correct: 1
+            },
+            {
+                question: "Τι σημαίνει lang='el';",
+                options: ["Ελληνική γλώσσα", "English", "Element", "External link"],
+                correct: 0
+            },
+            {
+                question: "Το charset='UTF-8' χρησιμεύει για:",
+                options: ["Χρώματα", "Ελληνικούς χαρακτήρες", "Links", "Images"],
+                correct: 1
+            }
+        ];
+        initQuiz(quizData);
+    </script>
+</body>
+</html>

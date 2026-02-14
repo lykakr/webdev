@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Εικόνες HTML | WebDev Learning Hub</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/lesson.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="lesson-nav">
+        <div class="container">
+            <a href="../index.html" class="nav-logo"><span>🚀</span> WebDev Hub</a>
+            <div class="nav-breadcrumb">
+                <a href="../index.html">Αρχική</a> / <a href="index.html">HTML</a> / <span class="current">Εικόνες</span>
+            </div>
+            <div class="nav-actions">
+                <button onclick="takeFullScreenshot()" class="btn-icon">📸</button>
+                <button onclick="exportToPDF()" class="btn-icon">📄</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="lesson-header html-header">
+        <div class="container">
+            <div class="lesson-badge">HTML Images</div>
+            <h1>🖼️ Εικόνες HTML</h1>
+            <p class="lesson-subtitle">Προσθέτοντας οπτικό περιεχόμενο στις σελίδες</p>
+            <div class="lesson-meta">
+                <span class="meta-item">⏱️ ~25 λεπτά</span>
+                <span class="meta-item">📊 Βασικό</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="lesson-content">
+        <div class="container">
+            
+            <!-- Tabs -->
+            <div class="tabs">
+                <button class="tab-btn active" onclick="showTab('theory')">📖 Θεωρία</button>
+                <button class="tab-btn" onclick="showTab('interactive')">🎮 Editor</button>
+                <button class="tab-btn" onclick="showTab('exercises')">✏️ Ασκήσεις</button>
+                <button class="tab-btn" onclick="showTab('quiz')">🎯 Quiz</button>
+            </div>
+
+            <!-- THEORY TAB -->
+            <section id="theory" class="tab-content active">
+                
+                <!-- Basic Image Tag -->
+                <div class="theory-section">
+                    <h2>🖼️ Το &lt;img&gt; Tag</h2>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">💡</div>
+                        <div class="info-content">
+                            <p>Το <code>&lt;img&gt;</code> tag χρησιμοποιείται για να εμφανίσουμε εικόνες. Είναι <strong>self-closing tag</strong> - δεν χρειάζεται closing tag!</p>
+                        </div>
+                    </div>
+
+                    <div class="code-block-wrapper">
+                        <div class="code-header">
+                            <span>Βασική Σύνταξη</span>
+                            <button onclick="copyCode(this)" class="copy-btn">📋 Αντιγραφή</button>
+                        </div>
+                        <pre class="code-block"><code>&lt;img src="photo.jpg" alt="Περιγραφή εικόνας"&gt;</code></pre>
+                    </div>
+
+                    <div class="anatomy-breakdown">
+                        <h3>🔬 Ανάλυση:</h3>
+                        <div class="anatomy-visual-img">
+                            <span class="part tag">&lt;img</span>
+                            <span class="part src">src="image.jpg"</span>
+                            <span class="part alt">alt="Description"</span>
+                            <span class="part tag">&gt;</span>
+                        </div>
+                        <div class="anatomy-legend">
+                            <div class="legend-item">
+                                <span class="color-box src"></span>
+                                <span><strong>src</strong> = source (πηγή/διαδρομή εικόνας)</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="color-box alt"></span>
+                                <span><strong>alt</strong> = alternative text (εναλλακτικό κείμενο)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-card warning">
+                        <div class="info-icon">⚠️</div>
+                        <div class="info-content">
+                            <p><strong>ΣΗΜΑΝΤΙΚΟ:</strong> Το <code>alt</code> attribute είναι υποχρεωτικό! Χρησιμεύει για:</p>
+                            <ul>
+                                <li>🔍 SEO (μηχανές αναζήτησης)</li>
+                                <li>♿ Προσβασιμότητα (screen readers)</li>
+                                <li>🖼️ Εμφανίζεται αν η εικόνα δεν φορτώσει</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image Attributes -->
+                <div class="theory-section">
+                    <h2>⚙️ Attributes Εικόνας</h2>
+                    
+                    <div class="attributes-grid-images">
+                        <div class="attr-card">
+                            <h4>src</h4>
+                            <code>src="path/image.jpg"</code>
+                            <p>Η διαδρομή της εικόνας (υποχρεωτικό)</p>
+                        </div>
+                        
+                        <div class="attr-card">
+                            <h4>alt</h4>
+                            <code>alt="Περιγραφή"</code>
+                            <p>Εναλλακτικό κείμενο (υποχρεωτικό)</p>
+                        </div>
+                        
+                        <div class="attr-card">
+                            <h4>width</h4>
+                            <code>width="300"</code>
+                            <p>Πλάτος σε pixels</p>
+                        </div>
+                        
+                        <div class="attr-card">
+                            <h4>height</h4>
+                            <code>height="200"</code>
+                            <p>Ύψος σε pixels</p>
+                        </div>
+                        
+                        <div class="attr-card">
+                            <h4>title</h4>
+                            <code>title="Tooltip"</code>
+                            <p>Tooltip κείμενο (hover)</p>
+                        </div>
+                        
+                        <div class="attr-card">
+                            <h4>loading</h4>
+                            <code>loading="lazy"</code>
+                            <p>Lazy loading για performance</p>
+                        </div>
+                    </div>
+
+                    <div class="code-block-wrapper">
+                        <div class="code-header"><span>Πλήρες Παράδειγμα</span></div>
+                        <pre class="code-block"><code>&lt;img 
+    src="images/photo.jpg" 
+    alt="Μια όμορφη φωτογραφία τοπίου" 
+    width="600" 
+    height="400"
+    title="Κάνε κλικ για μεγέθυνση"
+    loading="lazy"
+&gt;</code></pre>
+                    </div>
+                </div>
+
+                <!-- Image Formats -->
+                <div class="theory-section">
+                    <h2>📁 Μορφές Εικόνας</h2>
+                    
+                    <div class="formats-grid">
+                        <div class="format-card">
+                            <div class="format-icon">📷</div>
+                            <h4>.JPG / .JPEG</h4>
+                            <ul>
+                                <li>✅ Φωτογραφίες</li>
+                                <li>✅ Μικρό μέγεθος</li>
+                                <li>❌ Χωρίς διαφάνεια</li>
+                                <li>❌ Απώλεια ποιότητας</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="format-card">
+                            <div class="format-icon">🎨</div>
+                            <h4>.PNG</h4>
+                            <ul>
+                                <li>✅ Διαφάνεια (transparency)</li>
+                                <li>✅ Χωρίς απώλεια ποιότητας</li>
+                                <li>✅ Γραφικά, logos</li>
+                                <li>❌ Μεγαλύτερο μέγεθος</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="format-card">
+                            <div class="format-icon">🎬</div>
+                            <h4>.GIF</h4>
+                            <ul>
+                                <li>✅ Animations</li>
+                                <li>✅ Διαφάνεια</li>
+                                <li>❌ Μόνο 256 χρώματα</li>
+                                <li>❌ Χαμηλή ποιότητα</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="format-card">
+                            <div class="format-icon">🔷</div>
+                            <h4>.SVG</h4>
+                            <ul>
+                                <li>✅ Vector (scalable)</li>
+                                <li>✅ Τέλειο για icons/logos</li>
+                                <li>✅ Πολύ μικρό μέγεθος</li>
+                                <li>❌ Όχι για φωτογραφίες</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="format-card">
+                            <div class="format-icon">🌐</div>
+                            <h4>.WebP</h4>
+                            <ul>
+                                <li>✅ Μοντέρνα μορφή</li>
+                                <li>✅ Μικρότερο μέγεθος</li>
+                                <li>✅ Διαφάνεια + Animation</li>
+                                <li>⚠️ Έλεγξε compatibility</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Figure and Figcaption -->
+                <div class="theory-section">
+                    <h2>🏷️ Figure & Figcaption</h2>
+                    
+                    <p>Για εικόνες με λεζάντα, χρησιμοποιούμε τα semantic tags:</p>
+                    
+                    <div class="code-block-wrapper">
+                        <div class="code-header"><span>Figure με Λεζάντα</span></div>
+                        <pre class="code-block"><code>&lt;figure&gt;
+    &lt;img src="sunset.jpg" alt="Ηλιοβασίλεμα στη Σαντορίνη"&gt;
+    &lt;figcaption&gt;Ηλιοβασίλεμα στην Οία, Σαντορίνη - 2024&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+                    </div>
+
+                    <div class="figure-demo">
+                        <figure>
+                            <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=400&h=250&fit=crop" alt="Σαντορίνη">
+                            <figcaption>📸 Ηλιοβασίλεμα στην Οία, Σαντορίνη</figcaption>
+                        </figure>
+                    </div>
+                </div>
+
+                <!-- Responsive Images -->
+                <div class="theory-section">
+                    <h2>📱 Responsive Εικόνες</h2>
+                    
+                    <div class="responsive-methods">
+                        <div class="method-card">
+                            <h4>1. CSS max-width</h4>
+                            <p>Η πιο απλή μέθοδος:</p>
+                            <code>img { max-width: 100%; height: auto; }</code>
+                        </div>
+                        
+                        <div class="method-card">
+                            <h4>2. srcset Attribute</h4>
+                            <p>Διαφορετικές εικόνες για διαφορετικά μεγέθη οθόνης:</p>
+                            <div class="code-block-wrapper">
+                                <pre class="code-block"><code>&lt;img 
+    src="small.jpg"
+    srcset="small.jpg 480w,
+            medium.jpg 800w,
+            large.jpg 1200w"
+    sizes="(max-width: 600px) 480px,
+           (max-width: 900px) 800px,
+           1200px"
+    alt="Responsive image"
+&gt;</code></pre>
+                            </div>
+                        </div>
+                        
+                        <div class="method-card">
+                            <h4>3. Picture Element</h4>
+                            <p>Πλήρης έλεγχος για διαφορετικές συσκευές:</p>
+                            <div class="code-block-wrapper">
+                                <pre class="code-block"><code>&lt;picture&gt;
+    &lt;source media="(max-width: 600px)" srcset="mobile.jpg"&gt;
+    &lt;source media="(max-width: 1200px)" srcset="tablet.jpg"&gt;
+    &lt;img src="desktop.jpg" alt="Responsive"&gt;
+&lt;/picture&gt;</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image as Link -->
+                <div class="theory-section">
+                    <h2>🔗 Εικόνα ως Σύνδεσμος</h2>
+                    
+                    <div class="code-block-wrapper">
+                        <div class="code-header"><span>Clickable Image</span></div>
+                        <pre class="code-block"><code>&lt;a href="https://example.com"&gt;
+    &lt;img src="banner.jpg" alt="Κάνε κλικ εδώ!"&gt;
+&lt;/a&gt;</code></pre>
+                    </div>
+
+                    <div class="clickable-demo">
+                        <a href="#" onclick="alert('Clicked!'); return false;">
+                            <img src="https://via.placeholder.com/300x100/2563eb/ffffff?text=Click+Me!" alt="Clickable banner">
+                        </a>
+                        <p><small>👆 Δοκίμασε να κάνεις κλικ!</small></p>
+                    </div>
+                </div>
+
+                <!-- Summary -->
+                <div class="theory-section">
+                    <h2>📋 Ανακεφαλαίωση</h2>
+                    
+                    <div class="summary-box">
+                        <div class="summary-item">
+                            <span class="check">✅</span>
+                            <p><code>&lt;img&gt;</code> είναι self-closing tag</p>
+                        </div>
+                        <div class="summary-item">
+                            <span class="check">✅</span>
+                            <p><code>src</code> = πηγή εικόνας (υποχρεωτικό)</p>
+                        </div>
+                        <div class="summary-item">
+                            <span class="check">✅</span>
+                            <p><code>alt</code> = εναλλακτικό κείμενο (υποχρεωτικό)</p>
+                        </div>
+                        <div class="summary-item">
+                            <span class="check">✅</span>
+                            <p><code>&lt;figure&gt;</code> + <code>&lt;figcaption&gt;</code> για λεζάντα</p>
+                        </div>
+                        <div class="summary-item">
+                            <span class="check">✅</span>
+                            <p>JPG για φωτογραφίες, PNG για διαφάνεια, SVG για icons</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="next-section">
+                    <button class="btn btn-primary" onclick="showTab('interactive')">🎮 Πειραματίσου →</button>
+                </div>
+            </section>
+
+            <!-- INTERACTIVE TAB -->
+            <section id="interactive" class="tab-content">
+                <h2>🎮 Πειραματίσου με Εικόνες</h2>
+                
+                <div class="editor-container">
+                    <div class="editor-header">
+                        <h3>📝 Editor</h3>
+                        <div class="editor-actions">
+                            <button onclick="runCode()" class="btn btn-success">▶️ Εκτέλεση</button>
+                            <button onclick="resetEditor()" class="btn btn-secondary">🔄 Reset</button>
+                            <button onclick="saveCode()" class="btn btn-primary">💾 Αποθήκευση</button>
+                        </div>
+                    </div>
+                    
+                    <div class="editor-main single-editor">
+                        <div class="editor-panel active">
+                            <textarea id="code-editor" spellcheck="false"><!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <title>Gallery Εικόνων</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            padding: 20px;
+            background: #f0f4f8;
+            margin: 0;
+        }
+        h1 {
+            text-align: center;
+            color: #2563eb;
+        }
+        
+        /* Gallery Grid */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Figure Styling */
+        figure {
+            margin: 0;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        figure:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+        
+        figure img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        figcaption {
+            padding: 15px;
+            text-align: center;
+            color: #333;
+            font-weight: 500;
+        }
+        
+        /* Clickable Image */
+        .banner {
+            display: block;
+            max-width: 600px;
+            margin: 30px auto;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+        .banner img {
+            width: 100%;
+            display: block;
+            transition: transform 0.3s;
+        }
+        .banner:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Single Image with border */
+        .framed {
+            border: 5px solid #2563eb;
+            border-radius: 10px;
+            padding: 10px;
+            background: white;
+            display: inline-block;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🖼️ Gallery Εικόνων</h1>
+    
+    <!-- Image Gallery -->
+    <div class="gallery">
+        <figure>
+            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop" alt="Βουνά">
+            <figcaption>🏔️ Μαγευτικά Βουνά</figcaption>
+        </figure>
+        
+        <figure>
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&h=300&fit=crop" alt="Παραλία">
+            <figcaption>🏖️ Τροπική Παραλία</figcaption>
+        </figure>
+        
+        <figure>
+            <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=400&h=300&fit=crop" alt="Λίμνη">
+            <figcaption>🌊 Γαλήνια Λίμνη</figcaption>
+        </figure>
+        
+        <figure>
+            <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&h=300&fit=crop" alt="Δάσος">
+            <figcaption>🌲 Μυστηριώδες Δάσος</figcaption>
+        </figure>
+    </div>
+    
+    <!-- Clickable Banner -->
+    <h2 style="text-align:center; margin-top:40px;">🔗 Εικόνα ως Σύνδεσμος</h2>
+    <a href="https://unsplash.com" target="_blank" class="banner">
+        <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=600&h=200&fit=crop" alt="Κάνε κλικ για να δεις περισσότερες εικόνες!">
+    </a>
+    <p style="text-align:center;">👆 Κάνε κλικ στην εικόνα!</p>
+    
+    <!-- Image with dimensions -->
+    <h2 style="text-align:center; margin-top:40px;">📐 Εικόνα με Συγκεκριμένες Διαστάσεις</h2>
+    <p style="text-align:center;">
+        <img src="https://via.placeholder.com/200x150/10b981/ffffff?text=200x150" 
+             alt="200x150 pixels" 
+             width="200" 
+             height="150"
+             class="framed"
+             title="Αυτή η εικόνα είναι 200x150 pixels">
+    </p>
+</body>
+</html></textarea>
+                        </div>
+                        <div class="preview-container">
+                            <div class="preview-header">
+                                <h4>🖥️ Αποτέλεσμα</h4>
+                            </div>
+                            <iframe id="preview-frame"></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Challenges -->
+                <div class="challenges-section">
+                    <h3>🎯 Προκλήσεις:</h3>
+                    <div class="mini-challenges">
+                        <div class="mini-challenge">1️⃣ Πρόσθεσε μια 5η εικόνα στο gallery</div>
+                        <div class="mini-challenge">2️⃣ Άλλαξε το hover effect των figures</div>
+                        <div class="mini-challenge">3️⃣ Πρόσθεσε loading="lazy" σε όλες τις εικόνες</div>
+                        <div class="mini-challenge">4️⃣ Φτιάξε μια εικόνα με στρογγυλά corners (border-radius)</div>
+                    </div>
+                </div>
+                
+                <!-- Image Resources -->
+                <div class="resources-section">
+                    <h3>📚 Δωρεάν Εικόνες:</h3>
+                    <div class="resource-links">
+                        <a href="https://unsplash.com" target="_blank" class="resource-link">📷 Unsplash</a>
+                        <a href="https://www.pexels.com" target="_blank" class="resource-link">📸 Pexels</a>
+                        <a href="https://pixabay.com" target="_blank" class="resource-link">🖼️ Pixabay</a>
+                        <a href="https://placeholder.com" target="_blank" class="resource-link">📐 Placeholder</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- EXERCISES TAB -->
+            <section id="exercises" class="tab-content">
+                <h2>✏️ Ασκήσεις</h2>
+                
+                <!-- Exercise 1 -->
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-number">1</span>
+                        <h3>Συμπλήρωσε τα attributes</h3>
+                    </div>
+                    
+                    <div class="fill-code">
+                        <pre><code>&lt;!-- Βασική εικόνα --&gt;
+&lt;img <input type="text" class="code-input" data-answer="src" size="3">="photo.jpg" <input type="text" class="code-input" data-answer="alt" size="3">="Μια φωτογραφία"&gt;
+
+&lt;!-- Εικόνα με διαστάσεις --&gt;
+&lt;img src="banner.png" alt="Banner" <input type="text" class="code-input" data-answer="width" size="5">="800" <input type="text" class="code-input" data-answer="height" size="6">="200"&gt;
+
+&lt;!-- Lazy loading --&gt;
+&lt;img src="large.jpg" alt="Big image" <input type="text" class="code-input" data-answer="loading" size="7">="lazy"&gt;</code></pre>
+                    </div>
+                    <button onclick="checkExercise(1)" class="btn btn-primary">✅ Έλεγχος</button>
+                    <div id="result-1" class="exercise-result"></div>
+                </div>
+
+                <!-- Exercise 2 -->
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-number">2</span>
+                        <h3>Ποια μορφή να χρησιμοποιήσω;</h3>
+                    </div>
+                    
+                    <div class="matching-simple">
+                        <div class="match-row">
+                            <span>Φωτογραφία τοπίου</span>
+                            <select class="match-select" data-correct="jpg">
+                                <option value="">Επίλεξε...</option>
+                                <option value="jpg">JPG</option>
+                                <option value="png">PNG</option>
+                                <option value="gif">GIF</option>
+                                <option value="svg">SVG</option>
+                            </select>
+                        </div>
+                        <div class="match-row">
+                            <span>Logo με διαφάνεια</span>
+                            <select class="match-select" data-correct="png">
+                                <option value="">Επίλεξε...</option>
+                                <option value="jpg">JPG</option>
+                                <option value="png">PNG</option>
+                                <option value="gif">GIF</option>
+                                <option value="svg">SVG</option>
+                            </select>
+                        </div>
+                        <div class="match-row">
+                            <span>Animated emoji</span>
+                            <select class="match-select" data-correct="gif">
+                                <option value="">Επίλεξε...</option>
+                                <option value="jpg">JPG</option>
+                                <option value="png">PNG</option>
+                                <option value="gif">GIF</option>
+                                <option value="svg">SVG</option>
+                            </select>
+                        </div>
+                        <div class="match-row">
+                            <span>Icon που μεγαλώνει χωρίς θόλωμα</span>
+                            <select class="match-select" data-correct="svg">
+                                <option value="">Επίλεξε...</option>
+                                <option value="jpg">JPG</option>
+                                <option value="png">PNG</option>
+                                <option value="gif">GIF</option>
+                                <option value="svg">SVG</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button onclick="checkExercise(2)" class="btn btn-primary">✅ Έλεγχος</button>
+                    <div id="result-2" class="exercise-result"></div>
+                </div>
+
+                <!-- Exercise 3 -->
+                <div class="exercise-item">
+                    <div class="exercise-header">
+                        <span class="exercise-number">3</span>
+                        <h3>Γράψε Figure με Figcaption</h3>
+                    </div>
+                    <p>Δημιούργησε ένα figure με εικόνα από το Unsplash και λεζάντα</p>
+                    
+                    <textarea id="figure-exercise" class="code-textarea" rows="8" placeholder="<figure>
+    <img ...>
+    <figcaption>...</figcaption>
+</figure>"></textarea>
+                    <div class="exercise-buttons">
+                        <button onclick="previewFigureExercise()" class="btn btn-success">▶️ Προεπισκόπηση</button>
+                        <button onclick="checkFigureExercise()" class="btn btn-primary">✅ Έλεγχος</button>
+                    </div>
+                    <div id="figure-preview" class="exercise-preview"></div>
+                    <div id="result-3" class="exercise-result"></div>
+                </div>
+            </section>
+
+            <!-- QUIZ TAB -->
+            <section id="quiz" class="tab-content">
+                <h2>🎯 Quiz Εικόνων</h2>
+                <div id="quiz-container"></div>
+                <div id="quiz-results" style="display:none;">
+                    <div class="results-score"><span id="score-number">0</span>/5</div>
+                    <div id="results-message"></div>
+                    <button onclick="retakeQuiz()" class="btn btn-primary">🔄 Ξανά</button>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer Navigation -->
+    <footer class="lesson-footer">
+        <div class="container">
+            <div class="footer-nav">
+                <a href="links.html" class="footer-link">← Σύνδεσμοι</a>
+                <a href="text-elements.html" class="footer-link primary">Στοιχεία Κειμένου →</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="sub-script.js"></script>
+    <script>
+        // Quiz data for images
+        const quizData = [
+            {
+                question: "Ποιο tag χρησιμοποιούμε για εικόνες;",
+                options: ["<picture>", "<image>", "<img>", "<photo>"],
+                correct: 2
+            },
+            {
+                question: "Το alt attribute χρησιμεύει για:",
+                options: ["Styling", "Εναλλακτικό κείμενο/Προσβασιμότητα", "Μέγεθος", "Link"],
+                correct: 1
+            },
+            {
+                question: "Ποια μορφή υποστηρίζει διαφάνεια;",
+                options: ["JPG", "PNG", "BMP", "TIFF"],
+                correct: 1
+            },
+            {
+                question: "Το loading='lazy' κάνει:",
+                options: ["Αργό φόρτωμα για performance", "Blur effect", "Αλλαγή μεγέθους", "Animation"],
+                correct: 0
+            },
+            {
+                question: "Για εικόνα με λεζάντα χρησιμοποιούμε:",
+                options: ["<div> + <p>", "<figure> + <figcaption>", "<img> + <caption>", "<picture> + <text>"],
+                correct: 1
+            }
+        ];
+        
+        initQuiz(quizData);
+        
+        // Extra functions for exercises
+        function previewFigureExercise() {
+            const code = document.getElementById('figure-exercise').value;
+            const style = `<style>figure{max-width:300px;margin:10px auto;background:white;border-radius:10px;overflow:hidden;box-shadow:0 5px 15px rgba(0,0,0,0.2);}figure img{width:100%;display:block;}figcaption{padding:15px;text-align:center;}</style>`;
+            document.getElementById('figure-preview').innerHTML = `<iframe srcdoc="${style}${code.replace(/"/g,'&quot;')}" style="width:100%;height:280px;border:1px solid #ddd;border-radius:8px;"></iframe>`;
+        }
+        
+        function checkFigureExercise() {
+            const code = document.getElementById('figure-exercise').value.toLowerCase();
+            const result = document.getElementById('result-3');
+            const checks = {
+                figure: code.includes('<figure'),
+                img: code.includes('<img'),
+                src: code.includes('src='),
+                alt: code.includes('alt='),
+                figcaption: code.includes('<figcaption')
+            };
+            const score = Object.values(checks).filter(Boolean).length;
+            result.innerHTML = score === 5 ? '🎉 Τέλειο figure!' : `Έχεις ${score}/5 στοιχεία`;
+            result.className = 'exercise-result ' + (score === 5 ? 'success' : 'error');
+        }
+    </script>
+</body>
+</html>
